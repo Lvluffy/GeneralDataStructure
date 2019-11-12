@@ -1,6 +1,29 @@
 # GeneralDataStructure
 通用数据结构
 
+## gradle使用：
+
+一、Project下的build.gradle文件下添加
+
+allprojects {
+    repositories {
+      ...
+      maven { url 'https://jitpack.io' }
+    }
+}
+
+二、Module下的build.gradle文件下添加
+
+dependencies {
+          compile 'com.github.Lvluffy:GeneralDataStructure:1.0.0'
+}
+
+或者
+
+dependencies {
+          implementation 'com.github.Lvluffy:GeneralDataStructure:1.0.0'
+}
+
 ## 概述
 一、常用数据结（简单数据结构）
 
