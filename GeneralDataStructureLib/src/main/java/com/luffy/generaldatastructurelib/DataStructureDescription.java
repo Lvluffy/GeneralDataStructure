@@ -4,8 +4,8 @@ package com.luffy.generaldatastructurelib;
  * Created by lvlufei on 2019/11/6
  *
  * @name 数据结构描述
- * @desc 简单数据结构、复杂（高级）数据结构
- * 一、常用数据结构
+ * @desc --
+ * 一、常用数据结（简单数据结构）
  * 1-1，数组、字符串（Array & String）
  * 1-2，链表（Linked-list）
  * 1-3，栈（Stack）
