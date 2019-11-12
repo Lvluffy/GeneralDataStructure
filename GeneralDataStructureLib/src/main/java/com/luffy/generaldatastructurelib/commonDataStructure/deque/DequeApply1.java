@@ -3,8 +3,8 @@ package com.luffy.generaldatastructurelib.commonDataStructure.deque;
 /**
  * Created by lvlufei on 2019/11/6
  *
- * @name 双端队列应用
- * @desc 队列特点：
+ * @name 双端队列
+ * @desc --
  * <p>
  * 基本实现：
  * 可以利用一个双链表，队列的头尾两端能在O(1)的时间内进行数据的查看、添加和删除。

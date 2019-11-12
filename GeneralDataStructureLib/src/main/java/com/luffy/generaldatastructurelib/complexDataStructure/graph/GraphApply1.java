@@ -3,8 +3,8 @@ package com.luffy.generaldatastructurelib.complexDataStructure.graph;
 /**
  * Created by lvlufei on 2019/11/7
  *
- * @name 图的应用
- * @desc 图的特点：
+ * @name 图
+ * @desc --
  * <p>
  * 图的存储和表达方式：邻接矩阵、邻接链表
  * <p>
@@ -74,7 +74,7 @@ public class GraphApply1 {
      * @param graph
      * @return
      */
-    public static boolean dfs(int i, int[] color, int t, int[][] graph) {
+    private static boolean dfs(int i, int[] color, int t, int[][] graph) {
         if (color[i] != 0)
             return color[i] == t;
         color[i] = t;

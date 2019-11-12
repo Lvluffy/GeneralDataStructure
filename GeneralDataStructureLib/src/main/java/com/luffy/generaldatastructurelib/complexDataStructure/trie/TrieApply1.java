@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Created by lvlufei on 2019/11/7
  *
- * @name 前缀树的应用
- * @desc 前缀树的特点：
+ * @name 前缀树
+ * @desc --
  * <p>
  * 应用场景：前缀树被广泛地运用在字典查找当中，也被称为字段树。
  * <p>

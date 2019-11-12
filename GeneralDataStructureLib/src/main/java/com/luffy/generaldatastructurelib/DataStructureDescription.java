@@ -30,9 +30,16 @@ package com.luffy.generaldatastructurelib;
  * 3-3-1，堆排序（Heap Sort）
  * 3-3-2，桶排序（Bucket Sort）
  * 四、递归与回溯
+ * 4-1，递归（Recursion）
+ * 4-1，回溯（Backtracking）
  * 五、深度与广度优先搜索
+ * 5-1，深度优先搜索（Depth-First Search / DFS）
+ * 5-2，广度优先搜索（Breadth-First Search / BFS）
  * 六、动态规划
- * 七、二分搜索
+ * 6-1，动态规划（Dynamic Plan）
+ * 七、二分搜索与贪婪算法
+ * 7-1，二分搜索（Binary Search）
+ * 7-2，贪婪算法（Greedy）
  */
 public class DataStructureDescription {
 }

@@ -6,8 +6,10 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/10/22
  *
- * @name 栈应用
- * @desc 栈特点：后进先出
+ * @name 栈
+ * @desc --
+ * <p>
+ * 特点：后进先出
  * <p>
  * 题目：
  * 给定一个只包含'('，')'，'['，']'，'{'，'}'的字符串，判断括号组合是否有效?

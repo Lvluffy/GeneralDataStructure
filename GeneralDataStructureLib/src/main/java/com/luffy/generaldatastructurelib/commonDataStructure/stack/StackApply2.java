@@ -3,8 +3,10 @@ package com.luffy.generaldatastructurelib.commonDataStructure.stack;
 /**
  * Created by lvlufei on 2019/11/6
  *
- * @name 栈应用
- * @desc 栈特点：后进先出
+ * @name 栈
+ * @desc --
+ * <p>
+ * 特点：后进先出
  * <p>
  * 题目：
  * 根据每日气温列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过改日的天数。如果之后都不会升高，请在该位置用"0"替代。
