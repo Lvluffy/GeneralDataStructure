@@ -95,3 +95,8 @@ dependencies {
 
 7-2，贪婪算法（Greedy）
 
+## 图解算法
+
+### 冒泡排序
+
+![冒泡排序](https://user-images.githubusercontent.com/34730376/68725906-d7e08580-05fa-11ea-922d-6823c13ad8be.gif)
