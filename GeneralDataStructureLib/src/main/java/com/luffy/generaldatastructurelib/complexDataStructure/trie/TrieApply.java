@@ -49,7 +49,7 @@ import java.util.List;
  * 1，你需要优化回溯算法以通过更大数据量的测试。你能否早点停止回溯？
  * 2，如果当前单词不存在于所有单词的前缀中，则可以立即停止回溯。什么样的数据结构可以有效地执行这样的操作？。
  */
-public class TrieApply1 {
+public class TrieApply {
 
     private static TrieNode root = new TrieNode();
     private static int[] row = new int[]{-1, 1, 0, 0};

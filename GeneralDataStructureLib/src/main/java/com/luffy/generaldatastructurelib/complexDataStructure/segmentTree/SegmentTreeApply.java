@@ -8,13 +8,9 @@ import java.util.List;
  * Created by lvlufei on 2019/11/7
  *
  * @name 线段树
- * @desc --
+ * @desc 特点：是一种按照二叉树的形式存储数据的结构，每个节点保存的都是数组里某一段的总和。
  * <p>
- * 特点：
- * 就是一种按照二叉树的形式存储数据的结构，每个节点保存的都是数组里某一段的总和。
- * <p>
- * 适用：
- * 适用与数据很多，而且需要频繁更新并求和的操作。
+ * 适用：适用于数据很多，而且需要频繁更新并求和的操作。
  * <p>
  * 题目：计算右侧小于当前元素的个数
  * 给定一个整数数组 nums，按要求返回一个新数组 counts。数组 counts 有该性质： counts[i] 的值是  nums[i] 右侧小于 nums[i] 的元素的数量。
@@ -31,7 +27,7 @@ import java.util.List;
  * <p>
  * 方案：二分搜索
  */
-public class SegmentTreeApply1 {
+public class SegmentTreeApply {
     /**
      * 数小
      *

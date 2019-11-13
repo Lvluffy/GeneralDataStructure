@@ -6,5 +6,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.arrayString;
  * @name 数组、字符串
  * @desc --
  */
-public class ArrayStringApply1 {
+public class ArrayStringApply {
 }

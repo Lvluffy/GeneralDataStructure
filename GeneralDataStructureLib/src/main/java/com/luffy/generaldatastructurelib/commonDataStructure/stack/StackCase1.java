@@ -18,5 +18,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.stack;
  * temperature = [23,24,25,21,19,22,26,23]
  * 输出：[1,1,4,2,1,1,0,0]
  */
-public class StackApply2 {
+public class StackCase1 {
 }

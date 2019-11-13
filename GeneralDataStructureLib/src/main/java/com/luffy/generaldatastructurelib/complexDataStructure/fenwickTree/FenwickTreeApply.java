@@ -11,6 +11,6 @@ package com.luffy.generaldatastructurelib.complexDataStructure.fenwickTree;
  * 2，树状数组的第一个元素是空节点。
  * 3，如果节点tree[y]是tree[x]的父节点，那么需要满足条件：y = x-(x&(-x))。
  */
-public class FenwickTreeApply1 {
+public class FenwickTreeApply {
 
 }

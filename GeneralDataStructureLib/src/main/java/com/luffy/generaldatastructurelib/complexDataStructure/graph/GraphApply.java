@@ -47,7 +47,7 @@ package com.luffy.generaldatastructurelib.complexDataStructure.graph;
  * 3----2
  * 我们不能将节点分割成两个独立的子集。
  */
-public class GraphApply1 {
+public class GraphApply {
 
     /**
      * 判断二分图

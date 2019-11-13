@@ -20,5 +20,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.deque;
  * 输入：nums=[1,3,-1,-3,5,3,6,7]和k=3
  * 输出：[3,3,5,5,6,7]
  */
-public class DequeApply1 {
+public class DequeApply {
 }

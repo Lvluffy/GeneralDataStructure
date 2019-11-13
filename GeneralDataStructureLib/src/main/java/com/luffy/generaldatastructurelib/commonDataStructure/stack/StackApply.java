@@ -7,14 +7,12 @@ import java.util.Stack;
  * Created by lvlufei on 2019/10/22
  *
  * @name 栈
- * @desc --
- * <p>
- * 特点：后进先出
+ * @desc 特点：后进先出
  * <p>
  * 题目：
  * 给定一个只包含'('，')'，'['，']'，'{'，'}'的字符串，判断括号组合是否有效?
  */
-public class StackApply1 {
+public class StackApply {
     /**
      * 判断括号是否成对
      *

@@ -6,5 +6,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.linkedList;
  * @name 链表
  * @desc --
  */
-public class LinkedListApply1 {
+public class LinkedListApply {
 }

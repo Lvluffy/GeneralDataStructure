@@ -8,5 +8,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.queue;
  * <p>
  * 特点：先进先出
  */
-public class QueueApply1 {
+public class QueueApply {
 }
