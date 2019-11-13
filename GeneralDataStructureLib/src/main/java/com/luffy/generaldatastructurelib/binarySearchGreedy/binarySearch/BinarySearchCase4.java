@@ -4,7 +4,7 @@ package com.luffy.generaldatastructurelib.binarySearchGreedy.binarySearch;
  * Created by lvlufei on 2019/11/12
  *
  * @name 二分搜索
- * @desc 例题分析四：不定长的边界
+ * @desc 案例分析四：不定长的边界
  * <p>
  * 题目：有一段不知道具体长度的日志文件，里面记录了每次登录的时间戳，已知日志是按顺序从头到尾记录的，没有记录日志的地方为空，要求当前日志的长度。
  * <p>

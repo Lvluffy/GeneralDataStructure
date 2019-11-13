@@ -4,7 +4,7 @@ package com.luffy.generaldatastructurelib.binarySearchGreedy.binarySearch;
  * Created by lvlufei on 2019/11/12
  *
  * @name 二分搜索
- * @desc 例题分析三：旋转过的排序数组
+ * @desc 案例分析三：旋转过的排序数组
  * <p>
  * 二分搜索也能在经过旋转了的排序数组中进行。
  * <p>

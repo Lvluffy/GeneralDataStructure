@@ -4,7 +4,7 @@ package com.luffy.generaldatastructurelib.binarySearchGreedy.binarySearch;
  * Created by lvlufei on 2019/11/12
  *
  * @name 二分搜索
- * @desc 例题分析二：找模糊的边界
+ * @desc 案例分析二：找模糊的边界
  * <p>
  * 二分搜索可以用来查找一些模糊的边界。模糊的边界指：边界的值并不等于目标的值，而是大于或者小于目标的值。
  * <p>

@@ -4,7 +4,7 @@ package com.luffy.generaldatastructurelib.binarySearchGreedy.binarySearch;
  * Created by lvlufei on 2019/11/12
  *
  * @name 二分搜索
- * @desc 例题分析一：找确定的边界
+ * @desc 案例分析一：找确定的边界
  * <p>
  * 边界分上边界和下边界，有时候也被成为右边界和左边界。确定的边界指：边界的数值等于要找的目标数。
  * <p>
