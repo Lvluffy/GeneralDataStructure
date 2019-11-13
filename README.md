@@ -100,3 +100,19 @@ dependencies {
 ### 冒泡排序
 
 ![冒泡排序](https://user-images.githubusercontent.com/34730376/68725906-d7e08580-05fa-11ea-922d-6823c13ad8be.gif)
+
+### 插入排序：
+
+![插入排序](https://user-images.githubusercontent.com/34730376/68726049-3c9be000-05fb-11ea-82b3-b73021918342.gif)
+
+### 快速排序：
+
+![快速排序](https://user-images.githubusercontent.com/34730376/68726112-6d7c1500-05fb-11ea-92a1-21900452f5ba.gif)
+
+### 归并排序：
+
+![归并排序](https://user-images.githubusercontent.com/34730376/68726146-8c7aa700-05fb-11ea-8bc1-2fd95597b8ac.gif)
+
+### 堆排序：
+
+![堆排序](https://user-images.githubusercontent.com/34730376/68726222-c481ea00-05fb-11ea-9fa3-a54a01d8e4ce.gif)
