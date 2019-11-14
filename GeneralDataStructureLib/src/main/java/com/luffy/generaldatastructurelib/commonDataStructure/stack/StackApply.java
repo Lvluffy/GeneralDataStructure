@@ -1,6 +1,5 @@
 package com.luffy.generaldatastructurelib.commonDataStructure.stack;
 
-import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
@@ -25,38 +24,33 @@ public class StackApply {
         }
         Stack<Character> stack = new Stack<>();
         char[] c = str.toCharArray();
-        try {
-            for (int i = 0; i < c.length; i++) {
-                if (c[i] == '(' || c[i] == '[' || c[i] == '{') {
-                    /*加入栈顶*/
-                    stack.push(c[i]);
-                } else if (c[i] == ')') {
-                    /*检测栈顶是否存在*/
-                    if (stack.peek() == '(') {
-                        /*从栈中移除*/
-                        stack.pop();
-                    }
-                } else if (c[i] == ']') {
-                    /*检测栈顶是否存在*/
-                    if (stack.peek() == '[') {
-                        /*从栈中移除*/
-                        stack.pop();
-                    }
-                } else if (c[i] == '}') {
-                    /*检测栈顶是否存在*/
-                    if (stack.peek() == '{') {
-                        /*从栈中移除*/
-                        stack.pop();
-                    }
+        for (int i = 0; i < c.length; i++) {
+            if (c[i] == '(' || c[i] == '[' || c[i] == '{') {
+                /*加入栈顶*/
+                stack.push(c[i]);
+            } else if (c[i] == ')') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '(') {
+                    /*从栈中移除*/
+                    stack.pop();
+                }
+            } else if (c[i] == ']') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '[') {
+                    /*从栈中移除*/
+                    stack.pop();
+                }
+            } else if (c[i] == '}') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '{') {
+                    /*从栈中移除*/
+                    stack.pop();
                 }
             }
-            if (stack.empty()) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (EmptyStackException e) {
-            e.printStackTrace();
+        }
+        if (stack.empty()) {
+            return true;
+        } else {
             return false;
         }
     }
