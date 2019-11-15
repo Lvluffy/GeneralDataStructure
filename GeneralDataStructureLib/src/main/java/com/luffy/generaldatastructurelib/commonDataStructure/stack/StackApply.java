@@ -6,21 +6,46 @@ import java.util.Stack;
  * Created by lvlufei on 2019/10/22
  *
  * @name 栈
- * @desc 特点：后进先出
+ * @desc 特点：先进后出，后进先出。
  * <p>
- * 题目：
- * 给定一个只包含'('，')'，'['，']'，'{'，'}'的字符串，判断括号组合是否有效?
+ * 题目：给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+ * <p>
+ * 有效字符串需满足：
+ * 1，左括号必须用相同类型的右括号闭合。
+ * 2，左括号必须以正确的顺序闭合。
+ * <p>
+ * 注意：空字符串可被认为是有效字符串。
+ * <p>
+ * 示例1：
+ * 输入: "()"
+ * 输出: true
+ * <p>
+ * 示例2：
+ * 输入: "()[]{}"
+ * 输出: true
+ * <p>
+ * 示例3：
+ * 输入: "(]"
+ * 输出: false
+ * <p>
+ * 示例4：
+ * 输入: "([)]"
+ * 输出: false
+ * <p>
+ * 示例5：
+ * 输入: "{[]}"
+ * 输出: true
  */
 public class StackApply {
     /**
-     * 判断括号是否成对
+     * 栈解法
      *
-     * @param str
-     * @return ture-成对；false-不成对
+     * @param str 字符串
+     * @return 判断括号是否成对（ture-成对；false-不成对）
      */
-    public static boolean judgeBracketPair(String str) {
+    public static boolean stack(String str) {
         if (str == null || "".equals(str) || str.length() == 0) {
-            return false;
+            return true;
         }
         Stack<Character> stack = new Stack<>();
         char[] c = str.toCharArray();
@@ -56,8 +81,16 @@ public class StackApply {
     }
 
     public static void main(String[] args) {
-        System.out.println("是否成对：" + judgeBracketPair("((((({{{{{[[[[[]]]]]}}}}})))))(()){}[]{{[[]]}}"));
-        System.out.println("是否成对：" + judgeBracketPair("((((({{{{{[[[[[]]]]]}}}}})))))(()){]}}"));
-        System.out.println("是否成对：" + judgeBracketPair(null));
+        String str1 = "()";
+        String str2 = "()[]{}";
+        String str3 = "(]";
+        String str4 = "([)]";
+        String str5 = "{[]}";
+        System.out.println("示例1：" + stack(str1));
+        System.out.println("示例2：" + stack(str2));
+        System.out.println("示例3：" + stack(str3));
+        System.out.println("示例4：" + stack(str4));
+        System.out.println("示例5：" + stack(str5));
+        System.out.println("示例6：" + stack(null));
     }
 }
