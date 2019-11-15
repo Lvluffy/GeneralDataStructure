@@ -19,7 +19,7 @@ import java.util.List;
  * <p>
  * 注意:
  * 1，S的长度在[1, 500]之间。
- * 2，S只包含小写字母'a'到'z'。
+ * 2，S只包含小写字母'bothwayLinkedList'到'z'。
  */
 public class GreedyCase4 {
     /**

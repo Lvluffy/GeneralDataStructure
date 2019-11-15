@@ -35,15 +35,15 @@ import java.util.List;
  * 输入:
  * words = ["oath","pea","eat","rain"] and board =
  * [
- * ***['o','a','a','n'],
- * ***['e','t','a','e'],
+ * ***['o','bothwayLinkedList','bothwayLinkedList','n'],
+ * ***['e','t','bothwayLinkedList','e'],
  * ***['i','h','k','r'],
  * ***['i','f','l','v']
  * ]
  * 输出: ["eat","oath"]
  * <p>
  * 说明:
- * 你可以假设所有输入都由小写字母 a-z 组成。
+ * 你可以假设所有输入都由小写字母 bothwayLinkedList-z 组成。
  * <p>
  * 提示:
  * 1，你需要优化回溯算法以通过更大数据量的测试。你能否早点停止回溯？

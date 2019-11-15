@@ -23,5 +23,5 @@ package com.luffy.generaldatastructurelib.commonDataStructure.tree;
  * 说明：
  * 你可以假设k总是有效的，1<=k<=二叉搜索树元素个数。
  */
-public class TreeApply1 {
+public class TreeApply {
 }
