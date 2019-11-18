@@ -49,7 +49,7 @@ public class StackApply {
      * @param str 字符串
      * @return 判断括号是否成对（ture-成对；false-不成对）
      */
-    public static boolean stack(String str) {
+    public boolean stack(String str) {
         if (str == null || "".equals(str) || str.length() == 0) {
             return true;
         }
@@ -92,11 +92,12 @@ public class StackApply {
         String str3 = "(]";
         String str4 = "([)]";
         String str5 = "{[]}";
-        System.out.println("示例1：" + stack(str1));
-        System.out.println("示例2：" + stack(str2));
-        System.out.println("示例3：" + stack(str3));
-        System.out.println("示例4：" + stack(str4));
-        System.out.println("示例5：" + stack(str5));
-        System.out.println("示例6：" + stack(null));
+        StackApply stackApply = new StackApply();
+        System.out.println("示例1：" + stackApply.stack(str1));
+        System.out.println("示例2：" + stackApply.stack(str2));
+        System.out.println("示例3：" + stackApply.stack(str3));
+        System.out.println("示例4：" + stackApply.stack(str4));
+        System.out.println("示例5：" + stackApply.stack(str5));
+        System.out.println("示例6：" + stackApply.stack(null));
     }
 }

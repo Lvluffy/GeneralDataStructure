@@ -30,7 +30,7 @@ public class StringCase3 {
      * @param cur 当前答案
      * @param ans 最终答案
      */
-    private static void backtracking(String str, int pos, List<String> cur, List<String> ans) {
+    private void backtracking(String str, int pos, List<String> cur, List<String> ans) {
         if (cur.size() >= 4) {
             if (pos == str.length()) ans.add(String.join(".", cur));
             return;
@@ -59,7 +59,7 @@ public class StringCase3 {
      * @param str IP地址
      * @return
      */
-    public static List<String> restoreIpAddresses(String str) {
+    public List<String> restoreIpAddresses(String str) {
         List<String> ans = new ArrayList<>();
         backtracking(str, 0, new ArrayList<String>(), ans);
         return ans;
@@ -67,10 +67,9 @@ public class StringCase3 {
 
     public static void main(String[] args) {
         String str = "25525511135";
-        List<String> answers = restoreIpAddresses(str);
-        for (String answer : answers) {
-            System.out.println(answer);
-        }
+        StringCase3 stringCase3 = new StringCase3();
+        List<String> answers = stringCase3.restoreIpAddresses(str);
+        System.out.println(answers);
     }
 
 }

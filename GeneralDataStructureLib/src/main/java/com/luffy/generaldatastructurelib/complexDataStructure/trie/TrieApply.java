@@ -51,9 +51,9 @@ import java.util.List;
  */
 public class TrieApply {
 
-    private static TrieNode root = new TrieNode();
-    private static int[] row = new int[]{-1, 1, 0, 0};
-    private static int[] col = new int[]{0, 0, -1, 1};
+    private TrieNode root = new TrieNode();
+    private int[] row = new int[]{-1, 1, 0, 0};
+    private int[] col = new int[]{0, 0, -1, 1};
 
     /**
      * 查找单词
@@ -62,7 +62,7 @@ public class TrieApply {
      * @param words 字典中的单词列表
      * @return
      */
-    public static List<String> findWords(char[][] board, String[] words) {
+    public List<String> findWords(char[][] board, String[] words) {
         //1，直接用list存，会出现重复记录word的情况。
         //2，用HashSet暂存结果，确保不会出现重复word
         HashSet<String> temp = new HashSet<>();
@@ -98,7 +98,7 @@ public class TrieApply {
      * @param node    前缀树
      * @param temp
      */
-    private static void find(char[][] board, boolean[][] visited, int x, int y, TrieNode node, HashSet<String> temp) {
+    private void find(char[][] board, boolean[][] visited, int x, int y, TrieNode node, HashSet<String> temp) {
         visited[x][y] = true;
         TrieNode cur = node.next[board[x][y] - 'a'];
         //到达可匹配子串，记录当前 word
@@ -119,7 +119,7 @@ public class TrieApply {
     /**
      * 前缀树
      */
-    static class TrieNode {
+    class TrieNode {
         String word;
         TrieNode[] next = new TrieNode[26];
 
@@ -138,7 +138,8 @@ public class TrieApply {
     public static void main(String[] args) {
         char[][] board = {{'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}};
         String[] words = {"oath", "pea", "eat", "rain"};
-        List<String> list = findWords(board, words);
+        TrieApply trieApply = new TrieApply();
+        List<String> list = trieApply.findWords(board, words);
         for (String s : list) {
             System.out.println(s);
         }

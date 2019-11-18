@@ -28,7 +28,7 @@ public class StackCase4 {
      * @param nums 数据
      * @return 最大面积
      */
-    public static int stack(char[][] nums) {
+    public int stack(char[][] nums) {
         if (nums.length == 0) return 0;
         // 最大面积
         int maxarea = 0;
@@ -48,7 +48,7 @@ public class StackCase4 {
      * @param heights
      * @return
      */
-    private static int stackAssist(int[] heights) {
+    private int stackAssist(int[] heights) {
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
         int maxarea = 0;
@@ -70,7 +70,7 @@ public class StackCase4 {
      * @param nums 数据
      * @return 最大面积
      */
-    public static int dynamicPlan(char[][] nums) {
+    public int dynamicPlan(char[][] nums) {
         if (nums.length == 0) return 0;
         int maxarea = 0;
         int[][] dp = new int[nums.length][nums[0].length];
@@ -91,9 +91,10 @@ public class StackCase4 {
 
     public static void main(String[] args) {
         char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
+        StackCase4 stackCase4 = new StackCase4();
         // 栈解法
-        System.out.println("栈解法:" + stack(nums));
+        System.out.println("栈解法:" + stackCase4.stack(nums));
         // 动态规划解法
-        System.out.println("栈解法:" + dynamicPlan(nums));
+        System.out.println("栈解法:" + stackCase4.dynamicPlan(nums));
     }
 }

@@ -38,7 +38,7 @@ public class StackCase3 {
      * @param k   移除k位数字
      * @return 剩下的数字最小值
      */
-    public static String greedy(String num, int k) {
+    public String greedy(String num, int k) {
         //每次都移除峰值，共移除k次，返回结果值即可
         while (k > 0) {
             int index = num.length() - 1;
@@ -65,7 +65,7 @@ public class StackCase3 {
      * @param k   移除k位数字
      * @return 剩下的数字最小值
      */
-    public static String stack(String num, int k) {
+    public String stack(String num, int k) {
         int sum = 0;
         Stack<Integer> stack1 = new Stack<>();
         Stack<Integer> stack2 = new Stack<>();
@@ -105,15 +105,16 @@ public class StackCase3 {
         int k1 = 3;
         int k2 = 1;
         int k3 = 2;
+        StackCase3 stackCase3 = new StackCase3();
         // 贪心解法
         System.out.println("贪心解法");
-        System.out.println("示例1：" + greedy(str1, k1));
-        System.out.println("示例2：" + greedy(str2, k2));
-        System.out.println("示例3：" + greedy(str3, k3));
+        System.out.println("示例1：" + stackCase3.greedy(str1, k1));
+        System.out.println("示例2：" + stackCase3.greedy(str2, k2));
+        System.out.println("示例3：" + stackCase3.greedy(str3, k3));
         // 栈解法
         System.out.println("栈解法");
-        System.out.println("示例1：" + stack(str1, k1));
-        System.out.println("示例2：" + stack(str2, k2));
-        System.out.println("示例3：" + stack(str3, k3));
+        System.out.println("示例1：" + stackCase3.stack(str1, k1));
+        System.out.println("示例2：" + stackCase3.stack(str2, k2));
+        System.out.println("示例3：" + stackCase3.stack(str3, k3));
     }
 }

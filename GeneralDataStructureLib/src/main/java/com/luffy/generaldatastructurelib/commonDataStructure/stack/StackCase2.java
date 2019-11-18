@@ -19,14 +19,14 @@ import java.util.Stack;
 public class StackCase2 {
     /**
      * 栈解法
-     *
+     * <p>
      * 时间复杂度：O(n)。其中n是数组的长度，每个索引最多做一次压栈和出栈的操作。
      * 空间复杂度：O(m)
      *
      * @param nums 数组数据（每日气温列表）
      * @return 等待多久温度才会升高超过该日的天数
      */
-    public static int[] stack(int[] nums) {
+    public int[] stack(int[] nums) {
         int[] anwser = new int[nums.length];
         Stack<Integer> stack = new Stack();
         for (int i = nums.length - 1; i >= 0; --i) {
@@ -44,7 +44,8 @@ public class StackCase2 {
 
     public static void main(String[] args) {
         int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
-        int[] anwser = stack(nums);
+        StackCase2 stackCase2 = new StackCase2();
+        int[] anwser = stackCase2.stack(nums);
         for (int i : anwser) {
             System.out.print(i + "    ");
         }

@@ -33,7 +33,7 @@ public class StackCase1 {
      * @param str2 字符串2
      * @return 二者是否相等，true or false
      */
-    public static boolean stack(String str1, String str2) {
+    public boolean stack(String str1, String str2) {
         Stack<Character> stack1 = new Stack<>();
         Stack<Character> stack2 = new Stack<>();
         // 处理str1
@@ -81,8 +81,9 @@ public class StackCase1 {
         String str2_2 = "c#d#";
         String str3_1 = "a##c";
         String str3_2 = "#a#c";
-        System.out.println("示例1：" + stack(str1_1, str1_2));
-        System.out.println("示例2：" + stack(str2_1, str2_2));
-        System.out.println("示例3：" + stack(str3_1, str3_2));
+        StackCase1 stackCase1 = new StackCase1();
+        System.out.println("示例1：" + stackCase1.stack(str1_1, str1_2));
+        System.out.println("示例2：" + stackCase1.stack(str2_1, str2_2));
+        System.out.println("示例3：" + stackCase1.stack(str3_1, str3_2));
     }
 }

@@ -50,7 +50,7 @@ public class GraphCase2 {
      * @param prerequisites 先决条件
      * @return
      */
-    public static boolean bfs(int numCourses, int[][] prerequisites) {
+    public boolean bfs(int numCourses, int[][] prerequisites) {
         // 生成入度表
         int[] indegrees = new int[numCourses];
         for (int[] cp : prerequisites) {
@@ -98,7 +98,7 @@ public class GraphCase2 {
      * @param prerequisites 先决条件
      * @return
      */
-    public static boolean dfs(int numCourses, int[][] prerequisites) {
+    public boolean dfs(int numCourses, int[][] prerequisites) {
         int[][] adjacency = new int[numCourses][numCourses];
         int[] flags = new int[numCourses];
         for (int[] cp : prerequisites)
@@ -119,7 +119,7 @@ public class GraphCase2 {
      * @param i
      * @return
      */
-    private static boolean dfsAuxiliary(int[][] adjacency, int[] flags, int i) {
+    private boolean dfsAuxiliary(int[][] adjacency, int[] flags, int i) {
         if (flags[i] == 1) return false;
         if (flags[i] == -1) return true;
         flags[i] = 1;
@@ -137,13 +137,14 @@ public class GraphCase2 {
         int[][] prerequisites2 = {{1, 0}, {0, 1}};
         int numCourses1 = 2;
         int numCourses2 = 2;
+        GraphCase2 graphCase2 = new GraphCase2();
         // 广度优先搜索解法
         System.out.println("广度优先搜索解法：");
-        System.out.println("示例1：" + bfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + bfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + graphCase2.bfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + graphCase2.bfs(numCourses2, prerequisites2));
         // 深度优先搜索解法
         System.out.println("深度优先搜索解法：");
-        System.out.println("示例1：" + dfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + dfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + graphCase2.dfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + graphCase2.dfs(numCourses2, prerequisites2));
     }
 }

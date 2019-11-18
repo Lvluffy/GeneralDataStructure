@@ -33,7 +33,7 @@ public class GreedyCase2 {
      * @param str 平衡字符串
      * @return 可以通过分割得到的平衡字符串的最大数量
      */
-    public static int greedy(String str) {
+    public int greedy(String str) {
         int number = 0;//记录数量
         int result = 0;//结果
         for (int i = 0; i < str.length(); i++) {
@@ -55,7 +55,7 @@ public class GreedyCase2 {
      * @param str 平衡字符串
      * @return 可以通过分割得到的平衡字符串的最大数量
      */
-    public static int stack(String str) {
+    public int stack(String str) {
         Stack<Character> stack = new Stack<>();//开辟一个栈空间，用来记录
         int result = 0;//结果
         for (int i = 0; i < str.length(); i++) {
@@ -78,15 +78,16 @@ public class GreedyCase2 {
         String str1 = "RLRRLLRLRL";
         String str2 = "RLLLLRRRLR";
         String str3 = "LLLLRRRR";
+        GreedyCase2 greedyCase2 = new GreedyCase2();
         //贪婪解法
         System.out.println("贪婪解法");
-        System.out.println("示例1：" + greedy(str1));
-        System.out.println("示例2：" + greedy(str2));
-        System.out.println("示例3：" + greedy(str3));
+        System.out.println("示例1：" + greedyCase2.greedy(str1));
+        System.out.println("示例2：" + greedyCase2.greedy(str2));
+        System.out.println("示例3：" + greedyCase2.greedy(str3));
         //栈解法
         System.out.println("栈解法");
-        System.out.println("示例1：" + stack(str1));
-        System.out.println("示例2：" + stack(str2));
-        System.out.println("示例3：" + stack(str3));
+        System.out.println("示例1：" + greedyCase2.stack(str1));
+        System.out.println("示例2：" + greedyCase2.stack(str2));
+        System.out.println("示例3：" + greedyCase2.stack(str3));
     }
 }

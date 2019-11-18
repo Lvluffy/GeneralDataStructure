@@ -50,7 +50,7 @@ public class GreedyApply {
      * @param nums
      * @return
      */
-    public static int minMeetingRooms(int[][] nums) {
+    public int minMeetingRooms(int[][] nums) {
         if (nums == null || nums.length == 0) return 0;
         //开始时间、结束时间
         int[] startTime = new int[nums.length];
@@ -81,7 +81,8 @@ public class GreedyApply {
 
     public static void main(String[] args) {
         int[][] nums = {{0, 30}, {5, 10,}, {15, 20}};
-        int rooms = minMeetingRooms(nums);
+        GreedyApply greedyApply = new GreedyApply();
+        int rooms = greedyApply.minMeetingRooms(nums);
         System.out.println(rooms);
     }
 }

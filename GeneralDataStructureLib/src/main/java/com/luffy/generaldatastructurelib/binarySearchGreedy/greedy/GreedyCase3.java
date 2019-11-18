@@ -29,7 +29,7 @@ public class GreedyCase3 {
      * @param nums 数组数据
      * @return 准备的糖果数量
      */
-    public static int greedy(int[] nums) {
+    public int greedy(int[] nums) {
         int number = nums.length;//数量
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] != nums[i - 1]) {
@@ -47,7 +47,7 @@ public class GreedyCase3 {
      * @param nums 数组数据
      * @return 准备的糖果数量
      */
-    public static int dynamicPlan(int[] nums) {
+    public int dynamicPlan(int[] nums) {
         int len = nums.length;
         if (len == 0)
             return 0;
@@ -89,11 +89,12 @@ public class GreedyCase3 {
     public static void main(String[] args) {
         int[] nums1 = {1, 0, 2};
         int[] nums2 = {1, 2, 2};
+        GreedyCase3 greedyCase3 = new GreedyCase3();
         //贪婪解法
-        System.out.println("示例1：" + greedy(nums1));
-        System.out.println("示例2：" + greedy(nums2));
+        System.out.println("示例1：" + greedyCase3.greedy(nums1));
+        System.out.println("示例2：" + greedyCase3.greedy(nums2));
         //动态规划
-        System.out.println("示例1：" + dynamicPlan(nums1));
-        System.out.println("示例2：" + dynamicPlan(nums2));
+        System.out.println("示例1：" + greedyCase3.dynamicPlan(nums1));
+        System.out.println("示例2：" + greedyCase3.dynamicPlan(nums2));
     }
 }

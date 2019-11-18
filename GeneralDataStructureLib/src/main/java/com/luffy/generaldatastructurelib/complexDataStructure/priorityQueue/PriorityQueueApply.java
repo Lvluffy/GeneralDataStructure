@@ -42,7 +42,7 @@ public class PriorityQueueApply {
      * @param k
      * @return
      */
-    public static List<Integer> topKFrequent(int[] nums, int k) {
+    public List<Integer> priorityQueue(int[] nums, int k) {
         List<Integer> list = new ArrayList<>();
         final Map<Integer, Integer> map = new HashMap<>();
         for (int i : nums) {
@@ -72,7 +72,8 @@ public class PriorityQueueApply {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 2, 2, 3};
-        List<Integer> list = topKFrequent(nums, 2);
+        PriorityQueueApply priorityQueueApply = new PriorityQueueApply();
+        List<Integer> list = priorityQueueApply.priorityQueue(nums, 2);
         for (int i : list) {
             System.out.print(i + "   ");
         }

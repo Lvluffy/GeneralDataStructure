@@ -25,7 +25,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return
      */
-    public static int[] binarySearchRecursion(int[] nums, int target, int left, int right) {
+    public int[] binarySearchRecursion(int[] nums, int target, int left, int right) {
         int[] bounds = new int[2];
         bounds[0] = searchLeftBoundRecursion(nums, target, left, right);
         bounds[1] = searchRightBoundRecursion(nums, target, left, right);
@@ -41,7 +41,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    private static int searchLeftBoundRecursion(int[] nums, int target, int left, int right) {
+    private int searchLeftBoundRecursion(int[] nums, int target, int left, int right) {
         //为了避免无限循环，先判断，如果起点位置大于终点位置，表明超出了搜索区间，无法找到目标数，返回-1。
         if (left > right) {
             return -1;
@@ -69,7 +69,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    private static int searchRightBoundRecursion(int[] nums, int target, int left, int right) {
+    private int searchRightBoundRecursion(int[] nums, int target, int left, int right) {
         //为了避免无限循环，先判断，如果起点位置大于终点位置，表明超出了搜索区间，无法找到目标数，返回-1。
         if (left > right) {
             return -1;
@@ -97,7 +97,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return
      */
-    public static int[] binarySearch(int[] nums, int target, int left, int right) {
+    public int[] binarySearch(int[] nums, int target, int left, int right) {
         int[] bounds = new int[2];
         bounds[0] = searchLeftBound(nums, target, left, right);
         bounds[1] = searchRightBound(nums, target, left, right);
@@ -113,7 +113,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    private static int searchLeftBound(int[] nums, int target, int left, int right) {
+    private int searchLeftBound(int[] nums, int target, int left, int right) {
         //在while循环里，判断搜索的区间范围是否有效
         while (left <= right) {
             //取中位数
@@ -142,7 +142,7 @@ public class BinarySearchCase1 {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    private static int searchRightBound(int[] nums, int target, int left, int right) {
+    private int searchRightBound(int[] nums, int target, int left, int right) {
         //在while循环里，判断搜索的区间范围是否有效
         while (left <= right) {
             //取中位数
@@ -165,14 +165,15 @@ public class BinarySearchCase1 {
     public static void main(String[] args) {
         int[] nums = {5, 7, 7, 8, 8, 10};
         int target = 8;
+        BinarySearchCase1 binarySearchCase1 = new BinarySearchCase1();
         //递归解法
-        int[] resultIndexRecursion = binarySearchRecursion(nums, target, 0, nums.length - 1);
+        int[] resultIndexRecursion = binarySearchCase1.binarySearchRecursion(nums, target, 0, nums.length - 1);
         System.out.print("二分搜索-递归解法:");
         for (int i : resultIndexRecursion) {
             System.out.print(i + "    ");
         }
         //非递归解法
-        int[] resultIndex = binarySearch(nums, target, 0, nums.length - 1);
+        int[] resultIndex = binarySearchCase1.binarySearch(nums, target, 0, nums.length - 1);
         System.out.print("\n二分搜索-非递归解法:");
         for (int i : resultIndex) {
             System.out.print(i + "    ");

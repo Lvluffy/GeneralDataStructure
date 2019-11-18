@@ -46,7 +46,7 @@ public class BinarySearchApply {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    public static int binarySearchRecursion(int[] nums, int target, int left, int right) {
+    public int binarySearchRecursion(int[] nums, int target, int left, int right) {
         //为了避免无限循环，先判断，如果起点位置大于终点位置，表明超出了搜索区间，无法找到目标数，返回-1。
         if (left > right) {
             return -1;
@@ -74,7 +74,7 @@ public class BinarySearchApply {
      * @param right  右边索引（终点）
      * @return 返回目标值所在数组索引
      */
-    public static int binarySearch(int[] nums, int target, int left, int right) {
+    public int binarySearch(int[] nums, int target, int left, int right) {
         //在while循环里，判断搜索的区间范围是否有效
         while (left <= right) {
             //取中位数
@@ -97,11 +97,12 @@ public class BinarySearchApply {
     public static void main(String[] args) {
         int[] nums = {1, 3, 4, 6, 7, 8, 10, 13, 14};
         int target = 7;
+        BinarySearchApply binarySearchApply = new BinarySearchApply();
         //递归解法
-        int resultIndexRecursion = binarySearchRecursion(nums, target, 0, nums.length - 1);
+        int resultIndexRecursion = binarySearchApply.binarySearchRecursion(nums, target, 0, nums.length - 1);
         System.out.println("二分搜索-递归解法：" + resultIndexRecursion);
         //非递归解法
-        int resultIndex = binarySearch(nums, target, 0, nums.length - 1);
+        int resultIndex = binarySearchApply.binarySearch(nums, target, 0, nums.length - 1);
         System.out.println("二分搜索-非递归解法：" + resultIndex);
     }
 }

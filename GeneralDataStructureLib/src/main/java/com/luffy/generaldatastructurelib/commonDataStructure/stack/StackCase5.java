@@ -30,7 +30,7 @@ public class StackCase5 {
      * @param str 数据
      * @return
      */
-    public static String stack(String str) {
+    public String stack(String str) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
             Character character = str.charAt(i);
@@ -52,9 +52,10 @@ public class StackCase5 {
     public static void main(String[] args) {
         String str1 = "bcabc";
         String str2 = "cbacdcbc";
+        StackCase5 stackCase5 = new StackCase5();
         // 栈解法
         System.out.println("栈解法:");
-        System.out.println("示例1:" + stack(str1));
-        System.out.println("示例2:" + stack(str2));
+        System.out.println("示例1:" + stackCase5.stack(str1));
+        System.out.println("示例2:" + stackCase5.stack(str2));
     }
 }

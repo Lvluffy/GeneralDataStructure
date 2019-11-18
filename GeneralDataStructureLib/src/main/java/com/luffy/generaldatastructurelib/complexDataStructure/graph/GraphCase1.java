@@ -53,7 +53,7 @@ public class GraphCase1 {
      * @param words 数组数据
      * @return
      */
-    public static String graph(String[] words) {
+    public String graph(String[] words) {
         // 1.构建图
         Map<Character, Set<Character>> map = new HashMap<>();
         for (int i = 0; i < words.length - 1; i++) {
@@ -117,8 +117,9 @@ public class GraphCase1 {
         String[] words1 = {"wrt", "wrf", "er", "ett", "rftt"};
         String[] words2 = {"z", "x"};
         String[] words3 = {"z", "x", "z"};
-        System.out.println("示例1：" + graph(words1));
-        System.out.println("示例2：" + graph(words2));
-        System.out.println("示例3：" + graph(words3));
+        GraphCase1 graphCase1 = new GraphCase1();
+        System.out.println("示例1：" + graphCase1.graph(words1));
+        System.out.println("示例2：" + graphCase1.graph(words2));
+        System.out.println("示例3：" + graphCase1.graph(words3));
     }
 }

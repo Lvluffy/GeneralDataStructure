@@ -28,7 +28,7 @@ public class StringCase2 {
      * @param str 字符串
      * @return 最长的回文子串
      */
-    public static String dynamicPlan(String str) {
+    public String dynamicPlan(String str) {
         // 如果最多只有一个字符，就返回。
         int len = str.length();
         if (len <= 1) {
@@ -60,8 +60,9 @@ public class StringCase2 {
     public static void main(String[] args) {
         String str1 = "babad";
         String str2 = "cbbd";
-        System.out.println("示例1：" + dynamicPlan(str1));
-        System.out.println("示例2：" + dynamicPlan(str2));
+        StringCase2 stringCase2 = new StringCase2();
+        System.out.println("示例1：" + stringCase2.dynamicPlan(str1));
+        System.out.println("示例2：" + stringCase2.dynamicPlan(str2));
     }
 
 }

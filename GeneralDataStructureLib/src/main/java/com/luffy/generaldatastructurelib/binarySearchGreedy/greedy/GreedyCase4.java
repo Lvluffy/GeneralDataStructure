@@ -31,7 +31,7 @@ public class GreedyCase4 {
      * 定义数组lastIndex[char]来表示字符char最后一次出现的下标。定义start和end来表示当前区间的首尾。如果遇到的字符最后一次出现的位置下标大于end，
      * 就让end=lastIndex[char]来拓展当前的区间。当遍历到了当前区间的末尾时(即i==end)，把当前区间加入答案，同时将start设为i+1去找下一个区间。
      */
-    public static List<Integer> greedy(String str) {
+    public List<Integer> greedy(String str) {
         //答案
         List<Integer> answer = new ArrayList();
         //字符最后一次出现的下标
@@ -55,7 +55,8 @@ public class GreedyCase4 {
 
     public static void main(String[] args) {
         String str = "ababcbacadefegdehijhklij";
-        List<Integer> answer = greedy(str);
+        GreedyCase4 greedyCase4 = new GreedyCase4();
+        List<Integer> answer = greedyCase4.greedy(str);
         for (int i : answer) {
             System.out.print(i + "  ");
         }

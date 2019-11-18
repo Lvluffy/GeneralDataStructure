@@ -40,7 +40,7 @@ public class StringCase1 {
      * @param word2 单词2
      * @return 最少操作数
      */
-    public static int dynamicPlan(String word1, String word2) {
+    public int dynamicPlan(String word1, String word2) {
         int n1 = word1.length();
         int n2 = word2.length();
         // 第一个单词是空的情况
@@ -74,8 +74,9 @@ public class StringCase1 {
         String word1_2 = "ros";
         String word2_1 = "intention";
         String word2_2 = "execution";
-        System.out.println("示例1：" + dynamicPlan(word1_1, word1_2));
-        System.out.println("示例2：" + dynamicPlan(word2_1, word2_2));
+        StringCase1 stringCase1 = new StringCase1();
+        System.out.println("示例1：" + stringCase1.dynamicPlan(word1_1, word1_2));
+        System.out.println("示例2：" + stringCase1.dynamicPlan(word2_1, word2_2));
     }
 
 }

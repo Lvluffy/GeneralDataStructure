@@ -39,7 +39,7 @@ public class StringCase4 {
      * @param str 字符串
      * @return 不含有重复字符的最长子串的长度。
      */
-    public static int bothwayLinkedList(String str) {
+    public int bothwayLinkedList(String str) {
         int anwser = 0;
         // 定义一个map数据结构存储(k, v)，其中key值为字符，value值为字符位置+1，加1表示从字符位置后一个才开始不重复。
         Map<Character, Integer> map = new HashMap<>();
@@ -59,9 +59,10 @@ public class StringCase4 {
         String str1 = "abcabcbb";
         String str2 = "bbbbb";
         String str3 = "pwwkew";
+        StringCase4 stringCase4 = new StringCase4();
         // 双向链表（滑动窗口）解法
-        System.out.println("示例1：" + bothwayLinkedList(str1));
-        System.out.println("示例1：" + bothwayLinkedList(str2));
-        System.out.println("示例1：" + bothwayLinkedList(str3));
+        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str1));
+        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str2));
+        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str3));
     }
 }

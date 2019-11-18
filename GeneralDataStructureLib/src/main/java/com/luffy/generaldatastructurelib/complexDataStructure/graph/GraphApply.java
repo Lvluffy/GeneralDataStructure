@@ -55,7 +55,7 @@ public class GraphApply {
      * @param graph
      * @return
      */
-    public static boolean isBipartite(int[][] graph) {
+    public boolean isBipartite(int[][] graph) {
         int len = graph.length;
         int color[] = new int[len];
         for (int i = 0; i < len; i++) {
@@ -74,7 +74,7 @@ public class GraphApply {
      * @param graph
      * @return
      */
-    private static boolean dfs(int i, int[] color, int t, int[][] graph) {
+    private boolean dfs(int i, int[] color, int t, int[][] graph) {
         if (color[i] != 0)
             return color[i] == t;
         color[i] = t;
@@ -87,6 +87,7 @@ public class GraphApply {
 
     public static void main(String[] args) {
         int[][] graph = {{1, 3}, {0, 2}, {1, 3}, {0, 2}};
-        System.out.println(isBipartite(graph));
+        GraphApply graphApply = new GraphApply();
+        System.out.println(graphApply.isBipartite(graph));
     }
 }

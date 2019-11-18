@@ -32,7 +32,7 @@ public class DequeCase1 {
      * @param k    子数组之和
      * @return 满足条件的子数组长度
      */
-    public static int deque(int[] nums, int k) {
+    public int deque(int[] nums, int k) {
         int length = nums.length;
         // 用数组 p 表示数组 nums 的前缀和。
         long[] p = new long[length + 1];
@@ -62,10 +62,11 @@ public class DequeCase1 {
         int k1 = 1;
         int k2 = 4;
         int k3 = 3;
+        DequeCase1 dequeCase1 = new DequeCase1();
         // 双端队列解法：
         System.out.println("双端队列解法");
-        System.out.println("示例1：" + deque(nums1, k1));
-        System.out.println("示例2：" + deque(nums2, k2));
-        System.out.println("示例3：" + deque(nums3, k3));
+        System.out.println("示例1：" + dequeCase1.deque(nums1, k1));
+        System.out.println("示例2：" + dequeCase1.deque(nums2, k2));
+        System.out.println("示例3：" + dequeCase1.deque(nums3, k3));
     }
 }
