@@ -59,7 +59,7 @@ public class GraphApply {
         int len = graph.length;
         int color[] = new int[len];
         for (int i = 0; i < len; i++) {
-            if (color[i] == 0 && dfs(i, color, 2, graph) == false)
+            if (color[i] == 0 && !dfs(i, color, 2, graph))
                 return false;
         }
         return true;
@@ -79,7 +79,7 @@ public class GraphApply {
             return color[i] == t;
         color[i] = t;
         for (int j : graph[i]) {
-            if (dfs(j, color, 3 - t, graph) == false)
+            if (!dfs(j, color, 3 - t, graph))
                 return false;
         }
         return true;

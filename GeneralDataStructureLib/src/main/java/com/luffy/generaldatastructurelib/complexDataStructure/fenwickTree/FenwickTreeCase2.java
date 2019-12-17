@@ -42,8 +42,8 @@ public class FenwickTreeCase2 {
         }
         // 使用二分搜索树方便排序
         Set<Integer> set = new TreeSet();
-        for (int i = 0; i < len; i++) {
-            set.add(nums[i]);
+        for (int num1 : nums) {
+            set.add(num1);
         }
         // 排名表
         Map<Integer, Integer> map = new HashMap<>();

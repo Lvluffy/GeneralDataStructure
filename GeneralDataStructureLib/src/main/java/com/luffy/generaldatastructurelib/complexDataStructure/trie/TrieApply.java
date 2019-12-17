@@ -67,11 +67,11 @@ public class TrieApply {
         //2，用HashSet暂存结果，确保不会出现重复word
         HashSet<String> temp = new HashSet<>();
         //前缀树
-        for (int i = 0; i < words.length; i++) {
+        for (String word : words) {
             TrieNode node = root;
-            for (int j = 0; j < words[i].length(); j++)
-                node = node.add(words[i].charAt(j));
-            node.word = words[i];
+            for (int j = 0; j < word.length(); j++)
+                node = node.add(word.charAt(j));
+            node.word = word;
         }
         //DFS（深度优先搜索算法）
         boolean[][] visited = new boolean[board.length][board[0].length];
@@ -131,7 +131,7 @@ public class TrieApply {
         }
 
         boolean ifExists(char chr) {
-            return (next[chr - 'a'] == null) ? false : true;
+            return next[chr - 'a'] != null;
         }
     }
 

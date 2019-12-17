@@ -46,8 +46,8 @@ public class BFSCase2 {
         if (strat == end) return 0;
         int N = routes.length;
         List<List<Integer>> graph = new ArrayList();
-        for (int i = 0; i < N; ++i) {
-            Arrays.sort(routes[i]);
+        for (int[] route : routes) {
+            Arrays.sort(route);
             graph.add(new ArrayList());
         }
         // 初始化 可见、队列、目标

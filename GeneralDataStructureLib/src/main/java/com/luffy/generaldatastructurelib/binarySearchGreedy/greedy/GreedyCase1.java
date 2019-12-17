@@ -82,7 +82,7 @@ public class GreedyCase1 {
 
     private boolean canJumpFromPosition(Index[] memo, int position, int[] nums) {
         if (memo[position] != Index.UNKNOWN) {
-            return memo[position] == Index.GOOD ? true : false;
+            return memo[position] == Index.GOOD;
         }
         int furthestJump = Math.min(position + nums[position], nums.length - 1);
         for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++) {

@@ -80,8 +80,8 @@ public class GreedyCase3 {
         }
         //计算总和
         int number = 0;
-        for (int i = 0; i < meger.length; i++) {
-            number += meger[i];
+        for (int aMeger : meger) {
+            number += aMeger;
         }
         return number;
     }

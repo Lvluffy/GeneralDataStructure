@@ -30,7 +30,7 @@ public class RecursionCase2 {
      */
     public List<String> recursion(int n) {
         if (n == 1) {
-            return Arrays.asList(new String[]{"0", "1", "8"});
+            return Arrays.asList("0", "1", "8");
         }
         HashMap<Integer, List<String>> map = new HashMap<>();
         // 这个是递归的处理方法

@@ -52,7 +52,7 @@ public class HeapSortApply {
      */
     private static void heapAdjust(int[] nums, int start, int end) {
         int temp = nums[start];
-        int j = start * 2 + 1;
+        int j;
         for (j = start * 2 + 1; j <= end; j = j * 2 + 1) {
             if (j < end && nums[j] < nums[j + 1])
                 j++;

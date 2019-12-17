@@ -55,23 +55,23 @@ public class StackApply {
         }
         Stack<Character> stack = new Stack<>();
         char[] c = str.toCharArray();
-        for (int i = 0; i < c.length; i++) {
-            if (c[i] == '(' || c[i] == '[' || c[i] == '{') {
+        for (char aC : c) {
+            if (aC == '(' || aC == '[' || aC == '{') {
                 /*加入栈顶*/
-                stack.push(c[i]);
-            } else if (c[i] == ')') {
+                stack.push(aC);
+            } else if (aC == ')') {
                 /*检测栈顶是否存在*/
                 if (stack.peek() == '(') {
                     /*从栈中移除*/
                     stack.pop();
                 }
-            } else if (c[i] == ']') {
+            } else if (aC == ']') {
                 /*检测栈顶是否存在*/
                 if (stack.peek() == '[') {
                     /*从栈中移除*/
                     stack.pop();
                 }
-            } else if (c[i] == '}') {
+            } else if (aC == '}') {
                 /*检测栈顶是否存在*/
                 if (stack.peek() == '{') {
                     /*从栈中移除*/
@@ -79,11 +79,7 @@ public class StackApply {
                 }
             }
         }
-        if (stack.empty()) {
-            return true;
-        } else {
-            return false;
-        }
+        return stack.empty();
     }
 
     public static void main(String[] args) {

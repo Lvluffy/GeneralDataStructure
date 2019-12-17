@@ -33,9 +33,9 @@ public class StackCase4 {
         // 最大面积
         int maxarea = 0;
         int[] dp = new int[nums[0].length];
-        for (int i = 0; i < nums.length; i++) {
+        for (char[] num : nums) {
             for (int j = 0; j < nums[0].length; j++) {
-                dp[j] = nums[i][j] == '1' ? dp[j] + 1 : 0;
+                dp[j] = num[j] == '1' ? dp[j] + 1 : 0;
             }
             maxarea = Math.max(maxarea, stackAssist(dp));
         }

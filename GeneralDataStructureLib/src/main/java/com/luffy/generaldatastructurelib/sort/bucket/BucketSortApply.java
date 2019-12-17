@@ -29,12 +29,12 @@ public class BucketSortApply {
             throw new Exception("参数错误");
         }
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < nums.length; i++) {
-            max = Math.max(max, nums[i]);
+        for (int num : nums) {
+            max = Math.max(max, num);
         }
         int[] bucket = new int[max + 1];
-        for (int i = 0; i < nums.length; i++) {
-            bucket[nums[i]]++;
+        for (int num : nums) {
+            bucket[num]++;
         }
         int i = 0;
         for (int j = 0; j < bucket.length; j++) {

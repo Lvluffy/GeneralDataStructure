@@ -69,7 +69,7 @@ public class RecursionCase1 {
             ans.append(name);
             int multiplicity = count.get(name);
             if (multiplicity > 1) {
-                ans.append("" + multiplicity);
+                ans.append("").append(multiplicity);
             }
         }
         return new String(ans);
@@ -159,7 +159,7 @@ public class RecursionCase1 {
         for (String name : stack.peek().keySet()) {
             ans.append(name);
             int multiplicity = stack.peek().get(name);
-            if (multiplicity > 1) ans.append("" + multiplicity);
+            if (multiplicity > 1) ans.append("").append(multiplicity);
         }
         return new String(ans);
     }
