@@ -19,5 +19,4 @@ package com.luffy.generaldatastructurelib.commonDataStructure.linkedList;
  */
 public class LinkedListCase1 {
 
-
 }
