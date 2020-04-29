@@ -1,1 +1,1 @@
-include ':app', ':GeneralDataStructureLib'
+include ':app', ':sortlib', ':searchlib', ':commonlib', ':complexlib'
