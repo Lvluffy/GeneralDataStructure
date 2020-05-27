@@ -68,37 +68,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
     }
 
     /**
-     * 范围检查（添加）
-     *
-     * @param index
-     */
-    private void rangeCheckForAdd(int index) {
-        if (index < 0 || index > size) {
-            outOfBounds(index);
-        }
-    }
-
-    /**
-     * 范围检查
-     *
-     * @param index
-     */
-    private void rangeCheck(int index) {
-        if (index < 0 || index >= size) {
-            outOfBounds(index);
-        }
-    }
-
-    /**
-     * 越界
-     *
-     * @param index
-     */
-    private void outOfBounds(int index) {
-        throw new IndexOutOfBoundsException("index:" + index + ", size:" + size);
-    }
-
-    /**
      * 确保容量
      *
      * @param capacity
