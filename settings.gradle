@@ -1,1 +1,1 @@
-include ':app', ':sortlib', ':searchlib', ':commonlib', ':complexlib'
+include ':app', ':sortlib', ':searchlib', ':commonlib', ':leetcodelib'
