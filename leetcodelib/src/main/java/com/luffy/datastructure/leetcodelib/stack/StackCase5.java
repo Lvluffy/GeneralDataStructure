@@ -6,56 +6,95 @@ import java.util.Stack;
  * Created by lvlufei on 2019/11/15
  *
  * @name 栈
- * @desc 案例分析：去除重复字母
+ * @desc 案例分析：最大矩形
  * <p>
- * 题目：给定一个仅包含小写字母的字符串，去除字符串中重复的字母，使得每个字母只出现一次。需保证返回结果的字典序最小（要求不能打乱其他字符的相对位置）。
+ * 题目：给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
  * <p>
- * 示例1：
- * 输入: "bcabc"
- * 输出: "abc"
- * <p>
- * 示例2：
- * 输入: "cbacdcbc"
- * 输出: "acdb"
+ * 示例：
+ * 输入:
+ * [
+ * ['1','0','1','0','0'],
+ * ['1','0','1','1','1'],
+ * ['1','1','1','1','1'],
+ * ['1','0','0','1','0']
+ * ]
+ * 输出: 6
  */
 public class StackCase5 {
 
     /**
      * 栈解法
-     * <p>
-     * 解题思想:
-     * 1，若栈中已经有当前元素，则直接去除当前元素
-     * 2，若当前的栈顶元素比当前的元素字典序大，且当前元素的位置后面还有栈顶元素,将栈顶元素出栈, 将当前元素入栈, 这样来找到最优的排列
      *
-     * @param str 数据
+     * @param nums 数据
+     * @return 最大面积
+     */
+    public int stack(char[][] nums) {
+        if (nums.length == 0) return 0;
+        // 最大面积
+        int maxarea = 0;
+        int[] dp = new int[nums[0].length];
+        for (char[] num : nums) {
+            for (int j = 0; j < nums[0].length; j++) {
+                dp[j] = num[j] == '1' ? dp[j] + 1 : 0;
+            }
+            maxarea = Math.max(maxarea, stackAssist(dp));
+        }
+        return maxarea;
+    }
+
+    /**
+     * 栈解法-辅助
+     *
+     * @param heights
      * @return
      */
-    public String stack(String str) {
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            Character character = str.charAt(i);
-            if (stack.contains(character)) {
-                continue;
+    private int stackAssist(int[] heights) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
+        int maxarea = 0;
+        for (int i = 0; i < heights.length; ++i) {
+            while (stack.peek() != -1 && heights[stack.peek()] >= heights[i]) {
+                maxarea = Math.max(maxarea, heights[stack.pop()] * (i - stack.peek() - 1));
             }
-            while (!stack.isEmpty() && stack.peek() > character && str.indexOf(stack.peek(), i) != -1) {
-                stack.pop();
+            stack.push(i);
+        }
+        while (stack.peek() != -1) {
+            maxarea = Math.max(maxarea, heights[stack.pop()] * (heights.length - stack.peek() - 1));
+        }
+        return maxarea;
+    }
+
+    /**
+     * 动态规划解法
+     *
+     * @param nums 数据
+     * @return 最大面积
+     */
+    public int dynamicPlan(char[][] nums) {
+        if (nums.length == 0) return 0;
+        int maxarea = 0;
+        int[][] dp = new int[nums.length][nums[0].length];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[0].length; j++) {
+                if (nums[i][j] == '1') {
+                    dp[i][j] = j == 0 ? 1 : dp[i][j - 1] + 1;
+                    int width = dp[i][j];
+                    for (int k = i; k >= 0; k--) {
+                        width = Math.min(width, dp[k][j]);
+                        maxarea = Math.max(maxarea, width * (i - k + 1));
+                    }
+                }
             }
-            stack.push(character);
         }
-        char[] res = new char[stack.size()];
-        for (int i = 0; i < stack.size(); i++) {
-            res[i] = stack.get(i);
-        }
-        return new String(res);
+        return maxarea;
     }
 
     public static void main(String[] args) {
-        String str1 = "bcabc";
-        String str2 = "cbacdcbc";
+        char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
         StackCase5 stackCase5 = new StackCase5();
         // 栈解法
-        System.out.println("栈解法:");
-        System.out.println("示例1:" + stackCase5.stack(str1));
-        System.out.println("示例2:" + stackCase5.stack(str2));
+        System.out.println("栈解法:" + stackCase5.stack(nums));
+        // 动态规划解法
+        System.out.println("栈解法:" + stackCase5.dynamicPlan(nums));
     }
 }

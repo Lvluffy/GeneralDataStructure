@@ -47,7 +47,8 @@ public class LinkedListReverse {
      * @return
      */
     public static ListNode reverseIteration(ListNode head) {
-        if (head == null) {
+        //当前结点为null，或者当前结点没有后续结点时，递归退出
+        if (head == null || head.getNext() == null) {
             return head;
         }
         ListNode pre = head;            //前一个指针
@@ -77,7 +78,7 @@ public class LinkedListReverse {
      */
     public static ListNode reverseRecursion(ListNode head) {
         //当前结点为null，或者当前结点没有后续结点时，递归退出
-        if (head.getNext() == null || head == null) {
+        if (head == null || head.getNext() == null) {
             return head;
         }
         //当前结点不为null并且有next时，递归去反转它的后续结点

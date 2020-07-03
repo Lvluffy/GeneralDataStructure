@@ -33,7 +33,7 @@ import java.util.Set;
  * 输入: nums = [1,1,1,2,2,3], k = 2
  * 输出: [1,2]
  */
-public class PriorityQueueApply {
+public class PriorityQueueCase {
 
     /**
      * 前k个高频
@@ -72,8 +72,8 @@ public class PriorityQueueApply {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 2, 2, 3};
-        PriorityQueueApply priorityQueueApply = new PriorityQueueApply();
-        List<Integer> list = priorityQueueApply.priorityQueue(nums, 2);
+        PriorityQueueCase priorityQueueCase = new PriorityQueueCase();
+        List<Integer> list = priorityQueueCase.priorityQueue(nums, 2);
         for (int i : list) {
             System.out.print(i + "   ");
         }

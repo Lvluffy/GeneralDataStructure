@@ -3,87 +3,150 @@ package com.luffy.datastructure.leetcodelib.stack;
 import java.util.Stack;
 
 /**
- * Created by lvlufei on 2019/11/15
+ * Created by lvlufei on 2019/10/22
  *
  * @name 栈
- * @desc 案例分析：比较含退格的字符串
+ * @desc 特点：先进后出，后进先出。
  * <p>
- * 题目：给定 str1 和 str2 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
+ * 核心方法讲解：
+ * 1，push()：压栈
+ * 2，pop()：出栈
+ * 3，peek()：获取栈顶的数据
+ * 4，empty()：判断栈是否为空
+ * <p>
+ * 题目：给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+ * <p>
+ * 有效字符串需满足：
+ * 1，左括号必须用相同类型的右括号闭合。
+ * 2，左括号必须以正确的顺序闭合。
+ * <p>
+ * 注意：空字符串可被认为是有效字符串。
  * <p>
  * 示例1：
- * 输入：str1 = "ab#c", str2 = "ad#c"
- * 输出：true
- * 解释：str1 和 str2 都会变成 “ac”。
+ * 输入: "()"
+ * 输出: true
  * <p>
  * 示例2：
- * 输入：str1 = "ab##", str2 = "c#d#"
- * 输出：true
- * 解释：str1 和 str2 都会变成 “”。
+ * 输入: "()[]{}"
+ * 输出: true
  * <p>
  * 示例3：
- * 输入：str1 = "a##c", str2 = "#a#c"
- * 输出：true
- * 解释：str1 和 str2 都会变成 “c”。
+ * 输入: "(]"
+ * 输出: false
+ * <p>
+ * 示例4：
+ * 输入: "([)]"
+ * 输出: false
+ * <p>
+ * 示例5：
+ * 输入: "{[]}"
+ * 输出: true
+ * <p>
+ * 解题思路：
+ * 1，遇见左字符，将左字符入栈
+ * 2，遇见右字符
+ * 【】如果栈是空的，说明括号无效
+ * 【】如果栈不为空，将栈顶字符出栈，与右字符匹配
+ * 《》如果左右字符不匹配，说明括号无效
+ * 《》如果左右字符匹配，继续扫描下一个字符
+ * 3，所有字符扫描完毕
+ * 【】栈为空，说明括号有效
+ * 【】栈不为空，说明括号无效
  */
 public class StackCase1 {
     /**
      * 栈解法
      *
-     * @param str1 字符串1
-     * @param str2 字符串2
-     * @return 二者是否相等，true or false
+     * @param str 字符串
+     * @return 判断括号是否成对（ture-成对；false-不成对）
      */
-    public boolean stack(String str1, String str2) {
-        Stack<Character> stack1 = new Stack<>();
-        Stack<Character> stack2 = new Stack<>();
-        // 处理str1
-        for (int i = 0; i < str1.length(); i++) {
-            if (str1.charAt(i) == '#') {
-                // 不为空
-                if (!stack1.empty()) {
-                    // 出栈
-                    stack1.pop();
+    public boolean stack(String str) {
+        if (str == null || "".equals(str) || str.length() == 0) {
+            return true;
+        }
+        Stack<Character> stack = new Stack<>();
+        char[] c = str.toCharArray();
+        for (char aC : c) {
+            if (aC == '(' || aC == '[' || aC == '{') {
+                /*加入栈顶*/
+                stack.push(aC);
+            } else if (aC == ')') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '(') {
+                    /*从栈中移除*/
+                    stack.pop();
                 }
-            } else {
-                // 压栈
-                stack1.push(str1.charAt(i));
-            }
-        }
-        // 处理str2
-        for (int j = 0; j < str2.length(); j++) {
-            if (str2.charAt(j) == '#') {
-                // 不为空
-                if (!stack2.empty()) {
-                    // 出栈
-                    stack2.pop();
+            } else if (aC == ']') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '[') {
+                    /*从栈中移除*/
+                    stack.pop();
                 }
+            } else if (aC == '}') {
+                /*检测栈顶是否存在*/
+                if (stack.peek() == '{') {
+                    /*从栈中移除*/
+                    stack.pop();
+                }
+            }
+        }
+        return stack.empty();
+    }
+
+    /**
+     * 通过String自带函数（性能太差）
+     *
+     * @param str
+     * @return
+     */
+    public boolean isValidString(String str) {
+        if (str.contains("()") || str.contains("[]") || str.contains("{}")) {
+            str = str.replace("()", "");
+            str = str.replace("[]", "");
+            str = str.replace("{}", "");
+        }
+        return str.isEmpty();
+    }
+
+    /**
+     * 通过栈
+     *
+     * @param str
+     * @return
+     */
+    public boolean isValidStack(String str) {
+        if (str == null || "".equals(str) || str.length() == 0) {
+            return true;
+        }
+        Stack<Character> stack = new Stack<>();
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
             } else {
-                // 压栈
-                stack2.push(str2.charAt(j));
+                if (stack.isEmpty()) return false;
+                char left = stack.pop();
+                if (left == '(' && c != ')') return false;
+                if (left == '[' && c != ']') return false;
+                if (left == '{' && c != '}') return false;
             }
         }
-        if (stack1.size() != stack2.size()) {
-            return false;
-        }
-        while (!stack1.empty()) {
-            // 判断是否相等
-            if (stack1.pop() != stack2.pop()) {
-                return false;
-            }
-        }
-        return true;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
-        String str1_1 = "ab#c";
-        String str1_2 = "ad#c";
-        String str2_1 = "ab##";
-        String str2_2 = "c#d#";
-        String str3_1 = "a##c";
-        String str3_2 = "#a#c";
+        String str1 = "()";
+        String str2 = "()[]{}";
+        String str3 = "(]";
+        String str4 = "([)]";
+        String str5 = "{[]}";
+        String str6 = "";
         StackCase1 stackCase1 = new StackCase1();
-        System.out.println("示例1：" + stackCase1.stack(str1_1, str1_2));
-        System.out.println("示例2：" + stackCase1.stack(str2_1, str2_2));
-        System.out.println("示例3：" + stackCase1.stack(str3_1, str3_2));
+        System.out.println("示例1：" + stackCase1.isValidString(str1));
+        System.out.println("示例2：" + stackCase1.isValidString(str2));
+        System.out.println("示例3：" + stackCase1.isValidString(str3));
+        System.out.println("示例4：" + stackCase1.isValidString(str4));
+        System.out.println("示例5：" + stackCase1.isValidString(str5));
+        System.out.println("示例6：" + stackCase1.isValidString(str6));
     }
 }

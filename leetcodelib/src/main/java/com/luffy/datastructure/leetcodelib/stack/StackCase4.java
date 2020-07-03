@@ -6,95 +6,115 @@ import java.util.Stack;
  * Created by lvlufei on 2019/11/15
  *
  * @name 栈
- * @desc 案例分析：最大矩形
+ * @desc 案例分析：移掉K位数字
  * <p>
- * 题目：给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
+ * 题目：给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。
  * <p>
- * 示例：
- * 输入:
- * [
- * ['1','0','1','0','0'],
- * ['1','0','1','1','1'],
- * ['1','1','1','1','1'],
- * ['1','0','0','1','0']
- * ]
- * 输出: 6
+ * 注意：
+ * 1，num 的长度小于 10002 且 ≥ k。
+ * 2，num 不会包含任何前导零。
+ * <p>
+ * 示例1：
+ * 输入: num = "1432219", k = 3
+ * 输出: "1219"
+ * 解释: 移除掉三个数字 4, 3, 和 2 形成一个新的最小的数字 1219。
+ * <p>
+ * 示例2：
+ * 输入: num = "10200", k = 1
+ * 输出: "200"
+ * 解释: 移掉首位的 1 剩下的数字为 200. 注意输出不能有任何前导零。
+ * <p>
+ * 示例3：
+ * 输入: num = "10", k = 2
+ * 输出: "0"
+ * 解释: 从原数字移除所有的数字，剩余为空就是0。
  */
 public class StackCase4 {
 
     /**
+     * 贪心解法
+     *
+     * @param num 字符串
+     * @param k   移除k位数字
+     * @return 剩下的数字最小值
+     */
+    public String greedy(String num, int k) {
+        //每次都移除峰值，共移除k次，返回结果值即可
+        while (k > 0) {
+            int index = num.length() - 1;
+            //找到第一个num[i]>num[i+1]
+            for (int i = 0; i < num.length() - 1; i++)
+                if (num.charAt(i) > num.charAt(i + 1)) {
+                    index = i;
+                    break;
+                }
+            num = num.substring(0, index).concat(num.substring(index + 1));
+            //如果字符串一直升序，则index == num.length()-1,则移除index
+            k--;
+        }
+        while (num.length() > 0 && num.charAt(0) == '0') {
+            num = num.substring(1);
+        }
+        return ("".equals(num)) ? "0" : num;
+    }
+
+    /**
      * 栈解法
      *
-     * @param nums 数据
-     * @return 最大面积
+     * @param num 字符串
+     * @param k   移除k位数字
+     * @return 剩下的数字最小值
      */
-    public int stack(char[][] nums) {
-        if (nums.length == 0) return 0;
-        // 最大面积
-        int maxarea = 0;
-        int[] dp = new int[nums[0].length];
-        for (char[] num : nums) {
-            for (int j = 0; j < nums[0].length; j++) {
-                dp[j] = num[j] == '1' ? dp[j] + 1 : 0;
+    public String stack(String num, int k) {
+        int sum = 0;
+        Stack<Integer> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        for (int i = 0; i < num.length(); i++) {
+            int tmp = num.charAt(i) - '0';
+            while (!stack1.isEmpty() && stack1.peek() > tmp && sum < k) {
+                stack1.pop();
+                sum++;
             }
-            maxarea = Math.max(maxarea, stackAssist(dp));
+            stack1.add(tmp);
         }
-        return maxarea;
+        while (sum < k && !stack1.isEmpty()) {
+            sum++;
+            stack1.pop();
+        }
+        StringBuilder answer = new StringBuilder();
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
+        while (!stack2.isEmpty() && stack2.peek() == 0) {
+            stack2.pop();
+        }
+        while (!stack2.isEmpty()) {
+            answer.append(stack2.pop());
+        }
+        if (answer.length() == 0) {
+            answer.append("0");
+        }
+        return answer.toString();
     }
 
-    /**
-     * 栈解法-辅助
-     *
-     * @param heights
-     * @return
-     */
-    private int stackAssist(int[] heights) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(-1);
-        int maxarea = 0;
-        for (int i = 0; i < heights.length; ++i) {
-            while (stack.peek() != -1 && heights[stack.peek()] >= heights[i]) {
-                maxarea = Math.max(maxarea, heights[stack.pop()] * (i - stack.peek() - 1));
-            }
-            stack.push(i);
-        }
-        while (stack.peek() != -1) {
-            maxarea = Math.max(maxarea, heights[stack.pop()] * (heights.length - stack.peek() - 1));
-        }
-        return maxarea;
-    }
-
-    /**
-     * 动态规划解法
-     *
-     * @param nums 数据
-     * @return 最大面积
-     */
-    public int dynamicPlan(char[][] nums) {
-        if (nums.length == 0) return 0;
-        int maxarea = 0;
-        int[][] dp = new int[nums.length][nums[0].length];
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums[0].length; j++) {
-                if (nums[i][j] == '1') {
-                    dp[i][j] = j == 0 ? 1 : dp[i][j - 1] + 1;
-                    int width = dp[i][j];
-                    for (int k = i; k >= 0; k--) {
-                        width = Math.min(width, dp[k][j]);
-                        maxarea = Math.max(maxarea, width * (i - k + 1));
-                    }
-                }
-            }
-        }
-        return maxarea;
-    }
 
     public static void main(String[] args) {
-        char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
+        String str1 = "1432219";
+        String str2 = "10200";
+        String str3 = "10";
+        int k1 = 3;
+        int k2 = 1;
+        int k3 = 2;
         StackCase4 stackCase4 = new StackCase4();
+        // 贪心解法
+        System.out.println("贪心解法");
+        System.out.println("示例1：" + stackCase4.greedy(str1, k1));
+        System.out.println("示例2：" + stackCase4.greedy(str2, k2));
+        System.out.println("示例3：" + stackCase4.greedy(str3, k3));
         // 栈解法
-        System.out.println("栈解法:" + stackCase4.stack(nums));
-        // 动态规划解法
-        System.out.println("栈解法:" + stackCase4.dynamicPlan(nums));
+        System.out.println("栈解法");
+        System.out.println("示例1：" + stackCase4.stack(str1, k1));
+        System.out.println("示例2：" + stackCase4.stack(str2, k2));
+        System.out.println("示例3：" + stackCase4.stack(str3, k3));
     }
 }

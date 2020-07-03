@@ -3,51 +3,87 @@ package com.luffy.datastructure.leetcodelib.stack;
 import java.util.Stack;
 
 /**
- * Created by lvlufei on 2019/11/6
+ * Created by lvlufei on 2019/11/15
  *
  * @name 栈
- * @desc 案例分析：每日温度
+ * @desc 案例分析：比较含退格的字符串
  * <p>
- * 题目：根据每日气温列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请在该位置用0来代替。
+ * 题目：给定 str1 和 str2 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
  * <p>
- * 示例：
- * 输入：temperatures = [73, 74, 75, 71, 69, 72, 76, 73]。
- * 输出：[1, 1, 4, 2, 1, 1, 0, 0]。
+ * 示例1：
+ * 输入：str1 = "ab#c", str2 = "ad#c"
+ * 输出：true
+ * 解释：str1 和 str2 都会变成 “ac”。
  * <p>
- * 提示：气温列表长度的范围是[1, 30000]。每个气温的值的均为华氏度，都是在 [30, 100] 范围内的整数。
+ * 示例2：
+ * 输入：str1 = "ab##", str2 = "c#d#"
+ * 输出：true
+ * 解释：str1 和 str2 都会变成 “”。
+ * <p>
+ * 示例3：
+ * 输入：str1 = "a##c", str2 = "#a#c"
+ * 输出：true
+ * 解释：str1 和 str2 都会变成 “c”。
  */
 public class StackCase2 {
     /**
      * 栈解法
-     * <p>
-     * 时间复杂度：O(n)。其中n是数组的长度，每个索引最多做一次压栈和出栈的操作。
-     * 空间复杂度：O(m)
      *
-     * @param nums 数组数据（每日气温列表）
-     * @return 等待多久温度才会升高超过该日的天数
+     * @param str1 字符串1
+     * @param str2 字符串2
+     * @return 二者是否相等，true or false
      */
-    public int[] stack(int[] nums) {
-        int[] anwser = new int[nums.length];
-        Stack<Integer> stack = new Stack();
-        for (int i = nums.length - 1; i >= 0; --i) {
-            // 如果栈顶有值，并且栈顶的数值 > 当前数值，则将栈顶数值移除栈。
-            while (!stack.isEmpty() && nums[stack.peek()] > nums[i]) {
-                // 移除栈
-                stack.pop();
+    public boolean stack(String str1, String str2) {
+        Stack<Character> stack1 = new Stack<>();
+        Stack<Character> stack2 = new Stack<>();
+        // 处理str1
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) == '#') {
+                // 不为空
+                if (!stack1.empty()) {
+                    // 出栈
+                    stack1.pop();
+                }
+            } else {
+                // 压栈
+                stack1.push(str1.charAt(i));
             }
-            anwser[i] = stack.isEmpty() ? 0 : stack.peek() - i;
-            // 加入栈顶
-            stack.push(i);
         }
-        return anwser;
+        // 处理str2
+        for (int j = 0; j < str2.length(); j++) {
+            if (str2.charAt(j) == '#') {
+                // 不为空
+                if (!stack2.empty()) {
+                    // 出栈
+                    stack2.pop();
+                }
+            } else {
+                // 压栈
+                stack2.push(str2.charAt(j));
+            }
+        }
+        if (stack1.size() != stack2.size()) {
+            return false;
+        }
+        while (!stack1.empty()) {
+            // 判断是否相等
+            if (stack1.pop() != stack2.pop()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
+        String str1_1 = "ab#c";
+        String str1_2 = "ad#c";
+        String str2_1 = "ab##";
+        String str2_2 = "c#d#";
+        String str3_1 = "a##c";
+        String str3_2 = "#a#c";
         StackCase2 stackCase2 = new StackCase2();
-        int[] anwser = stackCase2.stack(nums);
-        for (int i : anwser) {
-            System.out.print(i + "    ");
-        }
+        System.out.println("示例1：" + stackCase2.stack(str1_1, str1_2));
+        System.out.println("示例2：" + stackCase2.stack(str2_1, str2_2));
+        System.out.println("示例3：" + stackCase2.stack(str3_1, str3_2));
     }
 }
