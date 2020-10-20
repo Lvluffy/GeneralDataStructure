@@ -13,9 +13,9 @@ package com.luffy.datastructure.sortlib.merge;
  * <p>
  * 过程：归并排序从小到大排序：首先让数组中的每一个数单独成为长度为1的区间，然后两两一组有序合并，得到长度为2的有序区间，依次进行，直到合成整个区间。
  * <p>
+ * 时间复杂度：O(nlogn)
  * 空间复杂度：O(n)
  * 由于合并n个元素需要分配一个大小为n的额外数组，合并完成之后，这个数组的空间就会被释放，所以算法的空间复杂度就是O(n)。
- * 时间复杂度：O(nlogn)
  * <p>
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
@@ -27,8 +27,9 @@ public class MergeSortApply {
      * @return
      */
     public static int[] mergeSort(int[] nums) throws Exception {
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             throw new Exception("参数错误");
+        }
         sort(nums, 0, nums.length - 1);
         return nums;
     }

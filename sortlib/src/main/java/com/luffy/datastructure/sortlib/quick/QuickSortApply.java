@@ -32,8 +32,9 @@ public class QuickSortApply {
      * @return
      */
     public static int[] quickSort(int[] nums) throws Exception {
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             throw new Exception("参数错误");
+        }
         sort(nums, 0, nums.length - 1);
         return nums;
     }

@@ -1,5 +1,7 @@
 package com.luffy.datastructure.sortlib.heap;
 
+import com.luffy.datastructure.SwapUtils;
+
 /**
  * Created by lvlufei on 2019/11/11
  *
@@ -17,8 +19,8 @@ package com.luffy.datastructure.sortlib.heap;
  * 过程：堆排序从小到大排序，首先将数组元素建成大小为n的大顶堆，堆顶（数组第一个元素）是所有元素中的最大值，将堆顶元素和数组最后一个元素进行交换，
  * 再将除了最后一个数的n-1个元素建立成大顶堆，再将最大元素和数组倒数第二个元素进行交换，重复直至堆大小减为1。
  * <p>
- * 空间复杂度：O(1)
  * 时间复杂度：O(nlogn)
+ * 空间复杂度：O(1)
  * <p>
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
@@ -31,13 +33,14 @@ public class HeapSortApply {
      * @throws Exception
      */
     public static int[] headSort(int[] nums) throws Exception {
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             throw new Exception("参数错误");
+        }
         for (int i = (nums.length - 2) / 2; i >= 0; i--) {
             heapAdjust(nums, i, nums.length - 1);
         }
         for (int i = nums.length - 1; i > 0; i--) {
-            swap(nums, 0, i);
+            SwapUtils.getInstance().swapDifficult(nums, 0, i);
             heapAdjust(nums, 0, i - 1);
         }
         return nums;
@@ -54,27 +57,16 @@ public class HeapSortApply {
         int temp = nums[start];
         int j;
         for (j = start * 2 + 1; j <= end; j = j * 2 + 1) {
-            if (j < end && nums[j] < nums[j + 1])
+            if (j < end && nums[j] < nums[j + 1]) {
                 j++;
-            if (temp >= nums[j])
+            }
+            if (temp >= nums[j]) {
                 break;
+            }
             nums[start] = nums[j];
             start = j;
         }
         nums[start] = temp;
-    }
-
-    /**
-     * 交换
-     *
-     * @param nums    数组数据
-     * @param index_a 下标a
-     * @param index_b 下标b
-     */
-    private static void swap(int[] nums, int index_a, int index_b) {
-        int temp = nums[index_a];
-        nums[index_a] = nums[index_b];
-        nums[index_b] = temp;
     }
 
     public static void main(String[] args) {
