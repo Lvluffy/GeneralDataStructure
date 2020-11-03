@@ -36,7 +36,7 @@ import java.util.Set;
 public class PriorityQueueCase {
 
     /**
-     * 前k个高频
+     * 队列解法
      *
      * @param nums
      * @param k
