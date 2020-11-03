@@ -30,11 +30,10 @@ public class HeapSortApply {
      *
      * @param nums 数组数据
      * @return
-     * @throws Exception
      */
-    public static int[] headSort(int[] nums) throws Exception {
+    public static int[] sort(int[] nums) {
         if (nums == null || nums.length == 0) {
-            throw new Exception("参数错误");
+            return nums;
         }
         for (int i = (nums.length - 2) / 2; i >= 0; i--) {
             heapAdjust(nums, i, nums.length - 1);
@@ -71,11 +70,7 @@ public class HeapSortApply {
 
     public static void main(String[] args) {
         int[] nums = {2, 1, 7, 9, 5, 8};
-        try {
-            headSort(nums);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sort(nums);
         for (int i : nums) {
             System.out.print(i + "    ");
         }

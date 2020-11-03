@@ -15,7 +15,6 @@ package com.luffy.datastructure.sortlib.merge;
  * <p>
  * 时间复杂度：O(nlogn)
  * 空间复杂度：O(n)
- * 由于合并n个元素需要分配一个大小为n的额外数组，合并完成之后，这个数组的空间就会被释放，所以算法的空间复杂度就是O(n)。
  * <p>
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
@@ -26,9 +25,9 @@ public class MergeSortApply {
      * @param nums 数组数据
      * @return
      */
-    public static int[] mergeSort(int[] nums) throws Exception {
+    public static int[] sort(int[] nums) {
         if (nums == null || nums.length == 0) {
-            throw new Exception("参数错误");
+            return nums;
         }
         sort(nums, 0, nums.length - 1);
         return nums;
@@ -84,11 +83,7 @@ public class MergeSortApply {
 
     public static void main(String[] args) {
         int[] nums = {2, 1, 7, 9, 5, 8};
-        try {
-            mergeSort(nums);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sort(nums);
         for (int i : nums) {
             System.out.print(i + "    ");
         }

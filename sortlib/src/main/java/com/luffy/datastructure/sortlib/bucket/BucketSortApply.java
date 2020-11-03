@@ -24,9 +24,9 @@ public class BucketSortApply {
      * @param nums 数组数据
      * @return
      */
-    public static int[] bucketSort1(int[] nums) throws Exception {
+    public static int[] sort(int[] nums) {
         if (nums == null || nums.length < 2) {
-            throw new Exception("参数错误");
+            return nums;
         }
         int max = Integer.MIN_VALUE;
         for (int num : nums) {
@@ -47,11 +47,7 @@ public class BucketSortApply {
 
     public static void main(String[] args) {
         int[] nums = {2, 1, 7, 9, 5, 8};
-        try {
-            bucketSort1(nums);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sort(nums);
         for (int i : nums) {
             System.out.print(i + "    ");
         }

@@ -22,7 +22,6 @@ import java.util.LinkedList;
  * 2，可以利用广度优先搜索或深度优先搜索进行拓扑排序。
  * <p>
  * 时间复杂度：O(n)
- * 统计顶点的入度需要O(n)的时间，接下来每一个顶点被遍历一次，同样需要O(n)的时间，所有拓扑排序的时间复杂度是O(n)。
  * <p>
  * 题目：课程表
  * 有一个学生想要修完5门课程的学分，这5门课程分别用0、1、2、3、4来表示，现在已知学习这些课有如下要求：
@@ -41,7 +40,7 @@ public class TopologicalSortApply {
      * @param prerequisites 先决条件
      * @return
      */
-    public static int[] topologicalSort(int numCourses, int[][] prerequisites) {
+    public static int[] sort(int numCourses, int[][] prerequisites) {
         //先处理极端情况
         if (numCourses <= 0) {
             return new int[0];
@@ -96,7 +95,7 @@ public class TopologicalSortApply {
 
     public static void main(String[] args) {
         int[][] prerequisites = {{1, 0}, {3, 0}, {2, 1}, {2, 3}, {3, 1}, {4, 2}, {4, 3}};
-        int[] result = topologicalSort(5, prerequisites);
+        int[] result = sort(5, prerequisites);
         for (int i : result) {
             System.out.print(i + "    ");
         }

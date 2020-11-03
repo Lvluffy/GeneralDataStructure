@@ -16,12 +16,6 @@ import com.luffy.datastructure.SwapUtils;
  * 变为0~N-2，数组第二大的数会放在数组倒数第二的位置。依次进行整个交换过程，最后范围只剩一个数时数组即为有序。
  * <p>
  * 时间复杂度：O(n^2)
- * 1，给定的数组按照顺序已经排好
- * 在这种情况下，我们只需要进行n-1次的比较，两两交换次数为0，时间复杂度是O(n)。这是最好的情况。
- * 2，给定的数组按照逆序排列
- * 在这种情况下，我们需要进行n(n-1)/2次比较，时间复杂度是O(n^2)。这是最坏的情况。
- * 3，给定的数组杂乱无章
- * 在这种情况下，平均时间复杂度是O(n^2)。
  * 空间复杂度：O(1)
  * <p>
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
@@ -33,9 +27,9 @@ public class BubbleSortApply {
      * @param nums 数组数据
      * @return
      */
-    public static int[] bubbleSort(int[] nums) throws Exception {
+    public static int[] sort(int[] nums) {
         if (nums == null || nums.length == 0) {
-            throw new Exception("参数错误");
+            return nums;
         }
         //每一趟确定一个元素，总共numsSize-1趟
         for (int i = 0; i < nums.length - 1; i++) {
@@ -51,11 +45,7 @@ public class BubbleSortApply {
 
     public static void main(String[] args) {
         int[] nums = {2, 1, 7, 9, 5, 8};
-        try {
-            bubbleSort(nums);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sort(nums);
         for (int i : nums) {
             System.out.print(i + "    ");
         }
