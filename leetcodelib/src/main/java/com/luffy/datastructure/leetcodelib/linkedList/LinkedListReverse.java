@@ -52,19 +52,18 @@ public class LinkedListReverse {
             return head;
         }
         ListNode pre = head;            //前一个指针
-        ListNode cur = head.getNext();  //后一个指针
-        ListNode temp;                  //临时对象，指针后移时要用到的
+        ListNode cur = head.getNext();  //当前指针
+        ListNode next;                  //下一个指针
         while (cur != null) {
-            temp = cur.getNext();
-            cur.setNext(pre);
-            pre = cur; //指针后移
-            cur = temp;//指针后移
+            next = cur.getNext();
+            cur.setNext(pre); // 反转指针域的指向
+            //指针后移
+            pre = cur;
+            cur = next;
         }
         //一定记得把初始链表头结点的next置为null，因为反转后它将会是最后一个结点
         head.setNext(null);
-        //把头结点设为反转后链表的第一个结点，然后返回就ok
-        head = pre;
-        return head;
+        return pre;
     }
 
     /**
