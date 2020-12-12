@@ -97,6 +97,7 @@ public class QuickSortApply {
         if (start > end) {
             return data;
         }
+        // 交换找基准
         int tmp = data[start];
         while (start < end) {
             while (start < end && data[end] >= tmp) {
@@ -109,7 +110,9 @@ public class QuickSortApply {
             data[end] = data[start];
         }
         data[start] = tmp;
+        // 左边排序
         sort(data, 0, start);
+        // 右边排序
         sort(data, start + 1, end);
         return data;
     }
