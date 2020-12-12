@@ -82,6 +82,38 @@ public class QuickSortApply {
         return start; // 返回tmp的正确位置
     }
 
+    /**
+     * 快速排序
+     *
+     * @param data
+     * @param start
+     * @param end
+     * @return
+     */
+    public static int[] quickSort(int[] data, int start, int end) {
+        if (data == null || data.length == 0) {
+            return data;
+        }
+        if (start > end) {
+            return data;
+        }
+        int tmp = data[start];
+        while (start < end) {
+            while (start < end && data[end] >= tmp) {
+                end--;
+            }
+            data[start] = data[end];
+            while (start < end && data[start] <= tmp) {
+                start++;
+            }
+            data[end] = data[start];
+        }
+        data[start] = tmp;
+        sort(data, 0, start);
+        sort(data, start + 1, end);
+        return data;
+    }
+
     public static void main(String[] args) {
         int[] nums = {2, 1, 7, 9, 5, 8};
         sort(nums);
