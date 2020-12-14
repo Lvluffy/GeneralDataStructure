@@ -94,26 +94,25 @@ public class QuickSortApply {
         if (data == null || data.length == 0) {
             return data;
         }
-        if (start > end) {
-            return data;
-        }
-        // 交换找基准
-        int tmp = data[start];
-        while (start < end) {
-            while (start < end && data[end] >= tmp) {
-                end--;
+        if (start < end) {
+            // 交换找基准
+            int tmp = data[start];
+            while (start < end) {
+                while (start < end && data[end] >= tmp) {
+                    end--;
+                }
+                data[start] = data[end];
+                while (start < end && data[start] <= tmp) {
+                    start++;
+                }
+                data[end] = data[start];
             }
-            data[start] = data[end];
-            while (start < end && data[start] <= tmp) {
-                start++;
-            }
-            data[end] = data[start];
+            data[start] = tmp;
+            // 左边排序
+            sort(data, 0, start);
+            // 右边排序
+            sort(data, start + 1, end);
         }
-        data[start] = tmp;
-        // 左边排序
-        sort(data, 0, start);
-        // 右边排序
-        sort(data, start + 1, end);
         return data;
     }
 
