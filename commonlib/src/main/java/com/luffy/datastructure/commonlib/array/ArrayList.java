@@ -7,7 +7,7 @@ package com.luffy.datastructure.commonlib.array;
  */
 public class ArrayList<E> extends AbstractList<E> implements List<E> {
 
-    private E[] elements;
+    private Object[] elements;
 
     public ArrayList() {
         this(DEFAULT_CAPACITY);
@@ -15,7 +15,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
 
     public ArrayList(int capacity) {
         capacity = capacity < DEFAULT_CAPACITY ? DEFAULT_CAPACITY : capacity;
-        elements = (E[]) new Object[capacity];
+        elements = new Object[capacity];
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
-        E old = elements[index];
+        E old = (E) elements[index];
         for (int i = index + 1; i < size; i++) {
             elements[i - 1] = elements[i];
         }
@@ -57,14 +57,14 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
     @Override
     public E set(int index, E element) {
         rangeCheck(index);
-        E old = elements[index];
+        E old = (E) elements[index];
         elements[index] = element;
         return old;
     }
 
     @Override
     public E get(int index) {
-        return elements[index];
+        return (E) elements[index];
     }
 
     /**
@@ -79,7 +79,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         int newCapacity = oldCapacity + (oldCapacity >> 1);
         E[] newElements = (E[]) new Object[newCapacity];
         for (int i = 0; i < size; i++) {
-            newElements[i] = elements[i];
+            newElements[i] = (E) elements[i];
         }
         elements = newElements;
         System.out.println(oldCapacity + "扩容为" + newCapacity);
