@@ -28,23 +28,4 @@ public class ArrayQueue<T> {
     int size() {
         return size;
     }
-
-
-    public static void main(String[] args) {
-        ArrayQueue<String> arrayQueue = new ArrayQueue<>();
-        arrayQueue.enqueue("1");
-
-        System.out.println(arrayQueue.size());
-        System.out.println(arrayQueue.dequeue());
-
-        arrayQueue.enqueue("2");
-
-        System.out.println(arrayQueue.size());
-        System.out.println(arrayQueue.dequeue());
-
-        arrayQueue.enqueue("3");
-
-        System.out.println(arrayQueue.size());
-        System.out.println(arrayQueue.dequeue());
-    }
 }
