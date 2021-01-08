@@ -162,4 +162,17 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
             return sb.toString();
         }
     }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        System.out.println(list.isEmpty());
+        System.out.println(list.toString());
+        list.clear();
+        System.out.println(list.isEmpty());
+        System.out.println(list.toString());
+    }
 }

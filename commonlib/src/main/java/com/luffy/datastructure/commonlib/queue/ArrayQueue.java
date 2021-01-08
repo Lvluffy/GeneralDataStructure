@@ -1,5 +1,10 @@
 package com.luffy.datastructure.commonlib.queue;
 
+/**
+ * Created by lvlufei on 2021-01-08
+ *
+ * @name 数组实现队列
+ */
 public class ArrayQueue<T> {
     private Object[] data;
     private int size;
@@ -27,5 +32,23 @@ public class ArrayQueue<T> {
 
     int size() {
         return size;
+    }
+
+    public static void main(String[] args) {
+        ArrayQueue<String> queue = new ArrayQueue<>();
+        queue.enqueue("1");
+
+        System.out.println(queue.size());
+        System.out.println(queue.dequeue());
+
+        queue.enqueue("2");
+
+        System.out.println(queue.size());
+        System.out.println(queue.dequeue());
+
+        queue.enqueue("3");
+
+        System.out.println(queue.size());
+        System.out.println(queue.dequeue());
     }
 }
