@@ -5,7 +5,7 @@ package com.luffy.datastructure.leetcodelib.other;
  *
  * @name 计算斐波那契数列的第n项的值
  */
-public class Leetcode_x {
+public class Leetcode_1 {
     public static int calNumberByRecursion(Integer n) {
         if (n == 1 || n == 2) {
             return 1;

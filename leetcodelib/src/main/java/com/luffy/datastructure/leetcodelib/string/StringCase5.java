@@ -17,14 +17,6 @@ import java.util.Set;
  */
 public class StringCase5 {
 
-    public static void main(String[] args) {
-        Integer[] data = {-1, 0, 1, 2, -1, 4};
-        Set<List<Integer>> set = find(Arrays.asList(data));
-        for (List<Integer> list : set) {
-            System.out.println(list);
-        }
-    }
-
     public static Set<List<Integer>> find(List<Integer> data) {
         // 进行排序去重
         Collections.sort(data);
@@ -45,5 +37,13 @@ public class StringCase5 {
             }
         }
         return set;
+    }
+
+    public static void main(String[] args) {
+        Integer[] data = {-1, 0, 1, 2, -1, 4};
+        Set<List<Integer>> set = find(Arrays.asList(data));
+        for (List<Integer> list : set) {
+            System.out.println(list);
+        }
     }
 }
