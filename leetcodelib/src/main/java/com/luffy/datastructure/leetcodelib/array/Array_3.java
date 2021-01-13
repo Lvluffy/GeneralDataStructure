@@ -12,8 +12,8 @@ public class Array_3 {
 
     public static int getIndex(int[] input, int target) {
         int start = 0;
-        int mid;
         int end = input.length - 1;
+        int mid;
         while (start <= end) {
             mid = (start + end) / 2;
             if (target > input[mid]) {
