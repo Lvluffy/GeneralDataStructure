@@ -55,45 +55,6 @@ import java.util.Stack;
  */
 public class StackCase1 {
     /**
-     * 栈解法
-     *
-     * @param str 字符串
-     * @return 判断括号是否成对（ture-成对；false-不成对）
-     */
-    public boolean stack(String str) {
-        if (str == null || "".equals(str) || str.length() == 0) {
-            return true;
-        }
-        Stack<Character> stack = new Stack<>();
-        char[] c = str.toCharArray();
-        for (char aC : c) {
-            if (aC == '(' || aC == '[' || aC == '{') {
-                /*加入栈顶*/
-                stack.push(aC);
-            } else if (aC == ')') {
-                /*检测栈顶是否存在*/
-                if (stack.peek() == '(') {
-                    /*从栈中移除*/
-                    stack.pop();
-                }
-            } else if (aC == ']') {
-                /*检测栈顶是否存在*/
-                if (stack.peek() == '[') {
-                    /*从栈中移除*/
-                    stack.pop();
-                }
-            } else if (aC == '}') {
-                /*检测栈顶是否存在*/
-                if (stack.peek() == '{') {
-                    /*从栈中移除*/
-                    stack.pop();
-                }
-            }
-        }
-        return stack.empty();
-    }
-
-    /**
      * 通过String自带函数（性能太差）
      *
      * @param str
@@ -148,5 +109,12 @@ public class StackCase1 {
         System.out.println("示例4：" + stackCase1.isValidString(str4));
         System.out.println("示例5：" + stackCase1.isValidString(str5));
         System.out.println("示例6：" + stackCase1.isValidString(str6));
+
+        System.out.println("示例1：" + stackCase1.isValidStack(str1));
+        System.out.println("示例2：" + stackCase1.isValidStack(str2));
+        System.out.println("示例3：" + stackCase1.isValidStack(str3));
+        System.out.println("示例4：" + stackCase1.isValidStack(str4));
+        System.out.println("示例5：" + stackCase1.isValidStack(str5));
+        System.out.println("示例6：" + stackCase1.isValidStack(str6));
     }
 }
