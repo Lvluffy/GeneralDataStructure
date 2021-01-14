@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 栈
- * @desc 案例分析：比较含退格的字符串
+ * @name 比较含退格的字符串
  * <p>
  * 题目：给定 str1 和 str2 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
  * <p>
@@ -25,7 +24,7 @@ import java.util.Stack;
  * 输出：true
  * 解释：str1 和 str2 都会变成 “c”。
  */
-public class StackCase2 {
+public class LeetCode_844 {
     /**
      * 栈解法
      *
@@ -81,9 +80,9 @@ public class StackCase2 {
         String str2_2 = "c#d#";
         String str3_1 = "a##c";
         String str3_2 = "#a#c";
-        StackCase2 stackCase2 = new StackCase2();
-        System.out.println("示例1：" + stackCase2.stack(str1_1, str1_2));
-        System.out.println("示例2：" + stackCase2.stack(str2_1, str2_2));
-        System.out.println("示例3：" + stackCase2.stack(str3_1, str3_2));
+        LeetCode_844 leetCode844 = new LeetCode_844();
+        System.out.println("示例1：" + leetCode844.stack(str1_1, str1_2));
+        System.out.println("示例2：" + leetCode844.stack(str2_1, str2_2));
+        System.out.println("示例3：" + leetCode844.stack(str3_1, str3_2));
     }
 }

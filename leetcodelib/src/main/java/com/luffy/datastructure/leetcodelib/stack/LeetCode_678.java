@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/10/22
  *
- * @name 栈
- * @desc 特点：先进后出，后进先出。
+ * @name 有效的括号字符串
  * <p>
  * 核心方法讲解：
  * 1，push()：压栈
@@ -53,7 +52,7 @@ import java.util.Stack;
  * 【】栈为空，说明括号有效
  * 【】栈不为空，说明括号无效
  */
-public class StackCase1 {
+public class LeetCode_678 {
     /**
      * 通过String自带函数（性能太差）
      *
@@ -102,19 +101,19 @@ public class StackCase1 {
         String str4 = "([)]";
         String str5 = "{[]}";
         String str6 = "";
-        StackCase1 stackCase1 = new StackCase1();
-        System.out.println("示例1：" + stackCase1.isValidString(str1));
-        System.out.println("示例2：" + stackCase1.isValidString(str2));
-        System.out.println("示例3：" + stackCase1.isValidString(str3));
-        System.out.println("示例4：" + stackCase1.isValidString(str4));
-        System.out.println("示例5：" + stackCase1.isValidString(str5));
-        System.out.println("示例6：" + stackCase1.isValidString(str6));
+        LeetCode_678 leetCode678 = new LeetCode_678();
+        System.out.println("示例1：" + leetCode678.isValidString(str1));
+        System.out.println("示例2：" + leetCode678.isValidString(str2));
+        System.out.println("示例3：" + leetCode678.isValidString(str3));
+        System.out.println("示例4：" + leetCode678.isValidString(str4));
+        System.out.println("示例5：" + leetCode678.isValidString(str5));
+        System.out.println("示例6：" + leetCode678.isValidString(str6));
 
-        System.out.println("示例1：" + stackCase1.isValidStack(str1));
-        System.out.println("示例2：" + stackCase1.isValidStack(str2));
-        System.out.println("示例3：" + stackCase1.isValidStack(str3));
-        System.out.println("示例4：" + stackCase1.isValidStack(str4));
-        System.out.println("示例5：" + stackCase1.isValidStack(str5));
-        System.out.println("示例6：" + stackCase1.isValidStack(str6));
+        System.out.println("示例1：" + leetCode678.isValidStack(str1));
+        System.out.println("示例2：" + leetCode678.isValidStack(str2));
+        System.out.println("示例3：" + leetCode678.isValidStack(str3));
+        System.out.println("示例4：" + leetCode678.isValidStack(str4));
+        System.out.println("示例5：" + leetCode678.isValidStack(str5));
+        System.out.println("示例6：" + leetCode678.isValidStack(str6));
     }
 }

@@ -27,6 +27,12 @@ public class Array_4 {
         System.out.println("mountainTop:" + mountainTop(array3));
     }
 
+    /**
+     * 二分法
+     *
+     * @param array
+     * @return
+     */
     public static int mountainTop(int[] array) {
         int start = 0;
         int end = array.length - 1;

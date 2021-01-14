@@ -3,8 +3,7 @@ package com.luffy.datastructure.leetcodelib.string;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 字符串
- * @desc 案例分析：编辑距离
+ * @name 编辑距离
  * <p>
  * 题目：给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。
  * <p>
@@ -31,7 +30,7 @@ package com.luffy.datastructure.leetcodelib.string;
  * exention -> exection (将 'n' 替换为 'c')
  * exection -> execution (插入 'u')
  */
-public class StringCase1 {
+public class LeetCode_72 {
 
     /**
      * 动态规划解法
@@ -74,9 +73,9 @@ public class StringCase1 {
         String word1_2 = "ros";
         String word2_1 = "intention";
         String word2_2 = "execution";
-        StringCase1 stringCase1 = new StringCase1();
-        System.out.println("示例1：" + stringCase1.dynamicPlan(word1_1, word1_2));
-        System.out.println("示例2：" + stringCase1.dynamicPlan(word2_1, word2_2));
+        LeetCode_72 leetCode72 = new LeetCode_72();
+        System.out.println("示例1：" + leetCode72.dynamicPlan(word1_1, word1_2));
+        System.out.println("示例2：" + leetCode72.dynamicPlan(word2_1, word2_2));
     }
 
 }

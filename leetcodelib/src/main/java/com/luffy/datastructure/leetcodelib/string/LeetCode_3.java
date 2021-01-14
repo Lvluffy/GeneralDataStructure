@@ -6,8 +6,7 @@ import java.util.Map;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 字符串
- * @desc 案例分析：无重复字符的最长字串
+ * @name 无重复字符的最长字串
  * <p>
  * 题目：给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
  * <p>
@@ -27,7 +26,7 @@ import java.util.Map;
  * 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
  * 请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
  */
-public class StringCase4 {
+public class LeetCode_3 {
 
     /**
      * 双向链表（滑动窗口）解法
@@ -59,10 +58,10 @@ public class StringCase4 {
         String str1 = "abcabcbb";
         String str2 = "bbbbb";
         String str3 = "pwwkew";
-        StringCase4 stringCase4 = new StringCase4();
+        LeetCode_3 leetCode3 = new LeetCode_3();
         // 双向链表（滑动窗口）解法
-        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str1));
-        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str2));
-        System.out.println("示例1：" + stringCase4.bothwayLinkedList(str3));
+        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str1));
+        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str2));
+        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str3));
     }
 }

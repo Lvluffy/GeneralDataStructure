@@ -6,8 +6,7 @@ import java.util.List;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 字符串
- * @desc 案例分析：复原IP地址
+ * @name 复原IP地址
  * <p>
  * 题目：给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。
  * <p>
@@ -21,7 +20,7 @@ import java.util.List;
  * 3，IP中每个数字的范围是0-255，注意使用stoi转换时“01”也是可以转换成1的，可以考虑再转回来与字符串对比排除。
  * 4，取得这一位的合法数字后，递归调用取下一位。
  */
-public class StringCase3 {
+public class LeetCode_93 {
     /**
      * 回溯解法
      *
@@ -67,8 +66,8 @@ public class StringCase3 {
 
     public static void main(String[] args) {
         String str = "25525511135";
-        StringCase3 stringCase3 = new StringCase3();
-        List<String> answers = stringCase3.restoreIpAddresses(str);
+        LeetCode_93 leetCode93 = new LeetCode_93();
+        List<String> answers = leetCode93.restoreIpAddresses(str);
         System.out.println(answers);
     }
 

@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 栈
- * @desc 案例分析：去除重复字母
+ * @name 去除重复字母
  * <p>
  * 题目：给定一个仅包含小写字母的字符串，去除字符串中重复的字母，使得每个字母只出现一次。需保证返回结果的字典序最小（要求不能打乱其他字符的相对位置）。
  * <p>
@@ -18,7 +17,7 @@ import java.util.Stack;
  * 输入: "cbacdcbc"
  * 输出: "acdb"
  */
-public class StackCase6 {
+public class LeetCode_316 {
 
     /**
      * 栈解法
@@ -52,10 +51,10 @@ public class StackCase6 {
     public static void main(String[] args) {
         String str1 = "bcabc";
         String str2 = "cbacdcbc";
-        StackCase6 stackCase6 = new StackCase6();
+        LeetCode_316 leetCode316 = new LeetCode_316();
         // 栈解法
         System.out.println("栈解法:");
-        System.out.println("示例1:" + stackCase6.stack(str1));
-        System.out.println("示例2:" + stackCase6.stack(str2));
+        System.out.println("示例1:" + leetCode316.stack(str1));
+        System.out.println("示例2:" + leetCode316.stack(str2));
     }
 }

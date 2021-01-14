@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 栈
- * @desc 案例分析：最大矩形
+ * @name 最大矩形
  * <p>
  * 题目：给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
  * <p>
@@ -20,7 +19,7 @@ import java.util.Stack;
  * ]
  * 输出: 6
  */
-public class StackCase5 {
+public class LeetCode_85 {
 
     /**
      * 栈解法
@@ -91,10 +90,10 @@ public class StackCase5 {
 
     public static void main(String[] args) {
         char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
-        StackCase5 stackCase5 = new StackCase5();
+        LeetCode_85 leetCode85 = new LeetCode_85();
         // 栈解法
-        System.out.println("栈解法:" + stackCase5.stack(nums));
+        System.out.println("栈解法:" + leetCode85.stack(nums));
         // 动态规划解法
-        System.out.println("栈解法:" + stackCase5.dynamicPlan(nums));
+        System.out.println("栈解法:" + leetCode85.dynamicPlan(nums));
     }
 }

@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 栈
- * @desc 案例分析：移掉K位数字
+ * @name 移掉K位数字
  * <p>
  * 题目：给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。
  * <p>
@@ -29,7 +28,7 @@ import java.util.Stack;
  * 输出: "0"
  * 解释: 从原数字移除所有的数字，剩余为空就是0。
  */
-public class StackCase4 {
+public class LeetCode_402 {
 
     /**
      * 贪心解法
@@ -105,16 +104,16 @@ public class StackCase4 {
         int k1 = 3;
         int k2 = 1;
         int k3 = 2;
-        StackCase4 stackCase4 = new StackCase4();
+        LeetCode_402 leetCode402 = new LeetCode_402();
         // 贪心解法
         System.out.println("贪心解法");
-        System.out.println("示例1：" + stackCase4.greedy(str1, k1));
-        System.out.println("示例2：" + stackCase4.greedy(str2, k2));
-        System.out.println("示例3：" + stackCase4.greedy(str3, k3));
+        System.out.println("示例1：" + leetCode402.greedy(str1, k1));
+        System.out.println("示例2：" + leetCode402.greedy(str2, k2));
+        System.out.println("示例3：" + leetCode402.greedy(str3, k3));
         // 栈解法
         System.out.println("栈解法");
-        System.out.println("示例1：" + stackCase4.stack(str1, k1));
-        System.out.println("示例2：" + stackCase4.stack(str2, k2));
-        System.out.println("示例3：" + stackCase4.stack(str3, k3));
+        System.out.println("示例1：" + leetCode402.stack(str1, k1));
+        System.out.println("示例2：" + leetCode402.stack(str2, k2));
+        System.out.println("示例3：" + leetCode402.stack(str3, k3));
     }
 }

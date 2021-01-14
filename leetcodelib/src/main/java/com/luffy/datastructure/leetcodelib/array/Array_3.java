@@ -10,6 +10,13 @@ package com.luffy.datastructure.leetcodelib.array;
  */
 public class Array_3 {
 
+    /**
+     * 二分法
+     *
+     * @param input
+     * @param target
+     * @return
+     */
     public static int getIndex(int[] input, int target) {
         int start = 0;
         int end = input.length - 1;

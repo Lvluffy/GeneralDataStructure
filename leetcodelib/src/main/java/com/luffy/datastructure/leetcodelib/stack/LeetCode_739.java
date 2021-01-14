@@ -5,8 +5,7 @@ import java.util.Stack;
 /**
  * Created by lvlufei on 2019/11/6
  *
- * @name 栈
- * @desc 案例分析：每日温度
+ * @name 每日温度
  * <p>
  * 题目：根据每日气温列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请在该位置用0来代替。
  * <p>
@@ -16,7 +15,7 @@ import java.util.Stack;
  * <p>
  * 提示：气温列表长度的范围是[1, 30000]。每个气温的值的均为华氏度，都是在 [30, 100] 范围内的整数。
  */
-public class StackCase3 {
+public class LeetCode_739 {
     /**
      * 栈解法
      * <p>
@@ -44,8 +43,8 @@ public class StackCase3 {
 
     public static void main(String[] args) {
         int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
-        StackCase3 stackCase3 = new StackCase3();
-        int[] anwser = stackCase3.stack(nums);
+        LeetCode_739 leetCode739 = new LeetCode_739();
+        int[] anwser = leetCode739.stack(nums);
         for (int i : anwser) {
             System.out.print(i + "    ");
         }

@@ -3,8 +3,7 @@ package com.luffy.datastructure.leetcodelib.string;
 /**
  * Created by lvlufei on 2019/11/15
  *
- * @name 字符串
- * @desc 案例分析：最长回文子串
+ * @name 最长回文子串
  * <p>
  * 题目：给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
  * <p>
@@ -17,7 +16,7 @@ package com.luffy.datastructure.leetcodelib.string;
  * 输入: "cbbd"
  * 输出: "bb"
  */
-public class StringCase2 {
+public class LeetCode_5 {
 
     /**
      * 动态规划解法
@@ -60,9 +59,9 @@ public class StringCase2 {
     public static void main(String[] args) {
         String str1 = "babad";
         String str2 = "cbbd";
-        StringCase2 stringCase2 = new StringCase2();
-        System.out.println("示例1：" + stringCase2.dynamicPlan(str1));
-        System.out.println("示例2：" + stringCase2.dynamicPlan(str2));
+        LeetCode_5 leetCode5 = new LeetCode_5();
+        System.out.println("示例1：" + leetCode5.dynamicPlan(str1));
+        System.out.println("示例2：" + leetCode5.dynamicPlan(str2));
     }
 
 }
