@@ -6,7 +6,7 @@ package com.luffy.datastructure.leetcodelib.linkedList;
  * @name 链表反转
  * @desc
  */
-public class LinkedListReverse {
+public class LeetCode_206 {
 
     /**
      * 链表中的结点
