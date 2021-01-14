@@ -7,25 +7,9 @@ import java.util.List;
 /**
  * Created by lvlufei on 2019/11/7
  *
- * @name 前缀树
- * @desc --
+ * @name 单词搜索
  * <p>
- * 应用场景：前缀树被广泛地运用在字典查找当中，也被称为字段树。
- * <p>
- * 经典用例：
- * 1，网站上的搜索框会罗列出以搜索文字作为开头的相关搜索信息，这里运用了前缀树进行后端的快速检索。
- * 2，汉字拼音输入法的联想输出功能也运用了前缀树。
- * <p>
- * 前缀树最基本的操作：创建和搜索
- * 1，创建
- * 1-1，遍历一遍输入的字符串，对字符串的字符进行遍历。
- * 1-2，从前缀树的根节点开始，将每个字符加入到节点的children字符集当中。
- * 1-3，如果字符集是字符串的最后一个，则把当前节点的isEnd标记为真。
- * 2，搜索
- * 与创建方法类似，从前缀树的根节点出发，逐个匹配输入的前缀字符，如果遇到了就继续往下一层搜索，如果没有遇到，就立即返回。
- * <p>
- * 题目：单词搜索
- * 给定一个二维网格board和一个字典中的单词列表words，找出所有同时在二维网格和字典中出现的单词。
+ * 题目：给定一个二维网格board和一个字典中的单词列表words，找出所有同时在二维网格和字典中出现的单词。
  * <p>
  * 单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母在一个单词中不允许被重复使用。
  * <p>
@@ -49,7 +33,7 @@ import java.util.List;
  * 1，你需要优化回溯算法以通过更大数据量的测试。你能否早点停止回溯？
  * 2，如果当前单词不存在于所有单词的前缀中，则可以立即停止回溯。什么样的数据结构可以有效地执行这样的操作？。
  */
-public class TrieApply {
+public class LeetCode_79 {
 
     private TrieNode root = new TrieNode();
     private int[] row = new int[]{-1, 1, 0, 0};
@@ -138,8 +122,8 @@ public class TrieApply {
     public static void main(String[] args) {
         char[][] board = {{'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}};
         String[] words = {"oath", "pea", "eat", "rain"};
-        TrieApply trieApply = new TrieApply();
-        List<String> list = trieApply.findWords(board, words);
+        LeetCode_79 leetCode79 = new LeetCode_79();
+        List<String> list = leetCode79.findWords(board, words);
         for (String s : list) {
             System.out.println(s);
         }

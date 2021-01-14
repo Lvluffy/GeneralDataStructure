@@ -11,8 +11,7 @@ import java.util.Set;
 /**
  * Created by lvlufei on 2019/11/16
  *
- * @name 图
- * @desc 案例分析：火星词典
+ * @name 火星词典
  * <p>
  * 题目：现有一种使用字母的全新语言，这门语言的字母顺序与英语顺序不同。假设，您并不知道其中字母之间的先后顺序。
  * 但是，会收到词典中获得一个不为空的单词列表。因为是从词典中获得的，所以该单词列表内的单词已经按这门新语言的字母顺序进行了排序。
@@ -45,7 +44,7 @@ import java.util.Set;
  * 将字符串的优先级构建为图，然后进行拓扑排序。如果图中无环，则将拓扑排序输出，否则顺序是非法的。
  * 注意对于输入"za","zb","ca","cb"，字符关系为a->b、z->c，输出可以为azbc、zacb，只要输出一种即可。
  */
-public class GraphCase1 {
+public class LeetCode_269 {
 
     /**
      * 图解法
@@ -117,9 +116,9 @@ public class GraphCase1 {
         String[] words1 = {"wrt", "wrf", "er", "ett", "rftt"};
         String[] words2 = {"z", "x"};
         String[] words3 = {"z", "x", "z"};
-        GraphCase1 graphCase1 = new GraphCase1();
-        System.out.println("示例1：" + graphCase1.graph(words1));
-        System.out.println("示例2：" + graphCase1.graph(words2));
-        System.out.println("示例3：" + graphCase1.graph(words3));
+        LeetCode_269 leetCode269 = new LeetCode_269();
+        System.out.println("示例1：" + leetCode269.graph(words1));
+        System.out.println("示例2：" + leetCode269.graph(words2));
+        System.out.println("示例3：" + leetCode269.graph(words3));
     }
 }

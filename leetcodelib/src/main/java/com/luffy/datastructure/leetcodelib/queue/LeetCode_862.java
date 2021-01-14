@@ -6,8 +6,7 @@ import java.util.LinkedList;
 /**
  * Created by lvlufei on 2019/11/16
  *
- * @name 双端队列
- * @desc 案例分析：和至少为 K 的最短子数组
+ * @name 和至少为 K 的最短子数组
  * <p>
  * 题目：返回A的最短的非空连续子数组的长度，该子数组的和至少为 K 。如果没有和至少为 K 的非空子数组，返回 -1 。
  * <p>
@@ -23,7 +22,7 @@ import java.util.LinkedList;
  * 输入：A = [2,-1,2], K = 3
  * 输出：3
  */
-public class DequeCase1 {
+public class LeetCode_862 {
 
     /**
      * 双端队列解法（滑动窗口）
@@ -62,11 +61,11 @@ public class DequeCase1 {
         int k1 = 1;
         int k2 = 4;
         int k3 = 3;
-        DequeCase1 dequeCase1 = new DequeCase1();
+        LeetCode_862 leetCode862 = new LeetCode_862();
         // 双端队列解法：
         System.out.println("双端队列解法");
-        System.out.println("示例1：" + dequeCase1.deque(nums1, k1));
-        System.out.println("示例2：" + dequeCase1.deque(nums2, k2));
-        System.out.println("示例3：" + dequeCase1.deque(nums3, k3));
+        System.out.println("示例1：" + leetCode862.deque(nums1, k1));
+        System.out.println("示例2：" + leetCode862.deque(nums2, k2));
+        System.out.println("示例3：" + leetCode862.deque(nums3, k3));
     }
 }

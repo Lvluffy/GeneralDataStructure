@@ -11,21 +11,9 @@ import java.util.Set;
 /**
  * Created by lvlufei on 2019/11/6
  *
- * @name 优先队列
- * @desc 特点：保证每次取出的元素是队列中优先级最高的。
+ * @name 前k个高频元素
  * <p>
- * 优先级别可自定义，例如，数据的数值越大，优先级越高；或者数据的数值越小，优先级越高。优先级甚至可以通过各种复杂的计算得到。
- * <p>
- * 最常用的场景：
- * 从杂乱无章的数据中按照一定的顺序（或者优先级）筛选数据
- * <p>
- * 本质：
- * 二叉堆的结构，利用一个数组结构来实现完全二叉树。
- * <p>
- * 复杂度：O(k+nlogk)
- * <p>
- * 题目：前k个高频元素
- * 给定一个非空的整数数组，返回其中出现频率前k高的元素。
+ * 题目：给定一个非空的整数数组，返回其中出现频率前k高的元素。
  * 说明：
  * 1，你可以假设给定的k总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。
  * 2，你的算法的时间复杂度必须优于O(nlogn), n是数组的大小。
@@ -33,7 +21,7 @@ import java.util.Set;
  * 输入: nums = [1,1,1,2,2,3], k = 2
  * 输出: [1,2]
  */
-public class PriorityQueueCase {
+public class LeetCode_347 {
 
     /**
      * 队列解法
@@ -72,8 +60,8 @@ public class PriorityQueueCase {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 2, 2, 3};
-        PriorityQueueCase priorityQueueCase = new PriorityQueueCase();
-        List<Integer> list = priorityQueueCase.priorityQueue(nums, 2);
+        LeetCode_347 leetCode347 = new LeetCode_347();
+        List<Integer> list = leetCode347.priorityQueue(nums, 2);
         for (int i : list) {
             System.out.print(i + "   ");
         }

@@ -3,8 +3,7 @@ package com.luffy.datastructure.leetcodelib.tree;
 /**
  * Created by lvlufei on 2019/11/18
  *
- * @name 线段树
- * @desc 案例分析：区域和检索 - 数组可修改
+ * @name 区域和检索 - 数组可修改
  * <p>
  * 题目：给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。
  * update(i, val) 函数可以通过将下标为 i 的数值更新为 val，从而对数列进行修改。
@@ -19,11 +18,11 @@ package com.luffy.datastructure.leetcodelib.tree;
  * 1，数组仅可以在 update 函数下进行修改。
  * 2，你可以假设 update 函数与 sumRange 函数的调用次数是均匀分布的。
  */
-public class SegmentTreeCase1 {
+public class LeetCode_307 {
     int[] tree;
     int n;
 
-    public SegmentTreeCase1(int[] nums) {
+    public LeetCode_307(int[] nums) {
         if (nums.length > 0) {
             n = nums.length;
             tree = new int[n * 2];
@@ -101,11 +100,11 @@ public class SegmentTreeCase1 {
 
     public static void main(String[] args) {
         int[] nums = {1, 3, 5};
-        SegmentTreeCase1 segmentTreeCase1 = new SegmentTreeCase1(nums);
-        System.out.println("sumRange(0,2) = " + segmentTreeCase1.sumRange(0, 2));
-        segmentTreeCase1.update(1, 2);
+        LeetCode_307 leetCode307 = new LeetCode_307(nums);
+        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
+        leetCode307.update(1, 2);
         System.out.println("update(1,2)");
-        System.out.println("sumRange(0,2) = " + segmentTreeCase1.sumRange(0, 2));
+        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
     }
 
 }

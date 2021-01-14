@@ -3,8 +3,7 @@ package com.luffy.datastructure.leetcodelib.tree;
 /**
  * Created by lvlufei on 2019/11/18
  *
- * @name 树状数组
- * @desc 案例分析：区间和的个数
+ * @name 区间和的个数
  * <p>
  * 题目：给定一个整数数组 nums，返回区间和在 [lower, upper] 之间的个数，包含 lower 和 upper。区间和 S(i, j) 表示在 nums 中，位置从 i 到 j 的元素之和，包含 i 和 j (i ≤ j)。
  * <p>
@@ -13,7 +12,7 @@ package com.luffy.datastructure.leetcodelib.tree;
  * 输出: 3
  * 解释: 3个区间分别是: [0,0], [2,2], [0,2]，它们表示的和分别为: -2, -1, 2。
  */
-public class FenwickTreeCase1 {
+public class LeetCode_327 {
 
     /**
      * @param nums  数组数据
@@ -54,7 +53,7 @@ public class FenwickTreeCase1 {
 
     public static void main(String[] args) {
         int[] nums = {-2, 5, -1};
-        FenwickTreeCase1 fenwickTreeCase1 = new FenwickTreeCase1();
-        System.out.println(fenwickTreeCase1.countRangeSum(nums, -2, 2));
+        LeetCode_327 leetCode327 = new LeetCode_327();
+        System.out.println(leetCode327.countRangeSum(nums, -2, 2));
     }
 }

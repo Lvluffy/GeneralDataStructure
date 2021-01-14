@@ -3,17 +3,9 @@ package com.luffy.datastructure.leetcodelib.tree;
 /**
  * Created by lvlufei on 2019/11/7
  *
- * @name 图
- * @desc --
+ * @name 判断二分图
  * <p>
- * 图的存储和表达方式：邻接矩阵、邻接链表
- * <p>
- * 图的遍历：深度优先搜索算法-DFS（Depth-First-Search）、广度优先搜索算法-BFS（Breadth-First-Search）
- * <p>
- * 二部图的检测、树的检测、环的检测：有向图、无向图
- * <p>
- * 题目：判断二分图
- * 给定一个无向图graph，当这个图为二分图时返回true。
+ * 题目：给定一个无向图graph，当这个图为二分图时返回true。
  * <p>
  * 如果我们能将一个图的节点集合分割成两个独立的子集A和B，并使图中的每一条边的两个节点一个来自A集合，一个来自B集合，我们就将这个图称为二分图。
  * <p>
@@ -47,7 +39,7 @@ package com.luffy.datastructure.leetcodelib.tree;
  * 3----2
  * 我们不能将节点分割成两个独立的子集。
  */
-public class GraphApply {
+public class LeetCode_785 {
 
     /**
      * 判断二分图
@@ -87,7 +79,7 @@ public class GraphApply {
 
     public static void main(String[] args) {
         int[][] graph = {{1, 3}, {0, 2}, {1, 3}, {0, 2}};
-        GraphApply graphApply = new GraphApply();
-        System.out.println(graphApply.isBipartite(graph));
+        LeetCode_785 leetCode785 = new LeetCode_785();
+        System.out.println(leetCode785.isBipartite(graph));
     }
 }

@@ -5,8 +5,7 @@ import java.util.LinkedList;
 /**
  * Created by lvlufei on 2019/11/16
  *
- * @name 图
- * @desc 案例分析：课程表
+ * @name 课程表
  * <p>
  * 题目：现在你总共有n门课需要选，记为0到 n-1。在选修某些课程之前需要一些先修课程。
  * 例如，想要学习课程0，你需要先完成课程1，我们用一个匹配来表示他们: [0,1]，给定课程总量以及它们的先决条件，判断是否可能完成所有课程的学习？
@@ -28,7 +27,7 @@ import java.util.LinkedList;
  * 2，通过DFS进行拓扑排序。
  * 3，拓扑排序也可以通过BFS完成。
  */
-public class GraphCase2 {
+public class LeetCode_207 {
 
     /**
      * 广度优先搜索解法
@@ -137,14 +136,14 @@ public class GraphCase2 {
         int[][] prerequisites2 = {{1, 0}, {0, 1}};
         int numCourses1 = 2;
         int numCourses2 = 2;
-        GraphCase2 graphCase2 = new GraphCase2();
+        LeetCode_207 leetCode207 = new LeetCode_207();
         // 广度优先搜索解法
         System.out.println("广度优先搜索解法：");
-        System.out.println("示例1：" + graphCase2.bfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + graphCase2.bfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + leetCode207.bfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + leetCode207.bfs(numCourses2, prerequisites2));
         // 深度优先搜索解法
         System.out.println("深度优先搜索解法：");
-        System.out.println("示例1：" + graphCase2.dfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + graphCase2.dfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + leetCode207.dfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + leetCode207.dfs(numCourses2, prerequisites2));
     }
 }
