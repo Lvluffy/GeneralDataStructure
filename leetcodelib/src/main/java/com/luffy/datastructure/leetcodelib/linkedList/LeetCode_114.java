@@ -8,7 +8,7 @@ import java.util.Set;
  *
  * @name 给定一个链表，判断链表中是否有环。
  */
-public class LinkedList_114 {
+public class LeetCode_114 {
 
     public static class ListNode {
 
