@@ -7,6 +7,9 @@ import java.util.Set;
  * Created by lvlufei on 2020-12-16
  *
  * @name 给定一个链表，判断链表中是否有环。
+ * <p>
+ * 例如：1->2->3->4->5  false
+ * 例如：1->2->3->4->5->1 true
  */
 public class LeetCode_114 {
 
@@ -81,10 +84,12 @@ public class LeetCode_114 {
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);
         ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
         node1.setNext(node2);
         node2.setNext(node3);
         node3.setNext(node4);
-        node4.setNext(node1);
+        node4.setNext(node5);
+        node5.setNext(node1);
         System.out.println(hasCycle_pointer(node1));
     }
 }

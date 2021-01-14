@@ -113,7 +113,7 @@ public class LeetCode_19 {
         next2.setNext(next3);
         next3.setNext(next4);
 
-        head = removeNthFromEnd_2(head, 0);
+        head = removeNthFromEnd_2(head, 1);
         while (head != null) {
             System.out.print(head.getVal() + " ");
             head = head.getNext();

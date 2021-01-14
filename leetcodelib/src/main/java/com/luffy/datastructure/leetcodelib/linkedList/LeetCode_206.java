@@ -4,7 +4,6 @@ package com.luffy.datastructure.leetcodelib.linkedList;
  * Created by lvlufei on 2020-02-19
  *
  * @name 链表反转
- * @desc
  */
 public class LeetCode_206 {
 
