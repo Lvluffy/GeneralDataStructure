@@ -27,7 +27,7 @@ public class LeetCode_5 {
      * @param str 字符串
      * @return 最长的回文子串
      */
-    public String dynamicPlan(String str) {
+    public static String dynamicPlan(String str) {
         // 如果最多只有一个字符，就返回。
         int len = str.length();
         if (len <= 1) {
@@ -57,11 +57,10 @@ public class LeetCode_5 {
     }
 
     public static void main(String[] args) {
-        String str1 = "babad";
-        String str2 = "cbbd";
-        LeetCode_5 leetCode5 = new LeetCode_5();
-        System.out.println("示例1：" + leetCode5.dynamicPlan(str1));
-        System.out.println("示例2：" + leetCode5.dynamicPlan(str2));
+        System.out.println("示例1：" + dynamicPlan("babad"));
+        System.out.println("示例2：" + dynamicPlan("cbbd"));
+        System.out.println("示例2：" + dynamicPlan("dddabccba"));
+        System.out.println("示例2：" + dynamicPlan("assdffdddabccba"));
     }
 
 }
