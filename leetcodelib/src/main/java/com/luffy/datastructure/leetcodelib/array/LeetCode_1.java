@@ -17,13 +17,16 @@ import java.util.HashMap;
 public class LeetCode_1 {
 
     /**
-     * 时间复杂度：o(n^2) 空间复杂度：o(1)
+     * 暴力法
+     * <p>
+     * 时间复杂度：o(n^2)
+     * 空间复杂度：o(1)
      *
      * @param input
      * @param target
      * @return
      */
-    public static int[] getResult_1(int[] input, int target) {
+    public static int[] twoNum_1(int[] input, int target) {
         if (input == null || input.length < 2) {
             return null;
         }
@@ -39,13 +42,16 @@ public class LeetCode_1 {
 
 
     /**
-     * 时间换空间 时间复杂度：o(n) 空间复杂度：o(n)
+     * 哈希表法（时间换空间）
+     * <p>
+     * 时间复杂度：o(n)
+     * 空间复杂度：o(n)
      *
      * @param input
      * @param target
      * @return
      */
-    public static int[] getResult_2(int[] input, int target) {
+    public static int[] twoNum_2(int[] input, int target) {
         HashMap<Integer, Integer> map = new HashMap<>(input.length);
         map.put(input[0], 0);
         for (int i = 1; i < input.length; i++) {
@@ -60,9 +66,11 @@ public class LeetCode_1 {
 
     public static void main(String[] args) {
         int[] input1 = {2, 7, 11, 15};
-        System.out.println(Arrays.toString(getResult_1(input1, 9)));
+        System.out.println(Arrays.toString(twoNum_1(input1, 9)));
+        System.out.println(Arrays.toString(twoNum_2(input1, 9)));
 
         int[] input2 = {3, 2, 4};
-        System.out.println(Arrays.toString(getResult_1(input2, 6)));
+        System.out.println(Arrays.toString(twoNum_1(input2, 6)));
+        System.out.println(Arrays.toString(twoNum_2(input2, 6)));
     }
 }
