@@ -3,7 +3,7 @@ package com.luffy.datastructure.leetcodelib.array;
 /**
  * Created by lvlufei on 2021-01-08
  *
- * @name 返回数组连续重复元素的最大次数。要求：时间复杂度o(n)，空间复杂度：o(1)
+ * @name 返回数组中连续出现指定元素的最大次数。要求：时间复杂度o(n)，空间复杂度：o(1)
  * <p>
  * 例如：
  * 输入：[1,1,1,0,0,1,1,0,1]   连续出现1的最多次数：3

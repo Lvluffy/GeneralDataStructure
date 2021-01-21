@@ -43,8 +43,7 @@ public class LeetCode_3 {
         // 定义一个map数据结构存储(k, v)，其中key值为字符，value值为字符位置+1，加1表示从字符位置后一个才开始不重复。
         Map<Character, Integer> map = new HashMap<>();
         // 开始位置（stratIndex）；结束位置（endIndex）
-        int stratIndex = 0;
-        for (int endIndex = 0; endIndex < str.length(); endIndex++) {
+        for (int stratIndex = 0, endIndex = 0; endIndex < str.length(); endIndex++) {
             if (map.containsKey(str.charAt(endIndex))) {
                 stratIndex = Math.max(map.get(str.charAt(endIndex)), stratIndex);
             }
