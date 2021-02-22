@@ -52,7 +52,7 @@ import java.util.Stack;
  * 【】栈为空，说明括号有效
  * 【】栈不为空，说明括号无效
  */
-public class LeetCode_678 {
+public class LeetCode_20 {
     /**
      * 通过String自带函数（性能太差）
      *
@@ -101,7 +101,7 @@ public class LeetCode_678 {
         String str4 = "([)]";
         String str5 = "{[]}";
         String str6 = "";
-        LeetCode_678 leetCode678 = new LeetCode_678();
+        LeetCode_20 leetCode678 = new LeetCode_20();
         System.out.println("示例1：" + leetCode678.isValidString(str1));
         System.out.println("示例2：" + leetCode678.isValidString(str2));
         System.out.println("示例3：" + leetCode678.isValidString(str3));
