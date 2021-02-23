@@ -13,31 +13,18 @@ import java.util.Set;
  */
 public class LeetCode_114 {
 
-    public static class ListNode {
-
-        private int val;
-        private ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public int getVal() {
-            return val;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node4.setNext(node5);
+        node5.setNext(node1);
+        System.out.println(hasCycle_pointer(node1));
     }
 
     /**
@@ -52,7 +39,7 @@ public class LeetCode_114 {
             if (!seen.add(head)) {
                 return true;
             }
-            head = head.next;
+            head = head.getNext();
         }
         return false;
     }
@@ -64,32 +51,18 @@ public class LeetCode_114 {
      * @return
      */
     public static boolean hasCycle_pointer(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null || head.getNext() == null) {
             return false;
         }
         ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode fast = head.getNext();
         while (slow != fast) {
-            if (fast == null || fast.next == null) {
+            if (fast == null || fast.getNext() == null) {
                 return false;
             }
-            slow = slow.next;
-            fast = fast.next.next;
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        node1.setNext(node2);
-        node2.setNext(node3);
-        node3.setNext(node4);
-        node4.setNext(node5);
-        node5.setNext(node1);
-        System.out.println(hasCycle_pointer(node1));
     }
 }

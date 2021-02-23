@@ -11,32 +11,23 @@ package com.luffy.datastructure.leetcodelib.linkedList;
  */
 public class LeetCode_19 {
 
-    public static class ListNode {
-
-        private int val;
-        private ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode next1 = new ListNode(2);
+        ListNode next2 = new ListNode(3);
+        ListNode next3 = new ListNode(4);
+        ListNode next4 = new ListNode(5);
+        head.setNext(next1);
+        next1.setNext(next2);
+        next2.setNext(next3);
+        next3.setNext(next4);
+        head = removeNthFromEnd_2(head, 2);
+        while (head != null) {
+            System.out.print(head.getVal() + " ");
+            head = head.getNext();
         }
-
-        public int getVal() {
-            return val;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-
     }
+
 
     /**
      * 计算链表长度
@@ -66,7 +57,7 @@ public class LeetCode_19 {
         int length = 0;
         while (head != null) {
             length++;
-            head = head.next;
+            head = head.getNext();
         }
         return length;
     }
@@ -101,22 +92,5 @@ public class LeetCode_19 {
         slow.setNext(slow.getNext().getNext());
         return head;
     }
-
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        ListNode next1 = new ListNode(2);
-        ListNode next2 = new ListNode(3);
-        ListNode next3 = new ListNode(4);
-        ListNode next4 = new ListNode(5);
-        head.setNext(next1);
-        next1.setNext(next2);
-        next2.setNext(next3);
-        next3.setNext(next4);
-
-        head = removeNthFromEnd_2(head, 1);
-        while (head != null) {
-            System.out.print(head.getVal() + " ");
-            head = head.getNext();
-        }
-    }
 }
+

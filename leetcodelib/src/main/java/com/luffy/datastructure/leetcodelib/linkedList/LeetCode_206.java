@@ -7,34 +7,19 @@ package com.luffy.datastructure.leetcodelib.linkedList;
  */
 public class LeetCode_206 {
 
-    /**
-     * 链表中的结点
-     */
-    public static class ListNode {
-
-        private int val;
-        private ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node1 = reverseIteration(node1);
+        while (node1 != null) {
+            System.out.print(node1.getVal() + " ");
+            node1 = node1.getNext();
         }
-
-        public int getVal() {
-            return val;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-
     }
 
     /**
@@ -85,20 +70,5 @@ public class LeetCode_206 {
         head.getNext().setNext(head);
         head.setNext(null);
         return tempNode;
-    }
-
-    public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        node1.setNext(node2);
-        node2.setNext(node3);
-        node3.setNext(node4);
-        node1 = reverseIteration(node1);
-        while (node1 != null) {
-            System.out.print(node1.getVal() + " ");
-            node1 = node1.getNext();
-        }
     }
 }
