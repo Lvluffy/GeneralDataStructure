@@ -39,6 +39,16 @@ public class LeetCode_79 {
     private int[] row = new int[]{-1, 1, 0, 0};
     private int[] col = new int[]{0, 0, -1, 1};
 
+    public static void main(String[] args) {
+        char[][] board = {{'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}};
+        String[] words = {"oath", "pea", "eat", "rain"};
+        LeetCode_79 leetCode79 = new LeetCode_79();
+        List<String> list = leetCode79.findWords(board, words);
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+
     /**
      * 查找单词
      *
@@ -116,16 +126,6 @@ public class LeetCode_79 {
 
         boolean ifExists(char chr) {
             return next[chr - 'a'] != null;
-        }
-    }
-
-    public static void main(String[] args) {
-        char[][] board = {{'o', 'a', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}};
-        String[] words = {"oath", "pea", "eat", "rain"};
-        LeetCode_79 leetCode79 = new LeetCode_79();
-        List<String> list = leetCode79.findWords(board, words);
-        for (String s : list) {
-            System.out.println(s);
         }
     }
 }

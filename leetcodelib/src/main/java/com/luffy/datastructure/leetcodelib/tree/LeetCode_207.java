@@ -29,6 +29,22 @@ import java.util.LinkedList;
  */
 public class LeetCode_207 {
 
+    public static void main(String[] args) {
+        int[][] prerequisites1 = {{1, 0}};
+        int[][] prerequisites2 = {{1, 0}, {0, 1}};
+        int numCourses1 = 2;
+        int numCourses2 = 2;
+        LeetCode_207 leetCode207 = new LeetCode_207();
+        // 广度优先搜索解法
+        System.out.println("广度优先搜索解法：");
+        System.out.println("示例1：" + leetCode207.bfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + leetCode207.bfs(numCourses2, prerequisites2));
+        // 深度优先搜索解法
+        System.out.println("深度优先搜索解法：");
+        System.out.println("示例1：" + leetCode207.dfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + leetCode207.dfs(numCourses2, prerequisites2));
+    }
+
     /**
      * 广度优先搜索解法
      * <p>
@@ -129,21 +145,5 @@ public class LeetCode_207 {
         }
         flags[i] = -1;
         return true;
-    }
-
-    public static void main(String[] args) {
-        int[][] prerequisites1 = {{1, 0}};
-        int[][] prerequisites2 = {{1, 0}, {0, 1}};
-        int numCourses1 = 2;
-        int numCourses2 = 2;
-        LeetCode_207 leetCode207 = new LeetCode_207();
-        // 广度优先搜索解法
-        System.out.println("广度优先搜索解法：");
-        System.out.println("示例1：" + leetCode207.bfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + leetCode207.bfs(numCourses2, prerequisites2));
-        // 深度优先搜索解法
-        System.out.println("深度优先搜索解法：");
-        System.out.println("示例1：" + leetCode207.dfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + leetCode207.dfs(numCourses2, prerequisites2));
     }
 }

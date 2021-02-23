@@ -46,6 +46,16 @@ import java.util.Set;
  */
 public class LeetCode_269 {
 
+    public static void main(String[] args) {
+        String[] words1 = {"wrt", "wrf", "er", "ett", "rftt"};
+        String[] words2 = {"z", "x"};
+        String[] words3 = {"z", "x", "z"};
+        LeetCode_269 leetCode269 = new LeetCode_269();
+        System.out.println("示例1：" + leetCode269.graph(words1));
+        System.out.println("示例2：" + leetCode269.graph(words2));
+        System.out.println("示例3：" + leetCode269.graph(words3));
+    }
+
     /**
      * 图解法
      *
@@ -110,15 +120,5 @@ public class LeetCode_269 {
         } else {
             return stringBuilder.toString();
         }
-    }
-
-    public static void main(String[] args) {
-        String[] words1 = {"wrt", "wrf", "er", "ett", "rftt"};
-        String[] words2 = {"z", "x"};
-        String[] words3 = {"z", "x", "z"};
-        LeetCode_269 leetCode269 = new LeetCode_269();
-        System.out.println("示例1：" + leetCode269.graph(words1));
-        System.out.println("示例2：" + leetCode269.graph(words2));
-        System.out.println("示例3：" + leetCode269.graph(words3));
     }
 }

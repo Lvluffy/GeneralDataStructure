@@ -22,6 +22,15 @@ public class LeetCode_307 {
     int[] tree;
     int n;
 
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5};
+        LeetCode_307 leetCode307 = new LeetCode_307(nums);
+        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
+        leetCode307.update(1, 2);
+        System.out.println("update(1,2)");
+        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
+    }
+
     public LeetCode_307(int[] nums) {
         if (nums.length > 0) {
             n = nums.length;
@@ -97,14 +106,4 @@ public class LeetCode_307 {
         }
         return sum;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 3, 5};
-        LeetCode_307 leetCode307 = new LeetCode_307(nums);
-        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
-        leetCode307.update(1, 2);
-        System.out.println("update(1,2)");
-        System.out.println("sumRange(0,2) = " + leetCode307.sumRange(0, 2));
-    }
-
 }

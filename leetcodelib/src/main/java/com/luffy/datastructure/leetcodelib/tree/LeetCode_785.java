@@ -41,6 +41,12 @@ package com.luffy.datastructure.leetcodelib.tree;
  */
 public class LeetCode_785 {
 
+    public static void main(String[] args) {
+        int[][] graph = {{1, 3}, {0, 2}, {1, 3}, {0, 2}};
+        LeetCode_785 leetCode785 = new LeetCode_785();
+        System.out.println(leetCode785.isBipartite(graph));
+    }
+
     /**
      * 判断二分图
      *
@@ -75,11 +81,5 @@ public class LeetCode_785 {
                 return false;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        int[][] graph = {{1, 3}, {0, 2}, {1, 3}, {0, 2}};
-        LeetCode_785 leetCode785 = new LeetCode_785();
-        System.out.println(leetCode785.isBipartite(graph));
     }
 }

@@ -14,6 +14,12 @@ package com.luffy.datastructure.leetcodelib.tree;
  */
 public class LeetCode_327 {
 
+    public static void main(String[] args) {
+        int[] nums = {-2, 5, -1};
+        LeetCode_327 leetCode327 = new LeetCode_327();
+        System.out.println(leetCode327.countRangeSum(nums, -2, 2));
+    }
+
     /**
      * @param nums  数组数据
      * @param lower 左边索引
@@ -49,11 +55,5 @@ public class LeetCode_327 {
             }
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {-2, 5, -1};
-        LeetCode_327 leetCode327 = new LeetCode_327();
-        System.out.println(leetCode327.countRangeSum(nums, -2, 2));
     }
 }

@@ -32,6 +32,15 @@ import java.util.TreeSet;
  * 3，使用线段树进行区域和检索。
  */
 public class LeetCode_315 {
+
+    public static void main(String[] args) {
+        int[] nums = {5, 2, 6, 1};
+
+        System.out.println(LeetCode_315.countSmaller(nums));
+
+        System.out.println(LeetCode_315.fenwickTree(nums));
+    }
+
     /**
      * 数小
      *
@@ -133,13 +142,5 @@ public class LeetCode_315 {
         public int lowbit(int x) {
             return x & (-x);
         }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {5, 2, 6, 1};
-
-        System.out.println(LeetCode_315.countSmaller(nums));
-
-        System.out.println(LeetCode_315.fenwickTree(nums));
     }
 }
