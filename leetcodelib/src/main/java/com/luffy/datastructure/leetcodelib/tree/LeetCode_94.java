@@ -85,6 +85,9 @@ public class LeetCode_94 {
      */
     public static List<Integer> inorderTraversal_2(TreeNode root) {
         List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
         Deque<TreeNode> deque = new LinkedList<>();
         while (root != null || !deque.isEmpty()) {
             while (root != null) {
