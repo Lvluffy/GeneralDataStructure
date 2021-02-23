@@ -71,9 +71,8 @@ public class LeetCode_102 {
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        TreeNode temp;
         while (!queue.isEmpty()) {
-            temp = queue.poll();
+            TreeNode temp = queue.poll();
             result.add(temp.val);
             if (temp.left != null) {
                 queue.add(temp.left);
@@ -101,12 +100,11 @@ public class LeetCode_102 {
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        TreeNode temp;
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
             int currentLevelSize = queue.size();
             for (int i = 1; i <= currentLevelSize; ++i) {
-                temp = queue.poll();
+                TreeNode temp = queue.poll();
                 level.add(temp.val);
                 if (temp.left != null) {
                     queue.offer(temp.left);
