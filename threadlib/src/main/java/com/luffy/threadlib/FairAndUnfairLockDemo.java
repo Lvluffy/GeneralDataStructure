@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @name 公平锁和非公平锁演示
  */
-public class FairAndUnfairLockMode {
+public class FairAndUnfairLockDemo {
     public static void main(String[] args) {
         PrintQueue printQueue = new PrintQueue();
         Thread thread[] = new Thread[10];
