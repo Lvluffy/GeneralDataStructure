@@ -26,18 +26,6 @@ package com.luffy.datastructure.leetcodelib.tree;
  */
 public class LeetCode_124 {
 
-    /**
-     * 树节点
-     */
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     int max_sum = Integer.MIN_VALUE;
 
@@ -58,3 +46,4 @@ public class LeetCode_124 {
         return max_sum;
     }
 }
+
