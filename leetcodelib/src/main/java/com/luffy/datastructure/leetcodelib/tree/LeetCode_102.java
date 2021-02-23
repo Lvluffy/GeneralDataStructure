@@ -51,12 +51,12 @@ public class LeetCode_102 {
         root.left = left;
         root.right = right;
 
-        System.out.println(levelPrint_1(root));
-        System.out.println(levelPrint_2(root));
+        System.out.println(levelTraversal_1(root));
+        System.out.println(levelTraversal_2(root));
     }
 
     /**
-     * 层级打印
+     * 一级集合
      * <p>
      * 时间复杂度：O(n)。
      * 空间复杂度：O(n)。
@@ -64,7 +64,7 @@ public class LeetCode_102 {
      * @param root
      * @return
      */
-    public static List<Integer> levelPrint_1(TreeNode root) {
+    public static List<Integer> levelTraversal_1(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -85,7 +85,7 @@ public class LeetCode_102 {
     }
 
     /**
-     * 层级打印
+     * 二级集合
      * <p>
      * 时间复杂度：O(n)。
      * 空间复杂度：O(n)。
@@ -93,7 +93,7 @@ public class LeetCode_102 {
      * @param root
      * @return
      */
-    public static List<List<Integer>> levelPrint_2(TreeNode root) {
+    public static List<List<Integer>> levelTraversal_2(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;

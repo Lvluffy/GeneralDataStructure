@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Created by lvlufei on 2021-02-23
  *
- * @name 二叉树的中序遍历
+ * @name 二叉树的后序遍历
  * <p>
- * 题目：给你一个二叉树，返回它的 中序 遍历
+ * 题目：给定一个二叉树，返回它的 后序 遍历。
  * <p>
  * 示例：
  * 二叉树：[1,2,3,4,5,6]
@@ -21,9 +21,9 @@ import java.util.List;
  *     / \   / \
  *    4  5  6  7
  *
- * 返回其层序遍历结果：[4,2,5,1,6,3,7]
+ * 返回其层序遍历结果：[4,5,2,6,7,3,1]
  */
-public class LeetCode_94 {
+public class LeetCode_145 {
 
     public static void main(String[] args) {
         //根节点
@@ -46,8 +46,8 @@ public class LeetCode_94 {
         root.left = left;
         root.right = right;
 
-        System.out.println(inorderTraversal_1(root));
-        System.out.println(inorderTraversal_2(root));
+        System.out.println(postorderTraversal_1(root));
+        System.out.println(postorderTraversal_2(root));
     }
 
     /**
@@ -59,19 +59,19 @@ public class LeetCode_94 {
      * @param root
      * @return
      */
-    public static List<Integer> inorderTraversal_1(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        inorder(root, res);
-        return res;
+    public static List<Integer> postorderTraversal_1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        postorder(root, result);
+        return result;
     }
 
-    private static void inorder(TreeNode root, List<Integer> res) {
+    public static void postorder(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
         }
-        inorder(root.left, res);
-        res.add(root.val);
-        inorder(root.right, res);
+        postorder(root.left, result);
+        postorder(root.right, result);
+        result.add(root.val);
     }
 
     /**
@@ -83,17 +83,27 @@ public class LeetCode_94 {
      * @param root
      * @return
      */
-    public static List<Integer> inorderTraversal_2(TreeNode root) {
+    public static List<Integer> postorderTraversal_2(TreeNode root) {
         List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
         Deque<TreeNode> deque = new LinkedList<>();
+        TreeNode node = null;
         while (root != null || !deque.isEmpty()) {
             while (root != null) {
                 deque.push(root);
                 root = root.left;
             }
             root = deque.pop();
-            result.add(root.val);
-            root = root.right;
+            if (root.right == null || root.right == node) {
+                result.add(root.val);
+                node = root;
+                root = null;
+            } else {
+                deque.push(root);
+                root = root.right;
+            }
         }
         return result;
     }
