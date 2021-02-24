@@ -19,56 +19,47 @@ public class ThreadWaitDemo {
 
     public static void main(String[] args) {
 
-        final Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (lock1) {
-                    try {
-                        System.out.println("第一步");
-                        Thread.sleep(1000);
-                        t1Run = true;
-                        lock1.notify();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+        final Thread thread1 = new Thread(() -> {
+            synchronized (lock1) {
+                try {
+                    System.out.println("第一步");
+                    Thread.sleep(1000);
+                    t1Run = true;
+                    lock1.notify();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });
 
-        final Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (lock1) {
-                    try {
-                        if (!t1Run) {
-                            lock1.wait();
-                        }
-                        synchronized (lock2) {
-                            System.out.println("第二步");
-                            Thread.sleep(1000);
-                            t2Run = true;
-                            lock2.notify();
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        final Thread thread2 = new Thread(() -> {
+            synchronized (lock1) {
+                try {
+                    if (!t1Run) {
+                        lock1.wait();
                     }
+                    synchronized (lock2) {
+                        System.out.println("第二步");
+                        Thread.sleep(1000);
+                        t2Run = true;
+                        lock2.notify();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });
 
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (lock2) {
-                    try {
-                        if (!t2Run) {
-                            lock2.wait();
-                        }
-                        System.out.println("第三步");
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        Thread thread3 = new Thread(() -> {
+            synchronized (lock2) {
+                try {
+                    if (!t2Run) {
+                        lock2.wait();
                     }
+                    System.out.println("第三步");
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });

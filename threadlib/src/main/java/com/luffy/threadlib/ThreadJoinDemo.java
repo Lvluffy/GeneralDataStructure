@@ -21,40 +21,31 @@ public class ThreadJoinDemo {
      * 子线程中使用Join
      */
     public static void childThreadUseJoin() {
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("子线程中使用Join：第一步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println("子线程中使用Join：第一步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    thread1.join();
-                    System.out.println("子线程中使用Join：第二步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread2 = new Thread(() -> {
+            try {
+                thread1.join();
+                System.out.println("子线程中使用Join：第二步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-            }
         });
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    thread2.join();
-                    System.out.println("子线程中使用Join：第三步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread3 = new Thread(() -> {
+            try {
+                thread2.join();
+                System.out.println("子线程中使用Join：第三步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         thread1.start();
@@ -66,37 +57,28 @@ public class ThreadJoinDemo {
      * 主线程中使用Join
      */
     public static void mainThreadUseJoin() throws InterruptedException {
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("主线程中使用Join：第一步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println("主线程中使用Join：第一步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("主线程中使用Join：第二步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread2 = new Thread(() -> {
+            try {
+                System.out.println("主线程中使用Join：第二步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("主线程中使用Join：第三步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread3 = new Thread(() -> {
+            try {
+                System.out.println("主线程中使用Join：第三步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         thread1.start();

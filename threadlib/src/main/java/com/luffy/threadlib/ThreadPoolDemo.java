@@ -33,39 +33,30 @@ public class ThreadPoolDemo {
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("第一步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println("第一步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("第二步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread2 = new Thread(() -> {
+            try {
+                System.out.println("第二步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("第三步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread3 = new Thread(() -> {
+            try {
+                System.out.println("第三步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         executorService.submit(thread1);

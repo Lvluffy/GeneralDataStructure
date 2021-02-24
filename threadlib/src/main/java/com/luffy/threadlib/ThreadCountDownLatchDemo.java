@@ -22,47 +22,38 @@ public class ThreadCountDownLatchDemo {
     private static CountDownLatch countDownLatch2 = new CountDownLatch(1);
 
     public static void main(String[] args) {
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("第一步");
-                    Thread.sleep(1000);
-                    // countDownLatch1 倒计时-1
-                    countDownLatch1.countDown();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println("第一步");
+                Thread.sleep(1000);
+                // countDownLatch1 倒计时-1
+                countDownLatch1.countDown();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //等待countDownLatch1倒计时，计时为0则往下运行
-                    countDownLatch1.await();
-                    System.out.println("第二步");
-                    Thread.sleep(1000);
-                    //对countDownLatch2倒计时-1
-                    countDownLatch2.countDown();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread2 = new Thread(() -> {
+            try {
+                //等待countDownLatch1倒计时，计时为0则往下运行
+                countDownLatch1.await();
+                System.out.println("第二步");
+                Thread.sleep(1000);
+                //对countDownLatch2倒计时-1
+                countDownLatch2.countDown();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //等待countDownLatch2倒计时，计时为0则往下运行
-                    countDownLatch2.await();
-                    System.out.println("第三步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread3 = new Thread(() -> {
+            try {
+                //等待countDownLatch2倒计时，计时为0则往下运行
+                countDownLatch2.await();
+                System.out.println("第三步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
         thread1.start();

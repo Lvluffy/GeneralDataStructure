@@ -15,7 +15,6 @@ public class FairAndUnfairLockDemo {
         for (int i = 0; i < 10; i++) {
             thread[i] = new Thread(new Job(printQueue), "Thead " + i);
         }
-
         for (int i = 0; i < 10; i++) {
             thread[i].start();
             try {

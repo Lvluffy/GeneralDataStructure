@@ -20,50 +20,41 @@ public class ThreadSemaphoreDemo {
         Semaphore semaphore1 = new Semaphore(1);
         Semaphore semaphore2 = new Semaphore(1);
 
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("第一步");
-                    Thread.sleep(1000);
-                    //释放许可证
-                    semaphore1.release();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println("第一步");
+                Thread.sleep(1000);
+                //释放许可证
+                semaphore1.release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //获取许可证
-                    semaphore1.acquire();
-                    System.out.println("第二步");
-                    Thread.sleep(1000);
-                    //释放许可证
-                    semaphore2.release();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread2 = new Thread(() -> {
+            try {
+                //获取许可证
+                semaphore1.acquire();
+                System.out.println("第二步");
+                Thread.sleep(1000);
+                //释放许可证
+                semaphore2.release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //获取许可证
-                    semaphore2.acquire();
-                    thread2.join();
-                    //释放许可证
-                    semaphore2.release();
-                    System.out.println("第三步");
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread thread3 = new Thread(() -> {
+            try {
+                //获取许可证
+                semaphore2.acquire();
+                thread2.join();
+                //释放许可证
+                semaphore2.release();
+                System.out.println("第三步");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 
