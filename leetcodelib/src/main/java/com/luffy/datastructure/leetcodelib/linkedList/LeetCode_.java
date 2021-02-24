@@ -27,7 +27,7 @@ public class LeetCode_ {
         next2.setNext(next3);
         next3.setNext(next4);
         next4.setNext(next5);
-        System.out.println(getMiddleNode(head).getVal());
+        System.out.println("快慢指针：" + getMiddleNode(head).getVal());
     }
 
     /**

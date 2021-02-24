@@ -28,7 +28,7 @@ public class LeetCode_114 {
     }
 
     /**
-     * 有没有环（哈希表）
+     * 哈希表
      *
      * @param head
      * @return
@@ -45,7 +45,7 @@ public class LeetCode_114 {
     }
 
     /**
-     * 有没有环（快慢指针）
+     * 快慢指针
      *
      * @param head
      * @return
