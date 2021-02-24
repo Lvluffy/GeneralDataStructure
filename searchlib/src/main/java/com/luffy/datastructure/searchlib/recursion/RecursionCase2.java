@@ -22,13 +22,17 @@ import java.util.List;
  */
 public class RecursionCase2 {
 
+    public static void main(String[] args) {
+        System.out.println(recursion(2));
+    }
+
     /**
      * 递归解法
      *
      * @param n
      * @return
      */
-    public List<String> recursion(int n) {
+    public static List<String> recursion(int n) {
         if (n == 1) {
             return Arrays.asList("0", "1", "8");
         }
@@ -52,7 +56,7 @@ public class RecursionCase2 {
      * @param map
      * @return
      */
-    public List<String> recursionAuxiliary(int n, HashMap map) {
+    private static List<String> recursionAuxiliary(int n, HashMap map) {
         if (map.containsKey(n)) {
             return (List<String>) map.get(n);
         }
@@ -84,10 +88,4 @@ public class RecursionCase2 {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        RecursionCase2 recursionCase2 = new RecursionCase2();
-        System.out.println(recursionCase2.recursion(2));
-    }
-
 }

@@ -43,7 +43,23 @@ import java.util.TreeMap;
  */
 public class RecursionCase1 {
 
-    int i;
+    public static void main(String[] args) {
+        String formula1 = "H2O";
+        String formula2 = "Mg(OH)2";
+        String formula3 = "K4(ON(SO3)2)2";
+        // 递归解法
+        System.out.println("递归解法:");
+        System.out.println("示例1:" + recursion(formula1));
+        System.out.println("示例2:" + recursion(formula2));
+        System.out.println("示例3:" + recursion(formula3));
+        // 栈解法
+        System.out.println("栈解法:");
+        System.out.println("示例1:" + stack(formula1));
+        System.out.println("示例2:" + stack(formula2));
+        System.out.println("示例3:" + stack(formula3));
+    }
+
+    static int i;
 
     /**
      * 递归解法
@@ -61,21 +77,21 @@ public class RecursionCase1 {
      * @param formula
      * @return
      */
-    public String recursion(String formula) {
-        StringBuilder ans = new StringBuilder();
+    public static String recursion(String formula) {
         i = 0;
+        StringBuilder ans = new StringBuilder();
         Map<String, Integer> count = parse(formula);
         for (String name : count.keySet()) {
             ans.append(name);
             int multiplicity = count.get(name);
             if (multiplicity > 1) {
-                ans.append("").append(multiplicity);
+                ans.append(multiplicity);
             }
         }
         return new String(ans);
     }
 
-    public Map<String, Integer> parse(String formula) {
+    public static Map<String, Integer> parse(String formula) {
         int len = formula.length();
         Map<String, Integer> count = new TreeMap();
         while (i < len && formula.charAt(i) != ')') {
@@ -120,7 +136,7 @@ public class RecursionCase1 {
      * @param formula
      * @return
      */
-    public String stack(String formula) {
+    public static String stack(String formula) {
         int len = formula.length();
         Stack<Map<String, Integer>> stack = new Stack();
         stack.push(new TreeMap());
@@ -163,22 +179,4 @@ public class RecursionCase1 {
         }
         return new String(ans);
     }
-
-    public static void main(String[] args) {
-        String formula1 = "H2O";
-        String formula2 = "Mg(OH)2";
-        String formula3 = "K4(ON(SO3)2)2";
-        RecursionCase1 recursionCase1 = new RecursionCase1();
-        // 递归解法
-        System.out.println("递归解法:");
-        System.out.println("示例1:" + recursionCase1.recursion(formula1));
-        System.out.println("示例2:" + recursionCase1.recursion(formula2));
-        System.out.println("示例3:" + recursionCase1.recursion(formula3));
-        // 栈解法
-        System.out.println("栈解法:");
-        System.out.println("示例1:" + recursionCase1.stack(formula1));
-        System.out.println("示例2:" + recursionCase1.stack(formula2));
-        System.out.println("示例3:" + recursionCase1.stack(formula3));
-    }
-
 }
