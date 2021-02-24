@@ -34,6 +34,13 @@ import java.util.Set;
  */
 public class DFSCase3 {
 
+    public static void main(String[] args) {
+        int n = 6;
+        int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {2, 4}, {2, 5}};
+        int[] answer = new DFSCase3().dfs(n, edges);
+        System.out.println(Arrays.toString(answer));
+    }
+
     int[] ans;// ans[x] 表示节点 x 距离树中其它节点的距离之和.
     int[] count;
     List<Set<Integer>> graph;
@@ -80,7 +87,7 @@ public class DFSCase3 {
     }
 
     /**
-     * 深度优先搜索解法-辅助1
+     * 深度优先搜索解法-辅助2
      *
      * @param node   节点
      * @param parent 父节点
@@ -91,17 +98,5 @@ public class DFSCase3 {
                 ans[child] = ans[node] - count[child] + N - count[child];
                 dfsAuxiliary2(child, node);
             }
-    }
-
-    public static void main(String[] args) {
-        int n = 6;
-        int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {2, 4}, {2, 5}};
-
-        DFSCase3 dfsCase3 = new DFSCase3();
-        int[] answer = dfsCase3.dfs(n, edges);
-        for (int i : answer) {
-            System.out.print(i + "    ");
-        }
-
     }
 }

@@ -30,20 +30,17 @@ import java.util.Queue;
  */
 public class DFSCase1 {
 
-    /**
-     * 深度优先搜索解法-辅助
-     *
-     * @param m       二维网络数据
-     * @param visited
-     * @param index   索引
-     */
-    private void dfsAuxiliary(int[][] m, int[] visited, int index) {
-        for (int j = 0; j < m.length; j++) {
-            if (m[index][j] == 1 && visited[j] == 0) {
-                visited[j] = 1;
-                dfsAuxiliary(m, visited, j);
-            }
-        }
+    public static void main(String[] args) {
+        int[][] M1 = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
+        int[][] M2 = {{1, 1, 0}, {1, 1, 1}, {0, 1, 1}};
+        // 深度优先搜索解法
+        System.out.println("深度优先搜索解法:");
+        System.out.println("示例1:" + dfs(M1));
+        System.out.println("示例2:" + dfs(M2));
+        // 广度优先搜索解法
+        System.out.println("广度优先搜索解法:");
+        System.out.println("示例1:" + bfs(M1));
+        System.out.println("示例2:" + bfs(M2));
     }
 
     /**
@@ -55,7 +52,7 @@ public class DFSCase1 {
      * @param M 二维网络数据
      * @return
      */
-    public int dfs(int[][] M) {
+    public static int dfs(int[][] M) {
         int[] visited = new int[M.length];
         int count = 0;
         for (int i = 0; i < M.length; i++) {
@@ -68,6 +65,22 @@ public class DFSCase1 {
     }
 
     /**
+     * 深度优先搜索解法-辅助
+     *
+     * @param m       二维网络数据
+     * @param visited
+     * @param index   索引
+     */
+    private static void dfsAuxiliary(int[][] m, int[] visited, int index) {
+        for (int j = 0; j < m.length; j++) {
+            if (m[index][j] == 1 && visited[j] == 0) {
+                visited[j] = 1;
+                dfsAuxiliary(m, visited, j);
+            }
+        }
+    }
+
+    /**
      * 广度优先搜索解法
      * <p>
      * 时间复杂度：O(n^2)，整个矩阵都要被访问。
@@ -76,7 +89,7 @@ public class DFSCase1 {
      * @param M 二维网络数据
      * @return
      */
-    public int bfs(int[][] M) {
+    public static int bfs(int[][] M) {
         int[] visited = new int[M.length];
         int count = 0;
         Queue<Integer> queue = new LinkedList<>();
@@ -96,19 +109,5 @@ public class DFSCase1 {
             }
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        int[][] M1 = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
-        int[][] M2 = {{1, 1, 0}, {1, 1, 1}, {0, 1, 1}};
-        DFSCase1 dfsCase1 = new DFSCase1();
-        // 深度优先搜索解法
-        System.out.println("深度优先搜索解法:");
-        System.out.println("示例1:" + dfsCase1.dfs(M1));
-        System.out.println("示例2:" + dfsCase1.dfs(M2));
-        // 广度优先搜索解法
-        System.out.println("广度优先搜索解法:");
-        System.out.println("示例1:" + dfsCase1.bfs(M1));
-        System.out.println("示例2:" + dfsCase1.bfs(M2));
     }
 }

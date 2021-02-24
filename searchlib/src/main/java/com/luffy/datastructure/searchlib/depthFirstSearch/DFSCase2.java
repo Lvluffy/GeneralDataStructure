@@ -29,24 +29,19 @@ import java.util.Queue;
  */
 public class DFSCase2 {
 
-    /**
-     * 深度优先搜索解法-辅助
-     *
-     * @param grid 二维网络数据
-     * @param row  行
-     * @param col  列
-     */
-    private void dfsAuxiliary(int[][] grid, int row, int col) {
-        int n_row = grid.length;
-        int n_col = grid[0].length;
-        if (row < 0 || col < 0 || row >= n_row || col >= n_col || grid[row][col] == 0) {
-            return;
-        }
-        grid[row][col] = 0;
-        dfsAuxiliary(grid, row - 1, col);
-        dfsAuxiliary(grid, row + 1, col);
-        dfsAuxiliary(grid, row, col - 1);
-        dfsAuxiliary(grid, row, col + 1);
+    public static void main(String[] args) {
+        int[][] M1_1 = {{1, 1, 1, 1, 0}, {1, 1, 0, 1, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 0, 0}};
+        int[][] M1_2 = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
+        int[][] M2_1 = {{1, 1, 1, 1, 0}, {1, 1, 0, 1, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 0, 0}};
+        int[][] M2_2 = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
+        // 深度优先搜索解法
+        System.out.println("深度优先搜索解法:");
+        System.out.println("示例1:" + dfs(M1_1));
+        System.out.println("示例2:" + dfs(M1_2));
+        // 广度优先搜索解法
+        System.out.println("广度优先搜索解法:");
+        System.out.println("示例1:" + bfs(M2_1));
+        System.out.println("示例2:" + bfs(M2_2));
     }
 
     /**
@@ -58,7 +53,7 @@ public class DFSCase2 {
      * @param grid 二维网络数据
      * @return
      */
-    public int dfs(int[][] grid) {
+    public static int dfs(int[][] grid) {
         if (grid == null || grid.length == 0) {
             return 0;
         }
@@ -77,6 +72,26 @@ public class DFSCase2 {
     }
 
     /**
+     * 深度优先搜索解法-辅助
+     *
+     * @param grid 二维网络数据
+     * @param row  行
+     * @param col  列
+     */
+    private static void dfsAuxiliary(int[][] grid, int row, int col) {
+        int n_row = grid.length;
+        int n_col = grid[0].length;
+        if (row < 0 || col < 0 || row >= n_row || col >= n_col || grid[row][col] == 0) {
+            return;
+        }
+        grid[row][col] = 0;
+        dfsAuxiliary(grid, row - 1, col);
+        dfsAuxiliary(grid, row + 1, col);
+        dfsAuxiliary(grid, row, col - 1);
+        dfsAuxiliary(grid, row, col + 1);
+    }
+
+    /**
      * 广度优先搜索解法
      * <p>
      * 时间复杂度：O(M×N)，其中 M 和 N 分别为行数和列数。
@@ -85,7 +100,7 @@ public class DFSCase2 {
      * @param grid 二维网络数据
      * @return
      */
-    public int bfs(int[][] grid) {
+    public static int bfs(int[][] grid) {
         if (grid == null || grid.length == 0) {
             return 0;
         }
@@ -124,21 +139,5 @@ public class DFSCase2 {
             }
         }
         return num_islands;
-    }
-
-    public static void main(String[] args) {
-        int[][] M1_1 = {{1, 1, 1, 1, 0}, {1, 1, 0, 1, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 0, 0}};
-        int[][] M1_2 = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
-        int[][] M2_1 = {{1, 1, 1, 1, 0}, {1, 1, 0, 1, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 0, 0}};
-        int[][] M2_2 = {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
-        DFSCase2 dfsCase2 = new DFSCase2();
-        // 深度优先搜索解法
-        System.out.println("深度优先搜索解法:");
-        System.out.println("示例1:" + dfsCase2.dfs(M1_1));
-        System.out.println("示例2:" + dfsCase2.dfs(M1_2));
-        // 广度优先搜索解法
-        System.out.println("广度优先搜索解法:");
-        System.out.println("示例1:" + dfsCase2.bfs(M2_1));
-        System.out.println("示例2:" + dfsCase2.bfs(M2_2));
     }
 }
