@@ -19,6 +19,14 @@ package com.luffy.datastructure.searchlib.dynamicPlan;
  * 总利润: ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
  */
 public class DynamicPlanCase1 {
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 2, 8, 4, 9};
+        int fee = 2;
+        //动态规划解法
+        System.out.println(dynamicPlan(nums, fee));
+    }
+
     /**
      * 动态规划解法
      * <p>
@@ -43,12 +51,4 @@ public class DynamicPlanCase1 {
         }
         return cash;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 3, 2, 8, 4, 9};
-        int fee = 2;
-        //动态规划解法
-        System.out.println(dynamicPlan(nums, fee));
-    }
-
 }

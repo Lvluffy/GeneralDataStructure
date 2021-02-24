@@ -19,6 +19,13 @@ package com.luffy.datastructure.searchlib.dynamicPlan;
  */
 public class DynamicPlanCase2 {
 
+    public static void main(String[] args) {
+        int[] nums = {1, 15, 7, 9, 2, 5, 10};
+        int k = 3;
+        // 动态规划解法
+        System.out.println("动态规划解法:" + dynamicPlan(nums, k));
+    }
+
     /**
      * 动态规划解法
      * <p>
@@ -44,13 +51,5 @@ public class DynamicPlanCase2 {
             }
         }
         return dp[len - 1];
-    }
-
-
-    public static void main(String[] args) {
-        int[] nums = {1, 15, 7, 9, 2, 5, 10};
-        int k = 3;
-        // 动态规划解法
-        System.out.println("动态规划解法:" + dynamicPlan(nums, k));
     }
 }
