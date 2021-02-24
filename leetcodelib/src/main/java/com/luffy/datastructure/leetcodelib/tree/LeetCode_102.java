@@ -51,8 +51,8 @@ public class LeetCode_102 {
         root.left = left;
         root.right = right;
 
-        System.out.println(levelTraversal_1(root));
-        System.out.println(levelTraversal_2(root));
+        System.out.println("一级集合:" + levelTraversal_1(root));
+        System.out.println("二级集合:" + levelTraversal_2(root));
     }
 
     /**

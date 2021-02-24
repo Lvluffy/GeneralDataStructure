@@ -46,8 +46,8 @@ public class LeetCode_144 {
         root.left = left;
         root.right = right;
 
-        System.out.println(preorderTraversal_1(root));
-        System.out.println(preorderTraversal_2(root));
+        System.out.println("递归法:" + preorderTraversal_1(root));
+        System.out.println("迭代法:" + preorderTraversal_2(root));
     }
 
     /**

@@ -35,10 +35,8 @@ public class LeetCode_315 {
 
     public static void main(String[] args) {
         int[] nums = {5, 2, 6, 1};
-
-        System.out.println(LeetCode_315.countSmaller(nums));
-
-        System.out.println(LeetCode_315.fenwickTree(nums));
+        System.out.println(countSmaller(nums));
+        System.out.println(fenwickTree(nums));
     }
 
     /**

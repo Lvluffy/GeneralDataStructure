@@ -16,8 +16,7 @@ public class LeetCode_327 {
 
     public static void main(String[] args) {
         int[] nums = {-2, 5, -1};
-        LeetCode_327 leetCode327 = new LeetCode_327();
-        System.out.println(leetCode327.countRangeSum(nums, -2, 2));
+        System.out.println(countRangeSum(nums, -2, 2));
     }
 
     /**
@@ -26,7 +25,7 @@ public class LeetCode_327 {
      * @param upper 右边索引
      * @return
      */
-    public int countRangeSum(int[] nums, int lower, int upper) {
+    public static int countRangeSum(int[] nums, int lower, int upper) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

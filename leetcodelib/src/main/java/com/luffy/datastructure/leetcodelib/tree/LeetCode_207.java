@@ -34,15 +34,14 @@ public class LeetCode_207 {
         int[][] prerequisites2 = {{1, 0}, {0, 1}};
         int numCourses1 = 2;
         int numCourses2 = 2;
-        LeetCode_207 leetCode207 = new LeetCode_207();
         // 广度优先搜索解法
         System.out.println("广度优先搜索解法：");
-        System.out.println("示例1：" + leetCode207.bfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + leetCode207.bfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + bfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + bfs(numCourses2, prerequisites2));
         // 深度优先搜索解法
         System.out.println("深度优先搜索解法：");
-        System.out.println("示例1：" + leetCode207.dfs(numCourses1, prerequisites1));
-        System.out.println("示例2：" + leetCode207.dfs(numCourses2, prerequisites2));
+        System.out.println("示例1：" + dfs(numCourses1, prerequisites1));
+        System.out.println("示例2：" + dfs(numCourses2, prerequisites2));
     }
 
     /**
@@ -65,7 +64,7 @@ public class LeetCode_207 {
      * @param prerequisites 先决条件
      * @return
      */
-    public boolean bfs(int numCourses, int[][] prerequisites) {
+    public static boolean bfs(int numCourses, int[][] prerequisites) {
         // 生成入度表
         int[] indegrees = new int[numCourses];
         for (int[] cp : prerequisites) {
@@ -113,7 +112,7 @@ public class LeetCode_207 {
      * @param prerequisites 先决条件
      * @return
      */
-    public boolean dfs(int numCourses, int[][] prerequisites) {
+    public static boolean dfs(int numCourses, int[][] prerequisites) {
         int[][] adjacency = new int[numCourses][numCourses];
         int[] flags = new int[numCourses];
         for (int[] cp : prerequisites)
@@ -134,7 +133,7 @@ public class LeetCode_207 {
      * @param i
      * @return
      */
-    private boolean dfsAuxiliary(int[][] adjacency, int[] flags, int i) {
+    private static boolean dfsAuxiliary(int[][] adjacency, int[] flags, int i) {
         if (flags[i] == 1) return false;
         if (flags[i] == -1) return true;
         flags[i] = 1;

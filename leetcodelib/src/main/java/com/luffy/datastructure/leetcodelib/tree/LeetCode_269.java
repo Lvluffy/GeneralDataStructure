@@ -50,10 +50,9 @@ public class LeetCode_269 {
         String[] words1 = {"wrt", "wrf", "er", "ett", "rftt"};
         String[] words2 = {"z", "x"};
         String[] words3 = {"z", "x", "z"};
-        LeetCode_269 leetCode269 = new LeetCode_269();
-        System.out.println("示例1：" + leetCode269.graph(words1));
-        System.out.println("示例2：" + leetCode269.graph(words2));
-        System.out.println("示例3：" + leetCode269.graph(words3));
+        System.out.println("示例1：" + graph(words1));
+        System.out.println("示例2：" + graph(words2));
+        System.out.println("示例3：" + graph(words3));
     }
 
     /**
@@ -62,7 +61,7 @@ public class LeetCode_269 {
      * @param words 数组数据
      * @return
      */
-    public String graph(String[] words) {
+    public static String graph(String[] words) {
         // 1.构建图
         Map<Character, Set<Character>> map = new HashMap<>();
         for (int i = 0; i < words.length - 1; i++) {

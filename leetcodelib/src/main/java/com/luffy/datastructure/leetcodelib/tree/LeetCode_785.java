@@ -43,8 +43,7 @@ public class LeetCode_785 {
 
     public static void main(String[] args) {
         int[][] graph = {{1, 3}, {0, 2}, {1, 3}, {0, 2}};
-        LeetCode_785 leetCode785 = new LeetCode_785();
-        System.out.println(leetCode785.isBipartite(graph));
+        System.out.println(isBipartite(graph));
     }
 
     /**
@@ -53,7 +52,7 @@ public class LeetCode_785 {
      * @param graph
      * @return
      */
-    public boolean isBipartite(int[][] graph) {
+    public static boolean isBipartite(int[][] graph) {
         int len = graph.length;
         int color[] = new int[len];
         for (int i = 0; i < len; i++) {
@@ -72,7 +71,7 @@ public class LeetCode_785 {
      * @param graph
      * @return
      */
-    private boolean dfs(int i, int[] color, int t, int[][] graph) {
+    private static boolean dfs(int i, int[] color, int t, int[][] graph) {
         if (color[i] != 0)
             return color[i] == t;
         color[i] = t;
