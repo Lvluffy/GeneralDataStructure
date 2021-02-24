@@ -23,13 +23,21 @@ import java.util.Queue;
  * 解释：一个可能的路径为 [0,1,4,2,3]
  */
 public class BFSCase3 {
+
+    public static void main(String[] args) {
+        int[][] graph1 = {{1, 2, 3}, {0}, {0}, {0}};
+        int[][] graph2 = {{1}, {0, 2, 4}, {1, 3, 4}, {2}, {1, 2}};
+        System.out.println("示例1：" + bfs(graph1));
+        System.out.println("示例2：" + bfs(graph2));
+    }
+
     /**
      * 广度优先搜索解法
      *
      * @param graph 图（二维网络）
      * @return
      */
-    public int bfs(int[][] graph) {
+    public static int bfs(int[][] graph) {
         int len = graph.length;
         if (graph == null || graph.length == 0) {
             return 0;
@@ -66,13 +74,5 @@ public class BFSCase3 {
             answer++;
         }
         return answer;
-    }
-
-    public static void main(String[] args) {
-        int[][] graph1 = {{1, 2, 3}, {0}, {0}, {0}};
-        int[][] graph2 = {{1}, {0, 2, 4}, {1, 3, 4}, {2}, {1, 2}};
-        BFSCase3 bfsCase3 = new BFSCase3();
-        System.out.println("示例1：" + bfsCase3.bfs(graph1));
-        System.out.println("示例2：" + bfsCase3.bfs(graph2));
     }
 }

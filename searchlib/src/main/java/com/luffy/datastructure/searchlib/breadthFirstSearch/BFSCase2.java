@@ -34,6 +34,13 @@ import java.util.Set;
  */
 public class BFSCase2 {
 
+    public static void main(String[] args) {
+        int[][] routes = {{1, 2, 7}, {3, 6, 7}};
+        int start = 1;
+        int end = 6;
+        System.out.println(bfs(routes, start, end));
+    }
+
     /**
      * 广度优先搜索解法
      *
@@ -42,7 +49,7 @@ public class BFSCase2 {
      * @param end    终点
      * @return
      */
-    public int bfs(int[][] routes, int strat, int end) {
+    public static int bfs(int[][] routes, int strat, int end) {
         if (strat == end) return 0;
         int N = routes.length;
         List<List<Integer>> graph = new ArrayList();
@@ -96,7 +103,7 @@ public class BFSCase2 {
      * @param B
      * @return
      */
-    public boolean intersect(int[] A, int[] B) {
+    private static boolean intersect(int[] A, int[] B) {
         int i = 0, j = 0;
         while (i < A.length && j < B.length) {
             if (A[i] == B[j]) return true;
@@ -104,13 +111,5 @@ public class BFSCase2 {
             else j++;
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        int[][] routes = {{1, 2, 7}, {3, 6, 7}};
-        int start = 1;
-        int end = 6;
-        BFSCase2 bfsCase2 = new BFSCase2();
-        System.out.println(bfsCase2.bfs(routes, start, end));
     }
 }

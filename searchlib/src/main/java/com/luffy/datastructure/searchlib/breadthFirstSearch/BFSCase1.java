@@ -25,16 +25,9 @@ import java.util.Queue;
  */
 public class BFSCase1 {
 
-    class TrapNode {
-        int height;
-        int row;
-        int col;
-
-        public TrapNode(int height, int row, int col) {
-            this.height = height;
-            this.row = row;
-            this.col = col;
-        }
+    public static void main(String[] args) {
+        int[][] n = {{1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}};
+        System.out.println(bfs(n));
     }
 
     /**
@@ -49,7 +42,7 @@ public class BFSCase1 {
      * @param heightMap
      * @return
      */
-    public int bfs(int[][] heightMap) {
+    public static int bfs(int[][] heightMap) {
         int rows = heightMap.length;
         if (rows == 0) {
             return 0;
@@ -110,10 +103,16 @@ public class BFSCase1 {
         }
         return total;
     }
+}
 
-    public static void main(String[] args) {
-        int[][] n = {{1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}};
-        BFSCase1 bfsCase1 = new BFSCase1();
-        System.out.println(bfsCase1.bfs(n));
+class TrapNode {
+    int height;
+    int row;
+    int col;
+
+    public TrapNode(int height, int row, int col) {
+        this.height = height;
+        this.row = row;
+        this.col = col;
     }
 }
