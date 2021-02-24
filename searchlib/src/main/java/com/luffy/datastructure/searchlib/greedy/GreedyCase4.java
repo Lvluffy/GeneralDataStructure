@@ -22,6 +22,12 @@ import java.util.List;
  * 2，S只包含小写字母'bothwayLinkedList'到'z'。
  */
 public class GreedyCase4 {
+
+    public static void main(String[] args) {
+        String str = "ababcbacadefegdehijhklij";
+        System.out.println(greedy(str));
+    }
+
     /**
      * 贪婪解法
      *
@@ -31,7 +37,7 @@ public class GreedyCase4 {
      * 定义数组lastIndex[char]来表示字符char最后一次出现的下标。定义start和end来表示当前区间的首尾。如果遇到的字符最后一次出现的位置下标大于end，
      * 就让end=lastIndex[char]来拓展当前的区间。当遍历到了当前区间的末尾时(即i==end)，把当前区间加入答案，同时将start设为i+1去找下一个区间。
      */
-    public List<Integer> greedy(String str) {
+    public static List<Integer> greedy(String str) {
         //答案
         List<Integer> answer = new ArrayList();
         //字符最后一次出现的下标
@@ -51,14 +57,5 @@ public class GreedyCase4 {
             }
         }
         return answer;
-    }
-
-    public static void main(String[] args) {
-        String str = "ababcbacadefegdehijhklij";
-        GreedyCase4 greedyCase4 = new GreedyCase4();
-        List<Integer> answer = greedyCase4.greedy(str);
-        for (int i : answer) {
-            System.out.print(i + "  ");
-        }
     }
 }

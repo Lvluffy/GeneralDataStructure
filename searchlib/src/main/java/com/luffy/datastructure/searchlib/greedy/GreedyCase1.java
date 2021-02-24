@@ -20,6 +20,23 @@ package com.luffy.datastructure.searchlib.greedy;
  */
 public class GreedyCase1 {
 
+    public static void main(String[] args) {
+        int[] nums1 = {2, 3, 1, 1, 4};
+        int[] nums2 = {3, 2, 1, 0, 4};
+        //回溯解法
+        System.out.println("数据1，回溯解法：" + backtracking(nums1));
+        System.out.println("数据2，回溯解法：" + backtracking(nums2));
+        //动态规划解法-自顶向下
+        System.out.println("数据1，动态规划解法-自顶向下：" + dynamicPlanDown(nums1));
+        System.out.println("数据2，动态规划解法-自顶向下：" + dynamicPlanDown(nums2));
+        //动态规划解法-自底向上
+        System.out.println("数据1，动态规划解法-自底向上：" + dynamicPlanUpward(nums1));
+        System.out.println("数据2，动态规划解法-自底向上：" + dynamicPlanUpward(nums2));
+        //贪婪解法
+        System.out.println("数据1，贪婪解法：" + greedy(nums1));
+        System.out.println("数据2，贪婪解法：" + greedy(nums2));
+    }
+
     /**
      * 回溯解法
      * <p>
@@ -32,11 +49,11 @@ public class GreedyCase1 {
      * @param nums 数组数据
      * @return
      */
-    public boolean backtracking(int[] nums) {
+    public static boolean backtracking(int[] nums) {
         return canJumpFromPosition(0, nums);
     }
 
-    private boolean canJumpFromPosition(int position, int[] nums) {
+    private static boolean canJumpFromPosition(int position, int[] nums) {
         if (position == nums.length - 1) {
             return true;
         }
@@ -69,7 +86,7 @@ public class GreedyCase1 {
      * @param nums 数组数据
      * @return
      */
-    public boolean dynamicPlanDown(int[] nums) {
+    public static boolean dynamicPlanDown(int[] nums) {
         //开辟记忆表空间，初始化memo的所有元素为UNKNOWN。
         Index[] memo = new Index[nums.length];
         for (int i = 0; i < memo.length; i++) {
@@ -80,7 +97,7 @@ public class GreedyCase1 {
         return canJumpFromPosition(memo, 0, nums);
     }
 
-    private boolean canJumpFromPosition(Index[] memo, int position, int[] nums) {
+    private static boolean canJumpFromPosition(Index[] memo, int position, int[] nums) {
         if (memo[position] != Index.UNKNOWN) {
             return memo[position] == Index.GOOD;
         }
@@ -109,7 +126,7 @@ public class GreedyCase1 {
      * @param nums 数组数据
      * @return
      */
-    public boolean dynamicPlanUpward(int[] nums) {
+    public static boolean dynamicPlanUpward(int[] nums) {
         //开辟记忆表空间
         Index[] memo = new Index[nums.length];
         for (int i = 0; i < memo.length; i++) {
@@ -138,7 +155,7 @@ public class GreedyCase1 {
      * @param nums 数组数据
      * @return
      */
-    public boolean greedy(int[] nums) {
+    public static boolean greedy(int[] nums) {
         int lastPos = nums.length - 1;
         for (int i = nums.length - 1; i >= 0; i--) {
             if (i + nums[i] >= lastPos) {
@@ -147,23 +164,4 @@ public class GreedyCase1 {
         }
         return lastPos == 0;
     }
-
-    public static void main(String[] args) {
-        int[] nums1 = {2, 3, 1, 1, 4};
-        int[] nums2 = {3, 2, 1, 0, 4};
-        GreedyCase1 greedyCase1 = new GreedyCase1();
-        //回溯解法
-        System.out.println("数据1，回溯解法：" + greedyCase1.backtracking(nums1));
-        System.out.println("数据2，回溯解法：" + greedyCase1.backtracking(nums2));
-        //动态规划解法-自顶向下
-        System.out.println("数据1，动态规划解法-自顶向下：" + greedyCase1.dynamicPlanDown(nums1));
-        System.out.println("数据2，动态规划解法-自顶向下：" + greedyCase1.dynamicPlanDown(nums2));
-        //动态规划解法-自底向上
-        System.out.println("数据1，动态规划解法-自底向上：" + greedyCase1.dynamicPlanUpward(nums1));
-        System.out.println("数据2，动态规划解法-自底向上：" + greedyCase1.dynamicPlanUpward(nums2));
-        //贪婪解法
-        System.out.println("数据1，贪婪解法：" + greedyCase1.greedy(nums1));
-        System.out.println("数据2，贪婪解法：" + greedyCase1.greedy(nums2));
-    }
-
 }
