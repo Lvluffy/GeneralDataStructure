@@ -20,6 +20,14 @@ import java.util.Stack;
  * 输出: 6
  */
 public class LeetCode_85 {
+    
+    public static void main(String[] args) {
+        char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
+        // 栈解法
+        System.out.println("栈解法:" + stack(nums));
+        // 动态规划解法
+        System.out.println("栈解法:" + dynamicPlan(nums));
+    }
 
     /**
      * 栈解法
@@ -27,7 +35,7 @@ public class LeetCode_85 {
      * @param nums 数据
      * @return 最大面积
      */
-    public int stack(char[][] nums) {
+    public static int stack(char[][] nums) {
         if (nums.length == 0) return 0;
         // 最大面积
         int maxarea = 0;
@@ -47,7 +55,7 @@ public class LeetCode_85 {
      * @param heights
      * @return
      */
-    private int stackAssist(int[] heights) {
+    private static int stackAssist(int[] heights) {
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
         int maxarea = 0;
@@ -69,7 +77,7 @@ public class LeetCode_85 {
      * @param nums 数据
      * @return 最大面积
      */
-    public int dynamicPlan(char[][] nums) {
+    public static int dynamicPlan(char[][] nums) {
         if (nums.length == 0) return 0;
         int maxarea = 0;
         int[][] dp = new int[nums.length][nums[0].length];
@@ -86,14 +94,5 @@ public class LeetCode_85 {
             }
         }
         return maxarea;
-    }
-
-    public static void main(String[] args) {
-        char[][] nums = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
-        LeetCode_85 leetCode85 = new LeetCode_85();
-        // 栈解法
-        System.out.println("栈解法:" + leetCode85.stack(nums));
-        // 动态规划解法
-        System.out.println("栈解法:" + leetCode85.dynamicPlan(nums));
     }
 }

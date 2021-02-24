@@ -53,13 +53,35 @@ import java.util.Stack;
  * 【】栈不为空，说明括号无效
  */
 public class LeetCode_20 {
+
+    public static void main(String[] args) {
+        String str1 = "()";
+        String str2 = "()[]{}";
+        String str3 = "(]";
+        String str4 = "([)]";
+        String str5 = "{[]}";
+        String str6 = "";
+        System.out.println("示例1-String自带函数:" + isValidString(str1));
+        System.out.println("示例1-栈：" + isValidStack(str1));
+        System.out.println("示例2-String自带函数：" + isValidString(str2));
+        System.out.println("示例2-栈：" + isValidStack(str2));
+        System.out.println("示例3-String自带函数：" + isValidString(str3));
+        System.out.println("示例3-栈：" + isValidStack(str3));
+        System.out.println("示例4-String自带函数：" + isValidString(str4));
+        System.out.println("示例4-栈：" + isValidStack(str4));
+        System.out.println("示例5-String自带函数：" + isValidString(str5));
+        System.out.println("示例5-栈：" + isValidStack(str5));
+        System.out.println("示例6-String自带函数：" + isValidString(str6));
+        System.out.println("示例6-栈：" + isValidStack(str6));
+    }
+
     /**
      * 通过String自带函数（性能太差）
      *
      * @param str
      * @return
      */
-    public boolean isValidString(String str) {
+    public static boolean isValidString(String str) {
         if (str.contains("()") || str.contains("[]") || str.contains("{}")) {
             str = str.replace("()", "");
             str = str.replace("[]", "");
@@ -74,7 +96,7 @@ public class LeetCode_20 {
      * @param str
      * @return
      */
-    public boolean isValidStack(String str) {
+    public static boolean isValidStack(String str) {
         if (str == null || "".equals(str) || str.length() == 0) {
             return true;
         }
@@ -92,28 +114,5 @@ public class LeetCode_20 {
             }
         }
         return stack.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        String str1 = "()";
-        String str2 = "()[]{}";
-        String str3 = "(]";
-        String str4 = "([)]";
-        String str5 = "{[]}";
-        String str6 = "";
-        LeetCode_20 leetCode678 = new LeetCode_20();
-        System.out.println("示例1：" + leetCode678.isValidString(str1));
-        System.out.println("示例2：" + leetCode678.isValidString(str2));
-        System.out.println("示例3：" + leetCode678.isValidString(str3));
-        System.out.println("示例4：" + leetCode678.isValidString(str4));
-        System.out.println("示例5：" + leetCode678.isValidString(str5));
-        System.out.println("示例6：" + leetCode678.isValidString(str6));
-
-        System.out.println("示例1：" + leetCode678.isValidStack(str1));
-        System.out.println("示例2：" + leetCode678.isValidStack(str2));
-        System.out.println("示例3：" + leetCode678.isValidStack(str3));
-        System.out.println("示例4：" + leetCode678.isValidStack(str4));
-        System.out.println("示例5：" + leetCode678.isValidStack(str5));
-        System.out.println("示例6：" + leetCode678.isValidStack(str6));
     }
 }

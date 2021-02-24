@@ -30,6 +30,25 @@ import java.util.Stack;
  */
 public class LeetCode_402 {
 
+    public static void main(String[] args) {
+        String str1 = "1432219";
+        String str2 = "10200";
+        String str3 = "10";
+        int k1 = 3;
+        int k2 = 1;
+        int k3 = 2;
+        // 贪心解法
+        System.out.println("贪心解法");
+        System.out.println("示例1：" + greedy(str1, k1));
+        System.out.println("示例2：" + greedy(str2, k2));
+        System.out.println("示例3：" + greedy(str3, k3));
+        // 栈解法
+        System.out.println("栈解法");
+        System.out.println("示例1：" + stack(str1, k1));
+        System.out.println("示例2：" + stack(str2, k2));
+        System.out.println("示例3：" + stack(str3, k3));
+    }
+
     /**
      * 贪心解法
      *
@@ -37,7 +56,7 @@ public class LeetCode_402 {
      * @param k   移除k位数字
      * @return 剩下的数字最小值
      */
-    public String greedy(String num, int k) {
+    public static String greedy(String num, int k) {
         //每次都移除峰值，共移除k次，返回结果值即可
         while (k > 0) {
             int index = num.length() - 1;
@@ -64,7 +83,7 @@ public class LeetCode_402 {
      * @param k   移除k位数字
      * @return 剩下的数字最小值
      */
-    public String stack(String num, int k) {
+    public static String stack(String num, int k) {
         int sum = 0;
         Stack<Integer> stack1 = new Stack<>();
         Stack<Integer> stack2 = new Stack<>();
@@ -94,26 +113,5 @@ public class LeetCode_402 {
             answer.append("0");
         }
         return answer.toString();
-    }
-
-
-    public static void main(String[] args) {
-        String str1 = "1432219";
-        String str2 = "10200";
-        String str3 = "10";
-        int k1 = 3;
-        int k2 = 1;
-        int k3 = 2;
-        LeetCode_402 leetCode402 = new LeetCode_402();
-        // 贪心解法
-        System.out.println("贪心解法");
-        System.out.println("示例1：" + leetCode402.greedy(str1, k1));
-        System.out.println("示例2：" + leetCode402.greedy(str2, k2));
-        System.out.println("示例3：" + leetCode402.greedy(str3, k3));
-        // 栈解法
-        System.out.println("栈解法");
-        System.out.println("示例1：" + leetCode402.stack(str1, k1));
-        System.out.println("示例2：" + leetCode402.stack(str2, k2));
-        System.out.println("示例3：" + leetCode402.stack(str3, k3));
     }
 }

@@ -25,6 +25,19 @@ import java.util.Stack;
  * 解释：str1 和 str2 都会变成 “c”。
  */
 public class LeetCode_844 {
+
+    public static void main(String[] args) {
+        String str1_1 = "ab#c";
+        String str1_2 = "ad#c";
+        String str2_1 = "ab##";
+        String str2_2 = "c#d#";
+        String str3_1 = "a##c";
+        String str3_2 = "#a#c";
+        System.out.println("示例1：" + stack(str1_1, str1_2));
+        System.out.println("示例2：" + stack(str2_1, str2_2));
+        System.out.println("示例3：" + stack(str3_1, str3_2));
+    }
+
     /**
      * 栈解法
      *
@@ -32,7 +45,7 @@ public class LeetCode_844 {
      * @param str2 字符串2
      * @return 二者是否相等，true or false
      */
-    public boolean stack(String str1, String str2) {
+    public static boolean stack(String str1, String str2) {
         Stack<Character> stack1 = new Stack<>();
         Stack<Character> stack2 = new Stack<>();
         // 处理str1
@@ -71,18 +84,5 @@ public class LeetCode_844 {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        String str1_1 = "ab#c";
-        String str1_2 = "ad#c";
-        String str2_1 = "ab##";
-        String str2_2 = "c#d#";
-        String str3_1 = "a##c";
-        String str3_2 = "#a#c";
-        LeetCode_844 leetCode844 = new LeetCode_844();
-        System.out.println("示例1：" + leetCode844.stack(str1_1, str1_2));
-        System.out.println("示例2：" + leetCode844.stack(str2_1, str2_2));
-        System.out.println("示例3：" + leetCode844.stack(str3_1, str3_2));
     }
 }

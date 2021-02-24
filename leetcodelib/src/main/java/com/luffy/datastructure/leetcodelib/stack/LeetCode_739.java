@@ -1,5 +1,6 @@
 package com.luffy.datastructure.leetcodelib.stack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -16,6 +17,12 @@ import java.util.Stack;
  * 提示：气温列表长度的范围是[1, 30000]。每个气温的值的均为华氏度，都是在 [30, 100] 范围内的整数。
  */
 public class LeetCode_739 {
+
+    public static void main(String[] args) {
+        int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
+        System.out.println(Arrays.toString(stack(nums)));
+    }
+
     /**
      * 栈解法
      * <p>
@@ -25,7 +32,7 @@ public class LeetCode_739 {
      * @param nums 数组数据（每日气温列表）
      * @return 等待多久温度才会升高超过该日的天数
      */
-    public int[] stack(int[] nums) {
+    public static int[] stack(int[] nums) {
         int[] anwser = new int[nums.length];
         Stack<Integer> stack = new Stack();
         for (int i = nums.length - 1; i >= 0; --i) {
@@ -39,14 +46,5 @@ public class LeetCode_739 {
             stack.push(i);
         }
         return anwser;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
-        LeetCode_739 leetCode739 = new LeetCode_739();
-        int[] anwser = leetCode739.stack(nums);
-        for (int i : anwser) {
-            System.out.print(i + "    ");
-        }
     }
 }

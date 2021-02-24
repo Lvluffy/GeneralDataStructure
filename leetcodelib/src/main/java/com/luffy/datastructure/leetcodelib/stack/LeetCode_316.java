@@ -18,6 +18,15 @@ import java.util.Stack;
  * 输出: "acdb"
  */
 public class LeetCode_316 {
+    
+    public static void main(String[] args) {
+        String str1 = "bcabc";
+        String str2 = "cbacdcbc";
+        // 栈解法
+        System.out.println("栈解法:");
+        System.out.println("示例1:" + stack(str1));
+        System.out.println("示例2:" + stack(str2));
+    }
 
     /**
      * 栈解法
@@ -29,7 +38,7 @@ public class LeetCode_316 {
      * @param str 数据
      * @return
      */
-    public String stack(String str) {
+    public static String stack(String str) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
             Character character = str.charAt(i);
@@ -46,15 +55,5 @@ public class LeetCode_316 {
             res[i] = stack.get(i);
         }
         return new String(res);
-    }
-
-    public static void main(String[] args) {
-        String str1 = "bcabc";
-        String str2 = "cbacdcbc";
-        LeetCode_316 leetCode316 = new LeetCode_316();
-        // 栈解法
-        System.out.println("栈解法:");
-        System.out.println("示例1:" + leetCode316.stack(str1));
-        System.out.println("示例2:" + leetCode316.stack(str2));
     }
 }
