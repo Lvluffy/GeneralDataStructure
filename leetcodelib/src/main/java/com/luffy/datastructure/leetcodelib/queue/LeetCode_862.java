@@ -24,6 +24,21 @@ import java.util.LinkedList;
  */
 public class LeetCode_862 {
 
+    public static void main(String[] args) {
+        int[] nums1 = {1};
+        int[] nums2 = {1, 2};
+        int[] nums3 = {2, -1, 2};
+        int k1 = 1;
+        int k2 = 4;
+        int k3 = 3;
+        LeetCode_862 leetCode862 = new LeetCode_862();
+        // 双端队列解法：
+        System.out.println("双端队列解法");
+        System.out.println("示例1：" + leetCode862.deque(nums1, k1));
+        System.out.println("示例2：" + leetCode862.deque(nums2, k2));
+        System.out.println("示例3：" + leetCode862.deque(nums3, k3));
+    }
+
     /**
      * 双端队列解法（滑动窗口）
      *
@@ -52,20 +67,5 @@ public class LeetCode_862 {
             deque.addLast(y);
         }
         return answer < length + 1 ? answer : -1;
-    }
-
-    public static void main(String[] args) {
-        int[] nums1 = {1};
-        int[] nums2 = {1, 2};
-        int[] nums3 = {2, -1, 2};
-        int k1 = 1;
-        int k2 = 4;
-        int k3 = 3;
-        LeetCode_862 leetCode862 = new LeetCode_862();
-        // 双端队列解法：
-        System.out.println("双端队列解法");
-        System.out.println("示例1：" + leetCode862.deque(nums1, k1));
-        System.out.println("示例2：" + leetCode862.deque(nums2, k2));
-        System.out.println("示例3：" + leetCode862.deque(nums3, k3));
     }
 }

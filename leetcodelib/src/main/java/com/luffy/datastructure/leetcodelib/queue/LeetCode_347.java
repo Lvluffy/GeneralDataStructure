@@ -23,6 +23,15 @@ import java.util.Set;
  */
 public class LeetCode_347 {
 
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        LeetCode_347 leetCode347 = new LeetCode_347();
+        List<Integer> list = leetCode347.priorityQueue(nums, 2);
+        for (int i : list) {
+            System.out.print(i + "   ");
+        }
+    }
+
     /**
      * 队列解法
      *
@@ -57,14 +66,4 @@ public class LeetCode_347 {
         }
         return list;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 1, 1, 2, 2, 3};
-        LeetCode_347 leetCode347 = new LeetCode_347();
-        List<Integer> list = leetCode347.priorityQueue(nums, 2);
-        for (int i : list) {
-            System.out.print(i + "   ");
-        }
-    }
-
 }
