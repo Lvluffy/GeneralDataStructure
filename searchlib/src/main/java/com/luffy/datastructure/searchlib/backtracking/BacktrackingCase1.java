@@ -23,6 +23,13 @@ import java.util.List;
  */
 public class BacktrackingCase1 {
 
+    public static void main(String[] args) {
+        int[] nums = {4, 3, 2, 3, 5, 2, 1};
+        int k = 4;
+        BacktrackingCase1 backtrackingCase1 = new BacktrackingCase1();
+        System.out.println(backtrackingCase1.backTracking(nums, k));
+    }
+
     /**
      * 回溯解法
      *
@@ -78,12 +85,5 @@ public class BacktrackingCase1 {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {4, 3, 2, 3, 5, 2, 1};
-        int k = 4;
-        BacktrackingCase1 backtrackingCase1 = new BacktrackingCase1();
-        System.out.println(backtrackingCase1.backTracking(nums, k));
     }
 }

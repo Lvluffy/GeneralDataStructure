@@ -36,6 +36,16 @@ import java.util.Stack;
  */
 public class BacktrackingCase5 {
 
+    public static void main(String[] args) {
+        int[] candidates1 = {2, 3, 6, 7};
+        int[] candidates2 = {2, 3, 5};
+        int target1 = 7;
+        int target2 = 8;
+        BacktrackingCase5 backtrackingCase5 = new BacktrackingCase5();
+        System.out.println("示例1：" + backtrackingCase5.backTracking(candidates1, target1));
+        System.out.println("示例2：" + backtrackingCase5.backTracking(candidates2, target2));
+    }
+
     /**
      * 回溯辅助
      *
@@ -76,15 +86,4 @@ public class BacktrackingCase5 {
         backTrackingAuxiliary(candidates, answer, target, 0, new Stack<Integer>());
         return answer;
     }
-
-    public static void main(String[] args) {
-        int[] candidates1 = {2, 3, 6, 7};
-        int[] candidates2 = {2, 3, 5};
-        int target1 = 7;
-        int target2 = 8;
-        BacktrackingCase5 backtrackingCase5 = new BacktrackingCase5();
-        System.out.println("示例1：" + backtrackingCase5.backTracking(candidates1, target1));
-        System.out.println("示例2：" + backtrackingCase5.backTracking(candidates2, target2));
-    }
-
 }

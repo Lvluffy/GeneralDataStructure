@@ -27,6 +27,12 @@ import java.util.List;
  */
 public class BacktrackingCase2 {
 
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        BacktrackingCase2 backtrackingCase2 = new BacktrackingCase2();
+        System.out.println(backtrackingCase2.backTracking(nums));
+    }
+
     /**
      * 回溯辅助
      *
@@ -61,11 +67,5 @@ public class BacktrackingCase2 {
         int n = nums.length;
         backTrackingAuxiliary(n, nums_lst, output, 0);
         return output;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        BacktrackingCase2 backtrackingCase2 = new BacktrackingCase2();
-        System.out.println(backtrackingCase2.backTracking(nums));
     }
 }

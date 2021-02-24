@@ -31,6 +31,12 @@ import java.util.Map;
  */
 public class BacktrackingCase4 {
 
+    public static void main(String[] args) {
+        String digits = "23";
+        BacktrackingCase4 backtrackingCase4 = new BacktrackingCase4();
+        System.out.println(backtrackingCase4.backTracking(digits));
+    }
+
     Map<String, String> phone = new HashMap<String, String>() {{
         put("2", "abc");
         put("3", "def");
@@ -75,11 +81,5 @@ public class BacktrackingCase4 {
         }
         backTrackingAuxiliary(answer, "", digits);
         return answer;
-    }
-
-    public static void main(String[] args) {
-        String digits = "23";
-        BacktrackingCase4 backtrackingCase4 = new BacktrackingCase4();
-        System.out.println(backtrackingCase4.backTracking(digits));
     }
 }

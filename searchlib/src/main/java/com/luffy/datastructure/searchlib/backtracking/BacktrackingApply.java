@@ -4,7 +4,6 @@ package com.luffy.datastructure.searchlib.backtracking;
  * Created by lvlufei on 2019/11/12
  *
  * @name 回溯
- * @desc --
  * <p>
  * 递归和回溯的关系密不可分：
  * 1，递归的基本性质就是函数调用，在处理问题的时候，递归往往是把一个大规模的问题不断地变小，然后进行推导的过程。

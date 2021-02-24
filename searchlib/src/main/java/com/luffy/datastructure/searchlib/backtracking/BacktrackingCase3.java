@@ -24,6 +24,12 @@ import java.util.List;
  */
 public class BacktrackingCase3 {
 
+    public static void main(String[] args) {
+        int n = 3;
+        BacktrackingCase3 backtrackingCase3 = new BacktrackingCase3();
+        System.out.println(backtrackingCase3.backTracking(n));
+    }
+
     /**
      * 回溯解法
      * <p>
@@ -60,11 +66,5 @@ public class BacktrackingCase3 {
         if (close < open) {
             backTrackingAuxiliary(answer, cur + ")", open, close + 1, max);
         }
-    }
-
-    public static void main(String[] args) {
-        int n = 3;
-        BacktrackingCase3 backtrackingCase3 = new BacktrackingCase3();
-        System.out.println(backtrackingCase3.backTracking(n));
     }
 }
