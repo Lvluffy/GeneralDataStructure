@@ -1,4 +1,4 @@
-package com.luffy.datastructure.sortlib.quick;
+package com.luffy.datastructure.sortlib;
 
 /**
  * Created by lvlufei on 2019/11/8
@@ -19,24 +19,12 @@ package com.luffy.datastructure.sortlib.quick;
  */
 public class QuickSortApply {
 
-    /**
-     * 获取基准值索引
-     */
-    private static int getIndex(int[] data, int start, int end) {
-        int tmp = data[start];
-        while (start < end) {
-            while (start < end && data[end] >= tmp) {
-                end--;
-            }
-            data[start] = data[end];
-            while (start < end && data[start] <= tmp) {
-                start++;
-            }
-            data[end] = data[start];
-
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 7, 9, 5, 8};
+        quickSort(nums, 0, nums.length - 1);
+        for (int i : nums) {
+            System.out.print(i + "    ");
         }
-        data[start] = tmp;
-        return start;
     }
 
     /**
@@ -57,11 +45,23 @@ public class QuickSortApply {
         return data;
     }
 
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 7, 9, 5, 8};
-        quickSort(nums, 0, nums.length - 1);
-        for (int i : nums) {
-            System.out.print(i + "    ");
+    /**
+     * 获取基准值索引
+     */
+    private static int getIndex(int[] data, int start, int end) {
+        int tmp = data[start];
+        while (start < end) {
+            while (start < end && data[end] >= tmp) {
+                end--;
+            }
+            data[start] = data[end];
+            while (start < end && data[start] <= tmp) {
+                start++;
+            }
+            data[end] = data[start];
+
         }
+        data[start] = tmp;
+        return start;
     }
 }

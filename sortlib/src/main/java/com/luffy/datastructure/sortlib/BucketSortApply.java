@@ -1,4 +1,4 @@
-package com.luffy.datastructure.sortlib.bucket;
+package com.luffy.datastructure.sortlib;
 
 /**
  * Created by lvlufei on 2019/11/11
@@ -18,6 +18,15 @@ package com.luffy.datastructure.sortlib.bucket;
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
 public class BucketSortApply {
+
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 7, 9, 5, 8};
+        sort(nums);
+        for (int i : nums) {
+            System.out.print(i + "    ");
+        }
+    }
+
     /**
      * 桶排序
      *
@@ -43,13 +52,5 @@ public class BucketSortApply {
             }
         }
         return nums;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 7, 9, 5, 8};
-        sort(nums);
-        for (int i : nums) {
-            System.out.print(i + "    ");
-        }
     }
 }

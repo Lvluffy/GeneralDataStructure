@@ -1,4 +1,4 @@
-package com.luffy.datastructure.sortlib.topological;
+package com.luffy.datastructure.sortlib;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -32,6 +32,14 @@ import java.util.LinkedList;
  * 那么这个学生应该按照怎样的顺序来学习这5门课程呢？
  */
 public class TopologicalSortApply {
+
+    public static void main(String[] args) {
+        int[][] prerequisites = {{1, 0}, {3, 0}, {2, 1}, {2, 3}, {3, 1}, {4, 2}, {4, 3}};
+        int[] result = sort(5, prerequisites);
+        for (int i : result) {
+            System.out.print(i + "    ");
+        }
+    }
 
     /**
      * 拓扑排序
@@ -90,14 +98,6 @@ public class TopologicalSortApply {
             return ret;
         } else {
             return new int[0];
-        }
-    }
-
-    public static void main(String[] args) {
-        int[][] prerequisites = {{1, 0}, {3, 0}, {2, 1}, {2, 3}, {3, 1}, {4, 2}, {4, 3}};
-        int[] result = sort(5, prerequisites);
-        for (int i : result) {
-            System.out.print(i + "    ");
         }
     }
 }

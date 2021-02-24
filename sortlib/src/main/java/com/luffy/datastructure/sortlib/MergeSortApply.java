@@ -1,4 +1,4 @@
-package com.luffy.datastructure.sortlib.merge;
+package com.luffy.datastructure.sortlib;
 
 /**
  * Created by lvlufei on 2019/11/7
@@ -19,6 +19,15 @@ package com.luffy.datastructure.sortlib.merge;
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
 public class MergeSortApply {
+
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 7, 9, 5, 8};
+        sort(nums);
+        for (int i : nums) {
+            System.out.print(i + "    ");
+        }
+    }
+
     /**
      * 归并排序
      *
@@ -78,14 +87,6 @@ public class MergeSortApply {
         //把最终的排序的结果复制给原数组
         for (index = 0; index < temp.length; index++) {
             nums[start + index] = temp[index];
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 7, 9, 5, 8};
-        sort(nums);
-        for (int i : nums) {
-            System.out.print(i + "    ");
         }
     }
 }

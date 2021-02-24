@@ -1,4 +1,4 @@
-package com.luffy.datastructure.sortlib.bubble;
+package com.luffy.datastructure.sortlib;
 
 import com.luffy.datastructure.SwapUtils;
 
@@ -21,6 +21,15 @@ import com.luffy.datastructure.SwapUtils;
  * 题目：给定一个数组[2,1,7,9,5,8]，要求按照从左到右、从小到大的顺序进行排序。
  */
 public class BubbleSortApply {
+
+    public static void main(String[] args) {
+        int[] nums = {2, 1, 7, 9, 5, 8};
+        sort(nums);
+        for (int i : nums) {
+            System.out.print(i + "    ");
+        }
+    }
+
     /**
      * 冒泡排序
      *
@@ -41,13 +50,5 @@ public class BubbleSortApply {
             }
         }
         return nums;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 7, 9, 5, 8};
-        sort(nums);
-        for (int i : nums) {
-            System.out.print(i + "    ");
-        }
     }
 }
