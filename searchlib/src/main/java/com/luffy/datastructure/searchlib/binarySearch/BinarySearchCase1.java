@@ -1,5 +1,7 @@
 package com.luffy.datastructure.searchlib.binarySearch;
 
+import java.util.Arrays;
+
 /**
  * Created by lvlufei on 2019/11/12
  *
@@ -15,6 +17,19 @@ package com.luffy.datastructure.searchlib.binarySearch;
  * 输出: [3,4]
  */
 public class BinarySearchCase1 {
+
+    public static void main(String[] args) {
+        int[] nums = {5, 7, 7, 8, 8, 10};
+        int target = 8;
+        BinarySearchCase1 binarySearchCase1 = new BinarySearchCase1();
+        //递归解法
+        int[] resultIndexRecursion = binarySearchCase1.binarySearchRecursion(nums, target, 0, nums.length - 1);
+        System.out.println("二分搜索-递归解法:" + Arrays.toString(resultIndexRecursion));
+
+        //非递归解法
+        int[] resultIndex = binarySearchCase1.binarySearch(nums, target, 0, nums.length - 1);
+        System.out.println("二分搜索-非递归解法:"+Arrays.toString(resultIndex));
+    }
 
     /**
      * 二分搜索-递归解法
@@ -33,7 +48,7 @@ public class BinarySearchCase1 {
     }
 
     /**
-     * 搜索左边界（下边界）-递归解法
+     * 搜索左边界-递归解法
      *
      * @param nums   数组数据
      * @param target 目标值
@@ -61,7 +76,7 @@ public class BinarySearchCase1 {
     }
 
     /**
-     * 搜索右边界（上边界）-递归解法
+     * 搜索右边界-递归解法
      *
      * @param nums   数组数据
      * @param target 目标值
@@ -105,7 +120,7 @@ public class BinarySearchCase1 {
     }
 
     /**
-     * 搜索左边界（下边界）-非递归解法
+     * 搜索左边界-非递归解法
      *
      * @param nums   数组数据
      * @param target 目标值
@@ -134,7 +149,7 @@ public class BinarySearchCase1 {
     }
 
     /**
-     * 搜索右边界（上边界）-非递归解法
+     * 搜索右边界-非递归解法
      *
      * @param nums   数组数据
      * @param target 目标值
@@ -161,23 +176,4 @@ public class BinarySearchCase1 {
         //如果超出了搜索区间，表明无法找到目标数，返回-1。
         return -1;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {5, 7, 7, 8, 8, 10};
-        int target = 8;
-        BinarySearchCase1 binarySearchCase1 = new BinarySearchCase1();
-        //递归解法
-        int[] resultIndexRecursion = binarySearchCase1.binarySearchRecursion(nums, target, 0, nums.length - 1);
-        System.out.print("二分搜索-递归解法:");
-        for (int i : resultIndexRecursion) {
-            System.out.print(i + "    ");
-        }
-        //非递归解法
-        int[] resultIndex = binarySearchCase1.binarySearch(nums, target, 0, nums.length - 1);
-        System.out.print("\n二分搜索-非递归解法:");
-        for (int i : resultIndex) {
-            System.out.print(i + "    ");
-        }
-    }
-
 }

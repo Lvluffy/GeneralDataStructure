@@ -13,6 +13,17 @@ package com.luffy.datastructure.searchlib.binarySearch;
  */
 public class BinarySearchCase4 {
 
+    public static void main(String[] args) {
+        String[] logs = {"2019-01-01", "2019-01-02", "2019-01-03", "2019-01-04", "2019-01-05", null, "2019-01-07"};
+        BinarySearchCase4 binarySearchCase4 = new BinarySearchCase4();
+        //递归解法
+        int resultIndexRecursion = binarySearchCase4.binarySearchRecursion(logs, 0, logs.length - 1);
+        System.out.println("二分搜索-递归解法：" + resultIndexRecursion);
+        //非递归解法
+        int resultIndex = binarySearchCase4.binarySearch(logs, 0, logs.length - 1);
+        System.out.println("二分搜索-非递归解法：" + resultIndex);
+    }
+
     /**
      * 二分搜索-递归解法
      *
@@ -67,16 +78,4 @@ public class BinarySearchCase4 {
         //如果超出了搜索区间，表明无法找到目标数，返回-1。
         return -1;
     }
-
-    public static void main(String[] args) {
-        String[] logs = {"2019-01-01", "2019-01-02", "2019-01-03", "2019-01-04", "2019-01-05", null, "2019-01-07"};
-        BinarySearchCase4 binarySearchCase4 = new BinarySearchCase4();
-        //递归解法
-        int resultIndexRecursion = binarySearchCase4.binarySearchRecursion(logs, 0, logs.length - 1);
-        System.out.println("二分搜索-递归解法：" + resultIndexRecursion);
-        //非递归解法
-        int resultIndex = binarySearchCase4.binarySearch(logs, 0, logs.length - 1);
-        System.out.println("二分搜索-非递归解法：" + resultIndex);
-    }
-
 }

@@ -16,6 +16,18 @@ package com.luffy.datastructure.searchlib.binarySearch;
  */
 public class BinarySearchCase3 {
 
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        BinarySearchCase3 binarySearchCase3 = new BinarySearchCase3();
+        //递归解法
+        int resultIndexRecursion = binarySearchCase3.binarySearchRecursion(nums, target, 0, nums.length - 1);
+        System.out.println("二分搜索-递归解法：" + resultIndexRecursion);
+        //非递归解法
+        int resultIndex = binarySearchCase3.binarySearch(nums, target, 0, nums.length - 1);
+        System.out.println("二分搜索-非递归解法：" + resultIndex);
+    }
+
     /**
      * 二分搜索-递归解法
      *
@@ -91,17 +103,4 @@ public class BinarySearchCase3 {
         //如果超出了搜索区间，表明无法找到目标数，返回-1。
         return -1;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {4, 5, 6, 7, 0, 1, 2};
-        int target = 0;
-        BinarySearchCase3 binarySearchCase3 = new BinarySearchCase3();
-        //递归解法
-        int resultIndexRecursion = binarySearchCase3.binarySearchRecursion(nums, target, 0, nums.length - 1);
-        System.out.println("二分搜索-递归解法：" + resultIndexRecursion);
-        //非递归解法
-        int resultIndex = binarySearchCase3.binarySearch(nums, target, 0, nums.length - 1);
-        System.out.println("二分搜索-非递归解法：" + resultIndex);
-    }
-
 }
