@@ -19,6 +19,20 @@ import java.util.Set;
  */
 public class LeetCode_349 {
 
+    public static void main(String[] args) {
+        int[] num1_1 = {1, 2, 2, 1};
+        int[] num2_1 = {2, 2};
+        System.out.println("循环遍历：" + Arrays.toString(intersection_1(num1_1, num2_1)));
+        System.out.println("双集合：" + Arrays.toString(intersection_2(num1_1, num2_1)));
+        System.out.println("排序 + 双指针：" + Arrays.toString(intersection_3(num1_1, num2_1)));
+
+        int[] num1_2 = {4, 9, 5};
+        int[] num2_2 = {9, 4, 9, 8, 4};
+        System.out.println("循环遍历：" + Arrays.toString(intersection_1(num1_2, num2_2)));
+        System.out.println("双集合：" + Arrays.toString(intersection_2(num1_2, num2_2)));
+        System.out.println("排序 + 双指针：" + Arrays.toString(intersection_3(num1_2, num2_2)));
+    }
+
     /**
      * 循环遍历
      *
@@ -115,15 +129,5 @@ public class LeetCode_349 {
             }
         }
         return Arrays.copyOfRange(intersection, 0, index);
-    }
-
-    public static void main(String[] args) {
-        int[] num1_1 = {1, 2, 2, 1};
-        int[] num2_1 = {2, 2};
-        System.out.println(Arrays.toString(intersection_3(num1_1, num2_1)));
-
-        int[] num1_2 = {4, 9, 5};
-        int[] num2_2 = {9, 4, 9, 8, 4};
-        System.out.println(Arrays.toString(intersection_3(num1_2, num2_2)));
     }
 }

@@ -8,11 +8,18 @@ package com.luffy.datastructure.leetcodelib.array;
  * 说明：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
  */
 public class LeetCode_136 {
+
     public static void main(String[] args) {
         int[] ints = {4, 2, 3, 2, 3};
         System.out.println(singleNumber(ints));
     }
 
+    /**
+     * 异或运算符
+     *
+     * @param nums
+     * @return
+     */
     public static int singleNumber(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {

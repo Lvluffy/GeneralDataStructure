@@ -15,19 +15,6 @@ import java.util.Arrays;
  */
 public class Array_2 {
 
-    public static int[] getData(int[] input) {
-        int max = -1;
-        int temp;
-        for (int i = input.length - 1; i >= 0; i--) {
-            temp = input[i];
-            input[i] = max;
-            if (temp > max) {
-                max = temp;
-            }
-        }
-        return input;
-    }
-
     public static void main(String[] args) {
         int[] input1 = {3, 8, 1, 10, 6, 8, 1};
         System.out.println(Arrays.toString(getData(input1)));
@@ -43,5 +30,18 @@ public class Array_2 {
 
         int[] input5 = {};
         System.out.println(Arrays.toString(getData(input5)));
+    }
+
+    public static int[] getData(int[] input) {
+        int max = -1;
+        int temp;
+        for (int i = input.length - 1; i >= 0; i--) {
+            temp = input[i];
+            input[i] = max;
+            if (temp > max) {
+                max = temp;
+            }
+        }
+        return input;
     }
 }

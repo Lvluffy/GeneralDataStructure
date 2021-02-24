@@ -12,6 +12,17 @@ package com.luffy.datastructure.leetcodelib.array;
  */
 public class Array_1 {
 
+    public static void main(String[] args) {
+        int[] input1 = {1, 1, 1, 0, 0, 1, 1, 0, 1};
+        System.out.println(getMaxNum(input1, 1));
+
+        int[] input2 = {0};
+        System.out.println(getMaxNum(input2, 1));
+
+        int[] input3 = {0, 0, 1, 0, 1, 0, 1};
+        System.out.println(getMaxNum(input3, 1));
+    }
+
     public static int getMaxNum(int[] input, int find) {
         if (input == null || input.length == 0) {
             return 0;
@@ -30,16 +41,4 @@ public class Array_1 {
         }
         return maxNum;
     }
-
-    public static void main(String[] args) {
-        int[] input1 = {1, 1, 1, 0, 0, 1, 1, 0, 1};
-        System.out.println(getMaxNum(input1, 1));
-
-        int[] input2 = {0};
-        System.out.println(getMaxNum(input2, 1));
-
-        int[] input3 = {0, 0, 1, 0, 1, 0, 1};
-        System.out.println(getMaxNum(input3, 1));
-    }
-
 }

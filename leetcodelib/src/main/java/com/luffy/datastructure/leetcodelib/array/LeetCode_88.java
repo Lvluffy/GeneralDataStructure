@@ -17,6 +17,16 @@ import java.util.Arrays;
  */
 public class LeetCode_88 {
 
+    public static void main(String[] args) {
+        int[] nums1_1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2_1 = {2, 5, 6};
+        System.out.println("合并后排序：" + Arrays.toString(merge_1(nums1_1, 3, nums2_1, 3)));
+
+        int[] nums1_2 = {1, 2, 3, 0, 0, 0};
+        int[] nums2_3 = {2, 5, 6};
+        System.out.println("双指针：" + Arrays.toString(merge_2(nums1_2, 3, nums2_3, 3)));
+    }
+
     /**
      * 合并后排序
      * <p>
@@ -56,15 +66,5 @@ public class LeetCode_88 {
         }
         System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
         return nums1;
-    }
-
-    public static void main(String[] args) {
-        int[] nums1_1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2_1 = {2, 5, 6};
-        System.out.println(Arrays.toString(merge_1(nums1_1, 3, nums2_1, 3)));
-
-        int[] nums1_2 = {1, 2, 3, 0, 0, 0};
-        int[] nums2_3 = {2, 5, 6};
-        System.out.println(Arrays.toString(merge_2(nums1_2, 3, nums2_3, 3)));
     }
 }

@@ -18,6 +18,21 @@ package com.luffy.datastructure.leetcodelib.array;
  */
 public class LeetCode_852 {
 
+    public static void main(String[] args) {
+        int[] array1 = new int[]{1, 3, 5, 7, 9, 10, 12, 8, 6, 5};//返回6
+        int[] array2 = new int[]{1, 2, 3, 4, 5, 3, 1};//返回4
+        int[] array3 = new int[]{0, 1, 2, 4, 2, 1};//返回3
+
+        System.out.println("线性扫描:" + mountainTop_1(array1));
+        System.out.println("二分法:" + mountainTop_2(array1));
+
+        System.out.println("线性扫描:" + mountainTop_1(array2));
+        System.out.println("二分法:" + mountainTop_2(array2));
+
+        System.out.println("线性扫描:" + mountainTop_1(array3));
+        System.out.println("二分法:" + mountainTop_2(array3));
+    }
+
     /**
      * 线性扫描
      * <p>
@@ -58,20 +73,4 @@ public class LeetCode_852 {
         }
         return start;
     }
-
-    public static void main(String[] args) {
-        int[] array1 = new int[]{1, 3, 5, 7, 9, 10, 12, 8, 6, 5};//返回6
-        int[] array2 = new int[]{1, 2, 3, 4, 5, 3, 1};//返回4
-        int[] array3 = new int[]{0, 1, 2, 4, 2, 1};//返回3
-
-        System.out.println("mountainTop_1:" + mountainTop_1(array1));
-        System.out.println("mountainTop_2:" + mountainTop_2(array1));
-
-        System.out.println("mountainTop_1:" + mountainTop_1(array2));
-        System.out.println("mountainTop_2:" + mountainTop_2(array2));
-
-        System.out.println("mountainTop_1:" + mountainTop_1(array3));
-        System.out.println("mountainTop_2:" + mountainTop_2(array3));
-    }
-
 }

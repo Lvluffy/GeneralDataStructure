@@ -16,6 +16,12 @@ import java.util.List;
  */
 public class LeetCode_15 {
 
+    public static void main(String[] args) {
+        int[] data = {-1, 0, 1, 2, -1, 4};
+        System.out.println("暴力法：" + threeSum_1(data));
+        System.out.println("双指针法" + threeSum_2(data));
+    }
+
     /**
      * 暴力法
      * <p>
@@ -103,16 +109,5 @@ public class LeetCode_15 {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[] data = {-1, 0, 1, 2, -1, 4};
-        for (List<Integer> list : threeSum_1(data)) {
-            System.out.println("暴力法：" + list);
-        }
-
-        for (List<Integer> list : threeSum_2(data)) {
-            System.out.println("双指针法" + list);
-        }
     }
 }

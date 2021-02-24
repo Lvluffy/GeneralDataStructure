@@ -19,8 +19,8 @@ public class LeetCode_905 {
 
     public static void main(String[] args) {
         int[] data = {1, 2, 3, 4, 5, 6, 7, 8};
-        System.out.println(Arrays.toString(sort_1(data)));
-        System.out.println(Arrays.toString(sort_2(data)));
+        System.out.println("两边扫描：" + Arrays.toString(sort_1(data)));
+        System.out.println("快慢指针：" + Arrays.toString(sort_2(data)));
     }
 
     /**

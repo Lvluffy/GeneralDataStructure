@@ -16,6 +16,16 @@ import java.util.HashMap;
  */
 public class LeetCode_1 {
 
+    public static void main(String[] args) {
+        int[] input1 = {2, 7, 11, 15};
+        System.out.println("暴力法：" + Arrays.toString(twoNum_1(input1, 9)));
+        System.out.println("哈希表法：" + Arrays.toString(twoNum_2(input1, 9)));
+
+        int[] input2 = {3, 2, 4};
+        System.out.println("暴力法：" + Arrays.toString(twoNum_1(input2, 6)));
+        System.out.println("哈希表法：" + Arrays.toString(twoNum_2(input2, 6)));
+    }
+
     /**
      * 暴力法
      * <p>
@@ -62,15 +72,5 @@ public class LeetCode_1 {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        int[] input1 = {2, 7, 11, 15};
-        System.out.println(Arrays.toString(twoNum_1(input1, 9)));
-        System.out.println(Arrays.toString(twoNum_2(input1, 9)));
-
-        int[] input2 = {3, 2, 4};
-        System.out.println(Arrays.toString(twoNum_1(input2, 6)));
-        System.out.println(Arrays.toString(twoNum_2(input2, 6)));
     }
 }
