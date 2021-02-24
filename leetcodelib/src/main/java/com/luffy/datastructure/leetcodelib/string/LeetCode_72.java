@@ -32,6 +32,15 @@ package com.luffy.datastructure.leetcodelib.string;
  */
 public class LeetCode_72 {
 
+    public static void main(String[] args) {
+        String word1_1 = "horse";
+        String word1_2 = "ros";
+        String word2_1 = "intention";
+        String word2_2 = "execution";
+        System.out.println("示例1：" + dynamicPlan(word1_1, word1_2));
+        System.out.println("示例2：" + dynamicPlan(word2_1, word2_2));
+    }
+
     /**
      * 动态规划解法
      *
@@ -39,7 +48,7 @@ public class LeetCode_72 {
      * @param word2 单词2
      * @return 最少操作数
      */
-    public int dynamicPlan(String word1, String word2) {
+    public static int dynamicPlan(String word1, String word2) {
         int n1 = word1.length();
         int n2 = word2.length();
         // 第一个单词是空的情况
@@ -67,15 +76,4 @@ public class LeetCode_72 {
         }
         return dp[n1][n2];
     }
-
-    public static void main(String[] args) {
-        String word1_1 = "horse";
-        String word1_2 = "ros";
-        String word2_1 = "intention";
-        String word2_2 = "execution";
-        LeetCode_72 leetCode72 = new LeetCode_72();
-        System.out.println("示例1：" + leetCode72.dynamicPlan(word1_1, word1_2));
-        System.out.println("示例2：" + leetCode72.dynamicPlan(word2_1, word2_2));
-    }
-
 }

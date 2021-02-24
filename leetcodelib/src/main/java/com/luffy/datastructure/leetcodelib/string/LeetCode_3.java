@@ -28,6 +28,16 @@ import java.util.Map;
  */
 public class LeetCode_3 {
 
+    public static void main(String[] args) {
+        String str1 = "abcabcbb";
+        String str2 = "bbbbb";
+        String str3 = "pwwkew";
+        // 双向链表（滑动窗口）解法
+        System.out.println("示例1：" + bothwayLinkedList(str1));
+        System.out.println("示例1：" + bothwayLinkedList(str2));
+        System.out.println("示例1：" + bothwayLinkedList(str3));
+    }
+
     /**
      * 双向链表（滑动窗口）解法
      * <p>
@@ -38,7 +48,7 @@ public class LeetCode_3 {
      * @param str 字符串
      * @return 不含有重复字符的最长子串的长度。
      */
-    public int bothwayLinkedList(String str) {
+    public static int bothwayLinkedList(String str) {
         int anwser = 0;
         // 定义一个map数据结构存储(k, v)，其中key值为字符，value值为字符位置+1，加1表示从字符位置后一个才开始不重复。
         Map<Character, Integer> map = new HashMap<>();
@@ -51,16 +61,5 @@ public class LeetCode_3 {
             map.put(str.charAt(endIndex), endIndex + 1);
         }
         return anwser;
-    }
-
-    public static void main(String[] args) {
-        String str1 = "abcabcbb";
-        String str2 = "bbbbb";
-        String str3 = "pwwkew";
-        LeetCode_3 leetCode3 = new LeetCode_3();
-        // 双向链表（滑动窗口）解法
-        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str1));
-        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str2));
-        System.out.println("示例1：" + leetCode3.bothwayLinkedList(str3));
     }
 }

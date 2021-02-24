@@ -21,6 +21,25 @@ import java.util.List;
  * 4，取得这一位的合法数字后，递归调用取下一位。
  */
 public class LeetCode_93 {
+    
+    public static void main(String[] args) {
+        String str = "25525511135";
+        List<String> answers = restoreIpAddresses(str);
+        System.out.println(answers);
+    }
+
+    /**
+     * 还原IP地址
+     *
+     * @param str IP地址
+     * @return
+     */
+    public static List<String> restoreIpAddresses(String str) {
+        List<String> ans = new ArrayList<>();
+        backtracking(str, 0, new ArrayList<String>(), ans);
+        return ans;
+    }
+
     /**
      * 回溯解法
      *
@@ -29,7 +48,7 @@ public class LeetCode_93 {
      * @param cur 当前答案
      * @param ans 最终答案
      */
-    private void backtracking(String str, int pos, List<String> cur, List<String> ans) {
+    private static void backtracking(String str, int pos, List<String> cur, List<String> ans) {
         if (cur.size() >= 4) {
             if (pos == str.length()) ans.add(String.join(".", cur));
             return;
@@ -51,24 +70,4 @@ public class LeetCode_93 {
             cur.remove(cur.size() - 1);
         }
     }
-
-    /**
-     * 还原IP地址
-     *
-     * @param str IP地址
-     * @return
-     */
-    public List<String> restoreIpAddresses(String str) {
-        List<String> ans = new ArrayList<>();
-        backtracking(str, 0, new ArrayList<String>(), ans);
-        return ans;
-    }
-
-    public static void main(String[] args) {
-        String str = "25525511135";
-        LeetCode_93 leetCode93 = new LeetCode_93();
-        List<String> answers = leetCode93.restoreIpAddresses(str);
-        System.out.println(answers);
-    }
-
 }

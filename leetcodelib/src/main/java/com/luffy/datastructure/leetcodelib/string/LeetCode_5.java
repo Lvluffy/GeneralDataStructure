@@ -18,6 +18,13 @@ package com.luffy.datastructure.leetcodelib.string;
  */
 public class LeetCode_5 {
 
+    public static void main(String[] args) {
+        System.out.println("示例1：" + dynamicPlan("babad"));
+        System.out.println("示例2：" + dynamicPlan("cbbd"));
+        System.out.println("示例2：" + dynamicPlan("dddabccba"));
+        System.out.println("示例2：" + dynamicPlan("assdffdddabccba"));
+    }
+
     /**
      * 动态规划解法
      * <p>
@@ -55,12 +62,4 @@ public class LeetCode_5 {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        System.out.println("示例1：" + dynamicPlan("babad"));
-        System.out.println("示例2：" + dynamicPlan("cbbd"));
-        System.out.println("示例2：" + dynamicPlan("dddabccba"));
-        System.out.println("示例2：" + dynamicPlan("assdffdddabccba"));
-    }
-
 }
