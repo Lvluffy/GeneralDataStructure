@@ -7,6 +7,27 @@ package com.luffy.datastructure.leetcodelib.other;
  */
 public class LeetCode_509 {
 
+    public static void main(String[] args) {
+        System.out.println("递归法：" + calNumberByRecursion_1(0));
+        System.out.println("动态规划：" + calNumberByRecursion_2(0));
+        System.out.println("递归法：" + calNumberByRecursion_1(1));
+        System.out.println("动态规划：" + calNumberByRecursion_2(1));
+        System.out.println("递归法：" + calNumberByRecursion_1(2));
+        System.out.println("动态规划：" + calNumberByRecursion_2(2));
+        System.out.println("递归法：" + calNumberByRecursion_1(3));
+        System.out.println("动态规划：" + calNumberByRecursion_2(3));
+        System.out.println("递归法：" + calNumberByRecursion_1(4));
+        System.out.println("动态规划：" + calNumberByRecursion_2(4));
+        System.out.println("递归法：" + calNumberByRecursion_1(5));
+        System.out.println("动态规划：" + calNumberByRecursion_2(5));
+        System.out.println("递归法：" + calNumberByRecursion_1(6));
+        System.out.println("动态规划：" + calNumberByRecursion_2(6));
+        System.out.println("递归法：" + calNumberByRecursion_1(7));
+        System.out.println("动态规划：" + calNumberByRecursion_2(7));
+        System.out.println("递归法：" + calNumberByRecursion_1(8));
+        System.out.println("动态规划：" + calNumberByRecursion_2(8));
+    }
+
     /**
      * 递归法
      *
@@ -39,17 +60,5 @@ public class LeetCode_509 {
             result = pre + cur;
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(calNumberByRecursion_1(0));
-        System.out.println(calNumberByRecursion_1(1));
-        System.out.println(calNumberByRecursion_1(2));
-        System.out.println(calNumberByRecursion_1(3));
-        System.out.println(calNumberByRecursion_1(4));
-        System.out.println(calNumberByRecursion_1(5));
-        System.out.println(calNumberByRecursion_1(6));
-        System.out.println(calNumberByRecursion_1(7));
-        System.out.println(calNumberByRecursion_1(8));
     }
 }
